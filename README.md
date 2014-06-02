@@ -1,35 +1,34 @@
-node-webkit-nedb-rest-angular
+Escritorio Educativo (demo)
 =============================
 
-AngularJS native desktop app (node-webkit, nedb, express, rest, angular)
+Aplicación de escritorio pensada para realizar búsquedas y consumir offline los recursos del portal educ.ar, basada en el stack de tecnologías: node-webkit, nedb, express, rest y angular.js
+
 
 ```
-  git clone https://github.com/buberdds/node-webkit-nedb-rest-angular.git
-  cd node-webkit-nedb-rest-angular
+  git clone https://github.com/ajchambeaud/escritorio-educativo
+  cd escritorio-educativo
   npm install
   cd ..
 ```
 
-<a href="https://github.com/rogerwang/node-webkit#downloads" target="_blank">Download</a> the prebuilt node-webkit binary for your platform and
-use it to run the app.
+<a href="https://github.com/rogerwang/node-webkit#downloads" target="_blank">Descarga</a> el binario de node-webkit para tu plataforma y usalo para ejecutar la aplicación.
 
 ```
-  nw node-webkit-nedb-rest-angular
+  nw escritorio-educativo
 ```
 
-Alternatively, you can cd into the directory where the project files and folders are and run this command:
+Mas información
 
-```
-  zip -r ../${PWD##*/}.nw *
-```
 
-This will create a .nw zip package that exists just in the folder just before the folder where your files exist.
+Más información sobre node-webkit
 
-Once the zip package is created, store it in the same folder as the node-webkit unpacked bundle and simply drag the .nw zip file to the "nw" executable.
+https://github.com/rogerwang/node-webkit
 
-Note. This solution is for linux.
-
-To view other solutions, please consult:
+Información para distribuir esta aplicacion en linux, mac y windows.
 
 https://github.com/rogerwang/node-webkit/wiki/How-to-package-and-distribute-your-apps
+
+Boilerplate tomado como punto de partida para este proyecto.
+
+https://github.com/buberdds/node-webkit-nedb-rest-angular
 
