@@ -3,11 +3,11 @@ var
   path = require("path"),
   nedb = require('nedb'),
   http = require('http');
-  databaseUrl = "db/items.db";
+  databaseUrl = "db/recursos.db";
 
 
 var db = {
-  items: new nedb({ filename: databaseUrl, autoload: true })
+  recursos: new nedb({ filename: databaseUrl, autoload: true })
 };
 
 var app = express();
@@ -62,6 +62,28 @@ app.get('/juegos', function(req, res){
 	  host: 'localhost',
 	  port: 3000,
 	  path: '/dummyJSON/recursos.juegos.json',
+	  method: 'GET'
+	};
+	http.request(options, function(response) {
+		var responseString = '';
+
+		response.on('data', function(data) {
+			responseString += data;
+		});
+
+		response.on('end', function() {
+			console.log(responseString);
+			var responseObject = JSON.parse(responseString);
+			res.send(responseObject);
+		});
+	}).end();
+});
+
+app.get('/juego/:id', function(req, res){
+	var options = {
+	  host: 'localhost',
+	  port: 3000,
+	  path: '/dummyJSON/recurso.juego.json',
 	  method: 'GET'
 	};
 	http.request(options, function(response) {
@@ -143,6 +165,24 @@ app.get('/secuencias', function(req, res){
 			res.send(responseObject);
 		});
 	}).end();
+});
+
+app.get('/recursos', function (req, res) {
+  db.recursos.find({}, function(err, result) {
+    res.send(result);
+  });
+});
+
+app.post('/recurso', function (req, res) {
+  var recurso = req.body;
+  db.recursos.insert(recurso, function (err, result) {
+    if (err) {
+      res.send({'error':'ocurrio un error'});
+    } else {
+      console.log('Success: ' + JSON.stringify(result));
+      res.send(result);
+    }
+  });
 });
 
 app.listen(app.get('port'));

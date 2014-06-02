@@ -1,1 +1,23 @@
 <h1>Mis Recursos</h1>
+<div class="container-fluid" ng-controller="MisRecursosController as misrecursos">
+      <div class="row" ng-hide="misrecursos.recursos == null">
+        <div class="col-sm-12 sidebar" id="temas_tree">
+	    <table class="table table-striped">
+	      <thead>
+		<tr>
+		  <th>#</th>
+		  <th>Titulo</th>
+		  <th>Descripcion</th>
+		</tr>
+	      </thead>
+	      <tbody>
+		<tr ng-repeat="recurso in misrecursos.recursos">
+		  <td>{{recurso.rec_id}}</td>
+		  <td>{{recurso.titulo}}</td>
+		  <td>{{recurso.descripcion}}</td>
+		</tr>
+	      </tbody>
+	    </table>
+	</div>
+      </div>
+</div>

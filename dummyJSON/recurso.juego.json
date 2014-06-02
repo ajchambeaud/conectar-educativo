@@ -1,0 +1,105 @@
+{
+	"codigo": 0,
+	"mensaje": "Ok",
+	"recurso": {
+		"rec_id": 116776,
+		"titulo": "Pteranodon",
+		"descripcion": "Modalidad simulación, juego combinado de arrastre y cliqueo.Conducir al pteranodon para<br>que pueda ir esquivando el insecto",
+		"derechos": "",
+		"export_file_size": "16662395",
+		"editor": {
+			"id": 1,
+			"desc": "Educ.ar"
+		},
+		"small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=be3da539-59af-4676-b625-355e09391174",
+		"medium_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=f631ef62-5693-4969-af76-13654b30165b",
+		"puntaje": 0,
+		"cant_votos": 0,
+		"cant_portafolios": 0,
+		"cant_etiquetas_usuarios": 0,
+		"cant_accesos": 762,
+		"cant_descargas_offline": 0,
+		"cant_comentarios": 0,
+		"cant_reproduccion_video": 0,
+		"cant_descarga_video": 0,
+		"fecha": "06/08/2013",
+		"fecha_creacion": "18/03/2013",
+		"version": 10,
+		"tipo_rec_educativo": {
+			"id": 1,
+			"desc": "Juego"
+		},
+		"formato": {
+			"id": 18,
+			"desc": "SWF –> application/x-shockwave-flash"
+		},
+		"tipo_funcional": {
+			"id": 7,
+			"desc": "Flash",
+			"data": {
+				"file_id": "http://www.educ.ar/repositorio/Download/file?file_id=d4173777-37e8-4ca4-b351-34b5242c0000",
+				"flash_vars": "",
+				"width": 800,
+				"height": 600
+			}
+		},
+		"etiquetas": [
+			{
+				"id": 83054,
+				"desc": "dinosaurio"
+			}
+		],
+		"recursos_relacionados": [],
+		"colecciones_asociadas": [],
+		"temas": [
+			{
+				"id": 1,
+				"desc": "Inicial"
+			},
+			{
+				"id": 5,
+				"desc": "Juegos"
+			},
+			{
+				"id": 9,
+				"desc": "Ambiente natural, social y tecnológico "
+			}
+		],
+		"modalidades": [],
+		"contribuyentes": [],
+		"fuentes": [],
+		"idiomas": [
+			{
+				"id": 1,
+				"desc": "Español",
+				"abreviacion": "es"
+			}
+		],
+		"autores": [
+			{
+				"id": 100318,
+				"desc": "RELPE"
+			}
+		],
+		"audiencias": [
+			{
+				"id": 2,
+				"desc": "Estudiante"
+			},
+			{
+				"id": 9,
+				"desc": "Inicial"
+			}
+		],
+		"alcances_geograficos": [],
+		"alcances_temporales": [],
+		"segmento_etario": [],
+		"extracurricular": [],
+		"screenshots": [],
+		"permisos": [
+			{
+				"comentar": true
+			}
+		]
+	}
+}

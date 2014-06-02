@@ -39,11 +39,19 @@
 
 	app.controller('HomeController', function(){});
 
-	app.controller('MisRecursosController', function(){});
+	app.controller('MisRecursosController', ['$http',function(){
+		var misRecursos = this;
+		misRecursos.recursos = null;
+		$http.get('/recursos').success(function(data){
+			misRecursos.recursos = data;
+			console.log(data);
+		});
+	}]);
 
 	app.controller('BuscarController', ['$http',function($http){
 		var busqueda = this;
 		busqueda.buscando = "";
+		busqueda.recurso = null;
 		$http.get('/temas').success(function(data){
 			temas = data.result;
 			for(var i in temas){
@@ -71,7 +79,7 @@
 		this.buscarVideos = function(){
 			$http.get('/videos').success(function(data){
 				console.log(data);
-				videos = data.result.data;
+				var videos = data.result.data;
 				busqueda.recursos = videos;
 				busqueda.buscando = "Videos";
 			});
@@ -80,12 +88,40 @@
 		this.buscarInfografias = function(){
 			$http.get('/infografias').success(function(data){
 				console.log(data);
-				infografias = data.result.data;
-				busqueda.infografias = infografias;
+				var infografias = data.result.data;
+				busqueda.recursos = infografias;
 				busqueda.buscando = "Infografias";
 			});
 		};
 
+		this.buscarSecuencias = function(){
+			$http.get('/secuencias').success(function(data){
+				console.log(data);
+				var secuencias = data.result.data;
+				busqueda.recursos = secuencias;
+				busqueda.buscando = "Secuencias Didácticas";
+			});
+		};
+
+		this.verRecurso = function(id){
+			$http.get('/juego/'+id).success(function(data){
+				console.log(data);
+				var recurso = data.recurso;
+				busqueda.recurso = data.recurso;
+			});
+		};
+
+		this.volver = function(){
+			busqueda.recurso = null;
+		};
+
+		this.descargar = function(){
+			if(busqueda.recurso != null){
+				$http.post('/recurso', busqueda.recurso).success(function(data){
+					console.log(data);
+				});
+			}
+		};
 	}]);
 
 	app.controller('PerfilController', function(){});

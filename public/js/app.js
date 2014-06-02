@@ -39,11 +39,19 @@
 
 	app.controller('HomeController', function(){});
 
-	app.controller('MisRecursosController', function(){});
+	app.controller('MisRecursosController', ['$http',function($http){
+		var misRecursos = this;
+		misRecursos.recursos = null;
+		$http.get('/recursos').success(function(data){
+			misRecursos.recursos = data;
+			console.log(data);
+		});
+	}]);
 
 	app.controller('BuscarController', ['$http',function($http){
 		var busqueda = this;
 		busqueda.buscando = "";
+		busqueda.recurso = null;
 		$http.get('/temas').success(function(data){
 			temas = data.result;
 			for(var i in temas){
@@ -95,6 +103,25 @@
 			});
 		};
 
+		this.verRecurso = function(id){
+			$http.get('/juego/'+id).success(function(data){
+				console.log(data);
+				var recurso = data.recurso;
+				busqueda.recurso = data.recurso;
+			});
+		};
+
+		this.volver = function(){
+			busqueda.recurso = null;
+		};
+
+		this.descargar = function(){
+			if(busqueda.recurso != null){
+				$http.post('/recurso', busqueda.recurso).success(function(data){
+					console.log(data);
+				});
+			}
+		};
 	}]);
 
 	app.controller('PerfilController', function(){});
