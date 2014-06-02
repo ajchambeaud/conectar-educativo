@@ -123,5 +123,27 @@ app.get('/infografias', function(req, res){
 	}).end();
 });
 
+app.get('/secuencias', function(req, res){
+	var options = {
+	  host: 'localhost',
+	  port: 3000,
+	  path: '/dummyJSON/recursos.secuencias.json',
+	  method: 'GET'
+	};
+	http.request(options, function(response) {
+		var responseString = '';
+
+		response.on('data', function(data) {
+			responseString += data;
+		});
+
+		response.on('end', function() {
+			console.log(responseString);
+			var responseObject = JSON.parse(responseString);
+			res.send(responseObject);
+		});
+	}).end();
+});
+
 app.listen(app.get('port'));
 console.log('Server listening on port ' + app.get('port'));

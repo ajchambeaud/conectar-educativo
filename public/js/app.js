@@ -71,7 +71,7 @@
 		this.buscarVideos = function(){
 			$http.get('/videos').success(function(data){
 				console.log(data);
-				videos = data.result.data;
+				var videos = data.result.data;
 				busqueda.recursos = videos;
 				busqueda.buscando = "Videos";
 			});
@@ -80,9 +80,18 @@
 		this.buscarInfografias = function(){
 			$http.get('/infografias').success(function(data){
 				console.log(data);
-				infografias = data.result.data;
+				var infografias = data.result.data;
 				busqueda.recursos = infografias;
 				busqueda.buscando = "Infografias";
+			});
+		};
+
+		this.buscarSecuencias = function(){
+			$http.get('/secuencias').success(function(data){
+				console.log(data);
+				var secuencias = data.result.data;
+				busqueda.recursos = secuencias;
+				busqueda.buscando = "Secuencias Didácticas";
 			});
 		};
 

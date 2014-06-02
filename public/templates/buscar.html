@@ -1,6 +1,6 @@
 <div class="container-fluid" ng-controller="BuscarController as busqueda">
       <div class="row">
-        <div class="col-sm-3 sidebar">
+        <div class="col-sm-3 sidebar" id="temas_tree">
 		<script type="text/ng-template" id="tree-renderer.html">
 		 <a href="">{{tema.desc}}</a>
 		 <ul>
@@ -12,7 +12,7 @@
 	    </ul>
         </div>
 
-        <div class="col-sm-9 main">
+        <div class="col-sm-9 main" id="busqueda_container">
           <h1 class="page-header">Buscar en educ.ar</h1>
 
           <div class="row placeholders">
@@ -26,7 +26,7 @@
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <img data-src="holder.js/200x200/auto/sky" class="img-responsive" src="/img/secuencias.jpg">
-              <h4>Secuencias Did&aacute;cticas</h4>
+              <h4 ng-click="busqueda.buscarSecuencias()">Secuencias Did&aacute;cticas</h4>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <img data-src="holder.js/200x200/auto/vine" class="img-responsive" src="/img/infografias.jpg">
