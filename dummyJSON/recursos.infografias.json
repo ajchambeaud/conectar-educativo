@@ -1,0 +1,73 @@
+{
+	"status": {
+		"code":200,
+		"message":"Ok"
+	},
+        "result":{
+		"resultLength": 10,
+		"totalFound": "87",
+		"totalRecordsPagination": "87",
+		"data": [
+		{
+			"rec_id": 20083,
+			"rec_titulo": "El eurotúnel",
+			"rec_descripcion": "Desde 1994, las ciudades de Coquelles (Pas-de-Calais, Francia) y Folkestone (Kent, Reino Unido) están conectadas por un túnel subacuático de tres viaductos, que atraviesa el Canal de la Mancha.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=98a20078-c83d-11e0-83b5-e7f760fda940"
+		},
+		{
+			"rec_id": 20094,
+			"rec_titulo": "La red de subterráneos de la ciudad de Buenos Aires",
+			"rec_descripcion": "Seis líneas de trenes subterráneos y una línea de tren de superficie forman una red de poco más de 50 km de vías. Cada día, alrededor de 1.300.000 pasajeros utilizan este medio de transporte.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=73143e98-c83d-11e0-808c-e7f760fda940"
+		},
+		{
+			"rec_id": 20011,
+			"rec_titulo": "Las corrientes marinas",
+			"rec_descripcion": "Las masas de agua de los océanos y de los grandes mares se encuentran en continuo movimiento. ¿Qué ocurre cuando esos movimientos son continuos y permanentes?.&nbsp;",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=f61c42cb-c83d-11e0-83ad-e7f760fda940"
+		},
+		{
+			"rec_id": 20018,
+			"rec_titulo": "Rutas y conexiones del mundo hacia el siglo XVI",
+			"rec_descripcion": "Desde la antiguedad distintas culturas se relacionaron a través del comercio o la guerra. Desde fines del siglo XIV, los vínculos entre los integrantes de la sociedad comienzan a multiplicarse y da origen a un mercado de escala planetaria.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=2254f7e0-c83d-11e0-80cd-e7f760fda940"
+		},
+		{
+			"rec_id": 20060,
+			"rec_titulo": "Los pasos de frontera",
+			"rec_descripcion": "Los pasos fronterizos no son solo puntos desplegados sobre la línea limítrofe internacional entre países.&nbsp; ¿En qué radica la importancia de su existencia? Enterate mirando esta animación.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=b1ab66f5-c83d-11e0-8228-e7f760fda940"
+		},
+		{
+			"rec_id": 20015,
+			"rec_titulo": "La reforma protestante",
+			"rec_descripcion": "A principios del siglo XVI, algunos filósofos y teólogos comenzaron a cuestionar algunos comportamientos de los miembros de la jerarquía de la Iglesia. En ese contexto, ¿qué repercursión tuvieron las críticas de Martín Lutero? ¿con qué apoyo contaba?",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=34f1d2ba-c83d-11e0-81a2-e7f760fda940"
+		},
+		{
+			"rec_id": 20026,
+			"rec_titulo": "Los primeros poblados agrícolas en el Cercano Oriente",
+			"rec_descripcion": "A partir del 12.000 a.C., en los territorios de la llamada “medialuna de las tierras fértiles”, los asentamientos de los primeros grupos de agricultores comenzaron a multiplicarse. En la mayoría de los casos, las primeras viviendas eran casas circulares, con paredes de barro hundidas en el suelo y techos de ramas. En el interior, se han hallado piedras de moler y restos de fogones donde cocinaban alimentos.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=f6d3bfd4-c83c-11e0-8228-e7f760fda940"
+		},
+		{
+			"rec_id": 20014,
+			"rec_titulo": "La polis griega",
+			"rec_descripcion": "Para los antiguos griegos, ¿qué eran las polis?, ¿dónde se trataban las cuestiones políticas y dónde y cómo se resolvían? Descubrilo mirando está animación.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=3b261592-c83d-11e0-805a-e7f760fda940"
+		},
+		{
+			"rec_id": 20081,
+			"rec_titulo": "La energía eólica",
+			"rec_descripcion": "Te contamos qué es la energía eólica, cómo se origina y qué beneficios tiene.&nbsp; Sin embargo, tiene una gran desventaja que tiene que ver con su principal recurso, el viento.&nbsp; Todas las ventajas y desventajas en este recurso.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=a5381af3-c83d-11e0-828c-e7f760fda940"
+		},
+		{
+			"rec_id": 20084,
+			"rec_titulo": "El Tratado Antártico",
+			"rec_descripcion": "El continente antártico es el único que no tiene población permanente. A partir de la firma del Tratado Antártico, la comunidad internacional aceptó que allí solo se desarrollen actividades científicas. Al mismo tiempo, varios Estados nacionales mantienen sus pretensiones de soberanía sobre sectores antárticos.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=925843da-c83d-11e0-8203-e7f760fda940"
+		}
+		]
+	}
+}

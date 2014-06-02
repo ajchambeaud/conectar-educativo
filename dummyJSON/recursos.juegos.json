@@ -1,0 +1,73 @@
+{
+	"status": {
+		"code":200,
+		"message":"Ok"
+	},
+        "result":{
+		"resultLength": 10,
+		"totalFound": "87",
+		"totalRecordsPagination": "87",
+		"data": [
+		{
+			"rec_id": 116776,
+			"rec_titulo": "Pteranodon",
+			"rec_descripcion": "Modalidad simulación, juego combinado de arrastre y cliqueo.Conducir al pteranodon para<br>que pueda ir esquivando el insecto",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=be3da539-59af-4676-b625-355e09391174"
+		},
+		{
+			"rec_id": 116812,
+			"rec_titulo": "Avioncito",
+			"rec_descripcion": "Modalidad simulación, juego combinado de arrastre y cliqueo.Juego de destreza, conducir el<br>avioncito esquivando las basuras que encuentran en su camino.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=be3da539-59af-4676-b625-355e09391174"
+		},
+		{
+			"rec_id": 116827,
+			"rec_titulo": "Abejita",
+			"rec_descripcion": "Modalidad simulación, juego combinado de arrastre y cliqueo.Conducir a la abeja esquivando<br>los insectos que encuentra en su camino",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=be3da539-59af-4676-b625-355e09391174"
+		},
+		{
+			"rec_id": 116858,
+			"rec_titulo": "Laberintos",
+			"rec_descripcion": "Modalidad simulación, juego combinado de arrastre y cliqueo. Seguir dirección hasta completar<br>el camino del laberinto",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=be3da539-59af-4676-b625-355e09391174"
+		},
+		{
+			"rec_id": 116869,
+			"rec_titulo": "Colorea estos dibujos",
+			"rec_descripcion": "Modalidad juego de simulación, juego de cliqueo. Seleccionar colores de una amplia paleta de<br>colores, y luego cliquear sobre la zona elegida",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=be3da539-59af-4676-b625-355e09391174"
+		},
+		{
+			"rec_id": 117359,
+			"rec_titulo": "Continúa la serie",
+			"rec_descripcion": "Discriminar, reconocer e identificar la figuras que corresponde en la serie.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=3f6f786a-d3be-4ff7-a6c4-f3eba691425d"
+		},
+		{
+			"rec_id": 20038,
+			"rec_titulo": "Las caries dentales",
+			"rec_descripcion": "Cómo se origina esta enfermedad infecciosa tan común, que va destruyendo la estructura ósea de los dientes y que puede ser la causa de la pérdida de piezas dentales. Te mostramos también cómo prevenirlas.<br><br>Infografía cedida por Eroski Consumer: www.consumer.es",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=7f677d57-c83e-11e0-8307-e7f760fda940"
+		},
+		{
+			"rec_id": 20039,
+			"rec_titulo": "Huracanes",
+			"rec_descripcion": "¿Cómo se forman estas tormentas tropicales que llegan a alcanzar los 350 km/h? ¿Cómo es su estructura? ¿ Dónde ocurren habitualmente?. En está animación te respondemos todas estas preguntas y además te mostramos día por día la formación de un huracán.<br><br>Infografía cedida por Eroski Consumer: www.consumer.es",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=ab82ce33-c83d-11e0-8361-e7f760fda940"
+		},
+		{
+			"rec_id": 117127,
+			"rec_titulo": "Contando de cero a nueve",
+			"rec_descripcion": "Aplicación que permite a los niños contar de cero a nueve, deben conocer también la representación escrita de los números.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=be3da539-59af-4676-b625-355e09391174"
+		},
+		{
+			"rec_id": 116861,
+			"rec_titulo": "Colorear",
+			"rec_descripcion": "Recurso que permite pintar diferentes dibujos, perfeccionando su destreza motriz fina.Se destaca la relevancia de que los niños y niñas ejerciten la destreza motriz fina y la coordinación<br>visomotriz, pues es la base de múltiples habilidades académicas a desarrollar en el futuro.",
+			"rec_small_icon_image_id": "http://globalbackend.educ.ar/repositorio/Imagen/ver?image_id=be3da539-59af-4676-b625-355e09391174"
+		}
+		]
+	}
+}
