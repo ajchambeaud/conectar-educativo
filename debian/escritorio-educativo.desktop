@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=escritorio-educativo
+Comment=Una aplicación para descargar y ver los recursos de educ.ar offline
+Exec=/usr/bin/escritorio-educativo
+Terminal=false
+Type=Application
+Icon=escritorio-educativo
+Categories=GNOME;GTK;Huayra;Network;
