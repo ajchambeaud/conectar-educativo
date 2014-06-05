@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module('demo', ['ngRoute']);
+	var app = angular.module('demo', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
 
 	app.config(['$routeProvider',
 	  function($routeProvider) {
