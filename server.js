@@ -2,10 +2,12 @@ var
   express = require("express"),
   path = require("path"),
   nedb = require('nedb'),
-  http = require('http');
-  api = require('educar-api.js');
-  databaseUrl = "db/recursos.db";
+  http = require('http'),
+  Api = require('educar-api.js'),
+  databaseUrl = "db/recursos.db",
+  config = require("./config.json");
 
+var api = new Api(config.apiKey);
 
 var db = {
   recursos: new nedb({ filename: databaseUrl, autoload: true })
@@ -34,13 +36,14 @@ app.get('/status', function (req, res) {
 });
 
 app.get('/temas', function(req, res){
-	var successCallback = function(data) {
-		var responseObject = JSON.parse(data);
-		res.send(responseObject.result);
-    };
-    var errorCallback = function(e) {
-    	console.error(e);
-    };
+  var successCallback = function(data) {
+    console.log(data);
+    var responseObject = JSON.parse(data);
+  	res.send(responseObject.result);
+  };
+  var errorCallback = function(e) {
+    console.error(e);
+  };
 	api.obtenerCatalogacion(errorCallback,successCallback);
 });
 
@@ -48,10 +51,10 @@ app.get('/juegos', function(req, res){
 	var successCallback = function(data) {
 		var responseObject = JSON.parse(data);
 		res.send(responseObject.result);
-    };
-    var errorCallback = function(e) {
+  };
+  var errorCallback = function(e) {
     	console.error(e);
-    };
+  };
 	api.buscarJuegos({},errorCallback,successCallback);
 });
 
