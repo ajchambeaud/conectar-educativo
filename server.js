@@ -14,8 +14,8 @@ var
 
   http = require('http'),
   Api = require('educar-api.js'),
-  databaseUrl = "db/recursos.db",
-  config = require("./config.json");
+
+  config = require(path.join(homedir, ".escritorio_educativo", "config.json"));
 
 var api = new Api(config.apiKey);
 
