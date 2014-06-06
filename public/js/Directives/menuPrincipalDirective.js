@@ -1,15 +1,14 @@
 var app = angular.module('app');
 
-app.directive('menuPrincipal', ['$http', function(){
-  return {
-    restrict: 'E',
-    templateUrl: '/templates/nav.html',
-    controller: function($http, $scope, $timeout){
-      var nav = this;
-      $http.get('/status').success(function(data){
-        nav.status = data;
-      });
-    },
-    controllerAs: 'nav'
-  };
-}]);
+app.directive('loader', function ($rootScope) {
+
+    return function ($scope, element, attrs) {
+        $scope.$on("loader_show", function () {
+            return $(element).show();
+        });
+
+        return $scope.$on("loader_hide", function () {
+            return $(element).hide();
+        });
+    };
+});
