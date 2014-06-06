@@ -1,4 +1,3 @@
-db/* usr/share/escritorio-educativo/db
 public/* usr/share/escritorio-educativo/public
 index.html usr/share/escritorio-educativo/
 package.json usr/share/escritorio-educativo/
