@@ -9,6 +9,13 @@ var
 
 var api = new Api(config.apiKey);
 
+// cross platform paths
+var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
+databaseUrl = path.join (homedir, '.escritorio_educativo' ,  'recursos.db');
+
+console.log('Running on: ' + process.platform);
+console.log('Database: ' + databaseUrl)
+
 var db = {
   recursos: new nedb({ filename: databaseUrl, autoload: true })
 };
