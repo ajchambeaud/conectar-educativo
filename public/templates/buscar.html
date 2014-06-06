@@ -2,7 +2,7 @@
       <div class="row" id="busqueda_recurso" ng-show="busqueda.recurso == null">
         <div class="col-sm-3 sidebar" id="temas_tree">
 		<script type="text/ng-template" id="tree-renderer.html">
-		 <a href="">{{tema.desc}}</a>
+		 <a href="">{{tema.descripcion}}</a>
 		 <ul>
 		   <li ng-repeat="tema in tema.children" ng-include="'tree-renderer.html'"></li>
 		 </ul>
@@ -34,9 +34,8 @@
             </div>
           </div>
 
-          
           <div class="table-responsive" ng-hide="busqueda.buscando == ''">
-	    <h2 class="sub-header">{{busqueda.buscando}}</h2>	
+	        <h2 class="sub-header">{{busqueda.buscando}}</h2>	
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -44,16 +43,16 @@
                   <th>Titulo</th>
                   <th>Descripcion</th>
                   <th>imagen</th>
-		  <th>Acciones</th> 	
+		              <th>Acciones</th> 	
                 </tr>
               </thead>
               <tbody>
                 <tr ng-repeat="recurso in busqueda.recursos">
-                  <td>{{recurso.rec_id}}</td>
-                  <td>{{recurso.rec_titulo}}</td>
-                  <td>{{recurso.rec_descripcion}}</td>
-                  <td><img src="{{recurso.rec_small_icon_image_id}}"></td>
-                  <td><a ng-click="busqueda.verRecurso(recurso.rec_id)" class="btn btn-default">ver/descargar</a></td>
+                  <td>{{recurso.id}}</td>
+                  <td>{{recurso.titulo}}</td>
+                  <td>{{recurso.descripcion}}</td>
+                  <td><img src="{{recurso.icono_chico}}"></td>
+                  <td><a ng-click="busqueda.verRecurso(recurso.id)" class="btn btn-default">ver/descargar</a></td>
                 </tr>
               </tbody>
             </table>
@@ -67,8 +66,8 @@
 	<div class="col-sm-10">
 	<h1>{{busqueda.recurso.titulo}}</h1>
 	<p>{{busqueda.recurso.descripcion}}</p>
-	<object type="application/x-shockwave-flash" id="flash-player" name="flash-player" data="{{busqueda.recurso.tipo_funcional.data.file_id}}" width="514" height="335.5"></object>
+	<object type="application/x-shockwave-flash" id="flash-player" name="flash-player" data="{{busqueda.recurso.url}}" width="514" height="335.5"></object>
 	</div>
 	<a ng-click="busqueda.descargar()" class="btn btn-default">Descargar</a></td>
-      </div>	
-    </div>
+</div>	
+</div>

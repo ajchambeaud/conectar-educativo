@@ -5,7 +5,7 @@ app.controller('BuscarController', ['$http',function($http){
   busqueda.buscando = "";
   busqueda.recurso = null;
   $http.get('/temas').success(function(data){
-    temas = data.result;
+    temas = data;
     for(var i in temas){
       temas[i].children = [];
       for(var j in temas){
@@ -20,36 +20,45 @@ app.controller('BuscarController', ['$http',function($http){
   });
 
   this.buscarJuegos = function(){
-    $http.get('/juegos').success(function(data){
-      console.log(data);
-      juegos = data.result.data;
+    $http.get('/juegos').success(function(result){
+      console.log(result);
+      juegos = result.data;
       busqueda.recursos = juegos;
       busqueda.buscando = "Juegos";
     });
   };
 
   this.buscarVideos = function(){
-    $http.get('/videos').success(function(data){
-      console.log(data);
-      var videos = data.result.data;
+    $http.get('/videos').success(function(result){
+      console.log(result);
+      var videos = result.data;
       busqueda.recursos = videos;
       busqueda.buscando = "Videos";
     });
   };
 
+  this.buscarEbooks = function(){
+    $http.get('/ebooks').success(function(result){
+      console.log(result);
+      var ebooks = result.data;
+      busqueda.recursos = ebooks;
+      busqueda.buscando = "Videos";
+    });
+  };
+
   this.buscarInfografias = function(){
-    $http.get('/infografias').success(function(data){
-      console.log(data);
-      var infografias = data.result.data;
+    $http.get('/infografias').success(function(result){
+      console.log(result);
+      var infografias = result.data;
       busqueda.recursos = infografias;
       busqueda.buscando = "Infografias";
     });
   };
 
   this.buscarSecuencias = function(){
-    $http.get('/secuencias').success(function(data){
-      console.log(data);
-      var secuencias = data.result.data;
+    $http.get('/secuencias').success(function(result){
+      console.log(result);
+      var secuencias = result.data;
       busqueda.recursos = secuencias;
       busqueda.buscando = "Secuencias Didácticas";
     });
@@ -58,8 +67,8 @@ app.controller('BuscarController', ['$http',function($http){
   this.verRecurso = function(id){
     $http.get('/juego/'+id).success(function(data){
       console.log(data);
-      var recurso = data.recurso;
-      busqueda.recurso = data.recurso;
+      var recurso = data;
+      busqueda.recurso = recurso;
     });
   };
 

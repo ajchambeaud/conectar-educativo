@@ -3,6 +3,7 @@ var
   path = require("path"),
   nedb = require('nedb'),
   http = require('http');
+  api = require('educar-api.js');
   databaseUrl = "db/recursos.db";
 
 
@@ -17,9 +18,6 @@ app.configure(function () {
   app.use(express.logger('dev'));
   app.use(express.bodyParser()),
   app.use(express.static(path.join(__dirname, 'public')));
-  //Se crea directorio para servir archivos JSON estaticos a fin de hacer pruebas sin conexión a la API
-  //Eliminar en versión final
-  app.use("/dummyJSON", express.static(__dirname + '/dummyJSON'));
 });
 
 app.get('/api', function (req, res) {
@@ -36,136 +34,84 @@ app.get('/status', function (req, res) {
 });
 
 app.get('/temas', function(req, res){
-	var options = {
-	  host: 'localhost',
-	  port: 3000,
-	  path: '/dummyJSON/recursos.temas.json',
-	  method: 'GET'
-	};
-	http.request(options, function(response) {
-		var responseString = '';
-
-		response.on('data', function(data) {
-			responseString += data;
-		});
-
-		response.on('end', function() {
-			console.log(responseString);
-			var responseObject = JSON.parse(responseString);
-			res.send(responseObject);
-		});
-	}).end();
+	var successCallback = function(data) {
+		var responseObject = JSON.parse(data);
+		res.send(responseObject.result);
+    };
+    var errorCallback = function(e) {
+    	console.error(e);
+    };
+	api.obtenerCatalogacion(errorCallback,successCallback);
 });
 
 app.get('/juegos', function(req, res){
-	var options = {
-	  host: 'localhost',
-	  port: 3000,
-	  path: '/dummyJSON/recursos.juegos.json',
-	  method: 'GET'
-	};
-	http.request(options, function(response) {
-		var responseString = '';
-
-		response.on('data', function(data) {
-			responseString += data;
-		});
-
-		response.on('end', function() {
-			console.log(responseString);
-			var responseObject = JSON.parse(responseString);
-			res.send(responseObject);
-		});
-	}).end();
-});
-
-app.get('/juego/:id', function(req, res){
-	var options = {
-	  host: 'localhost',
-	  port: 3000,
-	  path: '/dummyJSON/recurso.juego.json',
-	  method: 'GET'
-	};
-	http.request(options, function(response) {
-		var responseString = '';
-
-		response.on('data', function(data) {
-			responseString += data;
-		});
-
-		response.on('end', function() {
-			console.log(responseString);
-			var responseObject = JSON.parse(responseString);
-			res.send(responseObject);
-		});
-	}).end();
+	var successCallback = function(data) {
+		var responseObject = JSON.parse(data);
+		res.send(responseObject.result);
+    };
+    var errorCallback = function(e) {
+    	console.error(e);
+    };
+	api.buscarJuegos({},errorCallback,successCallback);
 });
 
 app.get('/videos', function(req, res){
-	var options = {
-	  host: 'localhost',
-	  port: 3000,
-	  path: '/dummyJSON/recursos.videos.json',
-	  method: 'GET'
-	};
-	http.request(options, function(response) {
-		var responseString = '';
+	var successCallback = function(data) {
+		var responseObject = JSON.parse(data);
+		res.send(responseObject.result);
+    };
+    var errorCallback = function(e) {
+    	console.error(e);
+    };
+	api.buscarVideos({},errorCallback,successCallback);
+});
 
-		response.on('data', function(data) {
-			responseString += data;
-		});
-
-		response.on('end', function() {
-			console.log(responseString);
-			var responseObject = JSON.parse(responseString);
-			res.send(responseObject);
-		});
-	}).end();
+app.get('/ebooks', function(req, res){
+	var successCallback = function(data) {
+		var responseObject = JSON.parse(data);
+		res.send(responseObject.result);
+    };
+    var errorCallback = function(e) {
+    	console.error(e);
+    };
+	api.buscarEbooks({},errorCallback,successCallback);
 });
 
 app.get('/infografias', function(req, res){
-	var options = {
-	  host: 'localhost',
-	  port: 3000,
-	  path: '/dummyJSON/recursos.infografias.json',
-	  method: 'GET'
-	};
-	http.request(options, function(response) {
-		var responseString = '';
-
-		response.on('data', function(data) {
-			responseString += data;
-		});
-
-		response.on('end', function() {
-			console.log(responseString);
-			var responseObject = JSON.parse(responseString);
-			res.send(responseObject);
-		});
-	}).end();
+	var successCallback = function(data) {
+		var responseObject = JSON.parse(data);
+		res.send(responseObject.result);
+    };
+    var errorCallback = function(e) {
+    	console.error(e);
+    };
+	api.buscarInfografias({},errorCallback,successCallback);
 });
 
 app.get('/secuencias', function(req, res){
-	var options = {
-	  host: 'localhost',
-	  port: 3000,
-	  path: '/dummyJSON/recursos.secuencias.json',
-	  method: 'GET'
-	};
-	http.request(options, function(response) {
-		var responseString = '';
-
-		response.on('data', function(data) {
-			responseString += data;
-		});
-
-		response.on('end', function() {
-			console.log(responseString);
-			var responseObject = JSON.parse(responseString);
-			res.send(responseObject);
-		});
-	}).end();
+	var successCallback = function(data) {
+		var responseObject = JSON.parse(data);
+		res.send(responseObject.result);
+    };
+    var errorCallback = function(e) {
+    	console.error(e);
+    };
+	api.buscarSecuencias({},errorCallback,successCallback);
 });
+
+
+app.get('/juego/:id', function(req, res){
+	var id = req.params.id;
+	var successCallback = function(data) {
+		var responseObject = JSON.parse(data);
+		res.send(responseObject.result);
+    };
+    var errorCallback = function(e) {
+    	console.error(e);
+    };
+	api.detalleJuegos(id,errorCallback,successCallback);
+});
+
 
 app.get('/recursos', function (req, res) {
   db.recursos.find({}, function(err, result) {
