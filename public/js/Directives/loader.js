@@ -6,9 +6,11 @@ app.directive('menuPrincipal', ['$http', function(){
     templateUrl: '/templates/nav.html',
     controller: function($http, $scope, $timeout){
       var nav = this;
+
       $http.get('/status').success(function(data){
         nav.status = data;
       });
+
     },
     controllerAs: 'nav'
   };
