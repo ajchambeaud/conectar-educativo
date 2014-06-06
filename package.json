@@ -10,8 +10,9 @@
     "position": "center",
     "fullscreen": false,
     "resizable": true,
-    "width": 800,
-    "height": 600
+    "width": 850,
+    "height": 600,
+    "min_width": 810
   },
   "webkit": {
     "plugin": true
