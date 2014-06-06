@@ -1,7 +1,7 @@
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'angularSpinner', 'ui.bootstrap']);
 
-app.config(['$routeProvider','$httpProvider',
-  function($routeProvider, $httpProvider) {
+app.config(function($routeProvider, $httpProvider) {
+
 	  $routeProvider.
 	  when('/home', {
 	    templateUrl: '/templates/home.html',
@@ -25,4 +25,4 @@ app.config(['$routeProvider','$httpProvider',
 	  $httpProvider.defaults.headers.post = {};
 	  $httpProvider.defaults.headers.put = {};
 	  $httpProvider.defaults.headers.patch = {};
-}]);
+});
