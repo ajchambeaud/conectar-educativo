@@ -24,7 +24,9 @@
         
             <li class="misrecursos"><a href="#misrecursos">Mis Recursos</a></li>
         
-            <li class="buscar"><a href="#buscar">Buscar en educ.ar</a></li>
+            <li class="buscar" ng-hide="nav.status=='offline'">
+              <a href="#buscar">Buscar en educ.ar</a>
+            </li>
         
             <li class="perfil"><a href="#perfil">Perfil</a></li>
 
