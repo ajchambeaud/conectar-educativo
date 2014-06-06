@@ -1,14 +1,12 @@
 var app = angular.module('app');
 
-app.controller('MainController', function($scope, usSpinnerService) {
+app.controller('MainController', function($scope, $location) {
 
-    $scope.startSpin = function(){
-      usSpinnerService.spin('spinner-1');
-    }
+  $scope.getClass = function(path) {
+    if ($location.path().substr(0, path.length) == path)
+      return "active";
+    else
+      return "";
+  }
 
-    $scope.stopSpin = function(){
-      usSpinnerService.stop('spinner-1');
-    }
-
-    $scope.startSpin();
 });
