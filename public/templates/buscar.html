@@ -1,4 +1,5 @@
-<div class="container-fluid" ng-controller="BuscarController as busqueda">
+<div class="container" ng-controller="BuscarController as busqueda">
+  <div class="row">
       <div class="row" id="busqueda_recurso" ng-show="busqueda.recurso == null">
         <div class="col-sm-3 sidebar" id="temas_tree">
 		<script type="text/ng-template" id="tree-renderer.html">
@@ -35,7 +36,7 @@
           </div>
 
           <div class="table-responsive" ng-hide="busqueda.buscando == ''">
-	        <h2 class="sub-header">{{busqueda.buscando}}</h2>	
+	        <h2 class="sub-header">{{busqueda.buscando}}</h2>
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -43,7 +44,7 @@
                   <th>Titulo</th>
                   <th>Descripcion</th>
                   <th>imagen</th>
-		              <th>Acciones</th> 	
+		              <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -69,5 +70,7 @@
 	<object type="application/x-shockwave-flash" id="flash-player" name="flash-player" data="{{busqueda.recurso.url}}" width="514" height="335.5"></object>
 	</div>
 	<a ng-click="busqueda.descargar()" class="btn btn-default">Descargar</a></td>
-</div>	
+</div>
+</div>
+
 </div>

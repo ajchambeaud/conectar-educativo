@@ -79,5 +79,35 @@
 
 
 #busqueda_container h4{
- cursor: pointer;	
+ cursor: pointer;
+}
+
+#loaderDiv {
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1100;
+}
+
+.ajax-loader {
+	position: fixed;
+	top: 60px;
+	margin-left: -32px;
+	margin-top: -32px;
+	display: block;
+	right: 10px;
+	width: 32px;
+	height: 32px;
+}
+
+
+.preferencias {
+	margin-top: 50px;
+}
+
+
+.btn-preferencias {
+	margin-top: 50px;
 }

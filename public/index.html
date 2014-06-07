@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/main.css">
 
+  <script src="../lib/jquery-2.1.1.js"></script>
   <script src="../lib/angular.js"></script>
   <script src="../lib/angular-route.js"></script>
   <script src="../lib/angular-animate.js"></script>
@@ -14,17 +15,22 @@
   <script src="../lib/angular-resource.js"></script>
   <script src="../lib/ui-bootstrap-tpls.js"></script>
 
+  <script src="../lib/spin.js"></script>
+  <script src="../lib/angular-spinner.js"></script>
+
   <script src="../js/app.js"></script>
+  <script src="../js/Controllers/MainCtrl.js"></script>
   <script src="../js/Controllers/BuscarCtrl.js"></script>
   <script src="../js/Controllers/HomeCtrl.js"></script>
   <script src="../js/Controllers/MisRecursosCtrl.js"></script>
   <script src="../js/Controllers/PerfilCtrl.js"></script>
 
+  <script src="../js/Directives/loader.js"></script>
   <script src="../js/Directives/menuPrincipalDirective.js"></script>
 
 </head>
 
-<body>
+<body ng-controller='MainController'>
 
   <menu-principal></menu-principal>
   <div ng-view></div>
