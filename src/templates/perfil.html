@@ -10,7 +10,7 @@
 
   <div class="form-group">
     <label for="exampleInputEmail1">Tu nombre</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Tu nombre completo">
+    <input ng-model='data.perfil.nombre' type="text" class="form-control" id="exampleInputEmail1" placeholder="Tu nombre completo">
   </div>
 
   <div class="form-group">
@@ -32,7 +32,7 @@
 
 
 
-  <button type="submit" disabled class="btn btn-primary btn-preferencias">Guardar</button>
+  <button ng-click='guardar()' ng-disabled='data.sin_cambios' class="btn btn-primary btn-preferencias">Guardar</button>
 </form>
 
 
