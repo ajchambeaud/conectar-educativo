@@ -19,12 +19,8 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-    <a ng-show='nav.status' id="connection-status-btn"
-       class="btn btn-default navbar-btn navbar-right scroll"
-       ng-class="(nav.status=='online') ? 'btn-success' : 'btn-danger'">
-       {{nav.status}}
-    </a>
-
+    <indicador-red></indicador-red>
+  
     <ul class="nav navbar-nav choose_page navbar-right">
 
             <li class="misrecursos" ng-class="getClass('/misrecursos')" ><a href="#misrecursos">Mis Recursos</a></li>
