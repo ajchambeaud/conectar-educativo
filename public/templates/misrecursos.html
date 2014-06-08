@@ -14,8 +14,13 @@
 		</tr>
 	      </thead>
 	      <tbody>
+
+		<tr ng-hide="misrecursos.recursos">
+      <td colspan='3' align='center'>Sin recursos</td>
+    </tr>
+
 		<tr ng-repeat="recurso in misrecursos.recursos">
-		  <td>{{recurso.rec_id}}</td>
+		  <td>{{recurso.id}}</td>
 		  <td>{{recurso.titulo}}</td>
 		  <td>{{recurso.descripcion}}</td>
 		</tr>

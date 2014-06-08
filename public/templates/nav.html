@@ -27,13 +27,13 @@
 
     <ul class="nav navbar-nav choose_page navbar-right">
 
-            <li class="misrecursos"><a href="#misrecursos">Mis Recursos</a></li>
+            <li class="misrecursos" ng-class="getClass('/misrecursos')" ><a href="#misrecursos">Mis Recursos</a></li>
 
-            <li class="buscar" ng-hide="nav.status=='offline'">
+            <li class="buscar" ng-class="getClass('/buscar')" ng-hide="nav.status=='offline'">
               <a href="#buscar">Buscar en educ.ar</a>
             </li>
 
-            <li class="perfil"><a href="#perfil">Perfil</a></li>
+            <li class="perfil" ng-class="getClass('/perfil')"><a href="#perfil">Perfil</a></li>
 
     </ul>
   </div><!-- /.navbar-collapse -->
