@@ -1,37 +1,27 @@
-var
-  express = require("express"),
-  path = require("path"),
-  nedb = require('nedb'),
-  http = require('http');
-  api = require('educar-api.js');
-
-  // cross platform paths
-  var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
-  databaseUrl = path.join (homedir, '.escritorio_educativo' ,  'recursos.db');
-
-  console.log('Running on: ' + process.platform);
-  console.log('Database: ' + databaseUrl)
-
-  http = require('http'),
-  Api = require('educar-api.js'),
-
-  config = require(path.join(homedir, ".escritorio_educativo", "config.json"));
-
-var api = new Api(config.apiKey);
+// require node modules
+var express = require("express"),
+var path = require("path");
+var nedb = require('nedb');
+var http = require('http');
+var Api = require('educar-api.js');
 
 // cross platform paths
 var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
-databaseUrl = path.join (homedir, '.escritorio_educativo' ,  'recursos.db');
+databaseUrl = path.join (homedir, '.escritorio-educativo' ,  'recursos.db');
 
 console.log('Running on: ' + process.platform);
 console.log('Database: ' + databaseUrl)
 
+config = require(path.join(homedir, ".escritorio_educativo", "config.json"));
+
+//instance api-wrapper and nedb
+var api = new Api(config.apiKey);
 var db = {
   recursos: new nedb({ filename: databaseUrl, autoload: true })
 };
 
+//create and configure express server
 var app = express();
-
 app.configure(function () {
   app.set('port', process.env.PORT || 3000);
   app.use(express.logger('dev'));
@@ -39,6 +29,7 @@ app.configure(function () {
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
+//REST api methods for AngularJS app
 app.get('/api', function (req, res) {
   res.send('API is running');
 });
