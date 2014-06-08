@@ -129,3 +129,30 @@ body {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Source Sans Pro';
 }
+
+
+
+
+.view-animate {
+  position:absolute;
+  top:100px;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+  transition:0.2s linear opacity;
+}
+
+.view-animate.ng-enter {
+  opacity: 0;
+}
+
+.view-animate.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.view-animate.ng-leave.ng-leave-active {
+  opacity: 0;
+}
