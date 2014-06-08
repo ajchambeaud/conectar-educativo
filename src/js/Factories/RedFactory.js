@@ -17,10 +17,14 @@ app.factory("RedFactory", function($timeout) {
     obj.texto = "offline";
   }
 
+  // Realiza una consulta a la red para verificar si hay conexión o no.
+  //
+  // Esta función se llama de forma periódica, así se puede conocer el
+  // estado de la red en todo momento.
   function consultar_acceso_a_internet() {
     console.log("Verificando acceso a intenet ...");
 
-    dns.resolve('http://www.google.com', function(err) {
+    dns.resolve('google.com', function(err) {
       $timeout(function() {
         if (err)
           definir_modo_offline();

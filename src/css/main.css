@@ -130,9 +130,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Source Sans Pro';
 }
 
-
-
-
 .view-animate {
   position:absolute;
   top:100px;
@@ -158,5 +155,5 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .indicador {
-	margin-top: 8px;
+	margin-top: 11px;
 }

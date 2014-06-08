@@ -17,6 +17,7 @@
           <h1 class="page-header">Buscar en educ.ar</h1>
 
           <div class="row placeholders">
+
             <div class="col-xs-6 col-sm-3 placeholder">
               <img data-src="holder.js/200x200/auto/sky" class="img-responsive" src="img/juegos.jpg">
               <h4 ng-click="busqueda.buscarJuegos()">Juegos</h4>
@@ -27,13 +28,20 @@
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <img data-src="holder.js/200x200/auto/sky" class="img-responsive" src="img/secuencias.jpg">
-              <h4 ng-click="busqueda.buscarSecuencias()">Secuencias Did&aacute;cticas</h4>
+              <h4 ng-click="busqueda.buscarSecuencias()">Secuencias Didácticas</h4>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <img data-src="holder.js/200x200/auto/vine" class="img-responsive" src="img/infografias.jpg">
               <h4 ng-click="busqueda.buscarInfografias()">Infografías</h4>
             </div>
           </div>
+
+          <div class='row'>
+            <button class='btn btn-success'>Simular una descarga</button>
+          </div>
+
+
+
 
           <div class="table-responsive" ng-hide="busqueda.buscando == ''">
 	        <h2 class="sub-header">{{busqueda.buscando}}</h2>
