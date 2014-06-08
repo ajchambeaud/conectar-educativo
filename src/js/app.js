@@ -4,19 +4,19 @@ app.config(function($routeProvider, $httpProvider) {
 
 	  $routeProvider.
 	  when('/home', {
-	    templateUrl: '/templates/home.html',
+	    templateUrl: 'templates/home.html',
 	    controller: 'HomeController'
 	  }).
 	  when('/misrecursos', {
-	    templateUrl: '/templates/misrecursos.html',
+	    templateUrl: 'templates/misrecursos.html',
 	    controller: 'MisRecursosController'
 	  }).
       when('/buscar', {
-	    templateUrl: '/templates/buscar.html',
+	    templateUrl: 'templates/buscar.html',
 	    controller: 'BuscarController'
 	  }).
       when('/perfil', {
-	    templateUrl: '/templates/perfil.html',
+	    templateUrl: 'templates/perfil.html',
 	    controller: 'PerfilController'
 	  }).
 			otherwise({redirectTo:'/home'});

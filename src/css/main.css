@@ -1,3 +1,8 @@
+html {
+	background: linear-gradient(to bottom, #FFF 0%,#F9F9F9 100%);
+	min-height: 100%;
+}
+
 #connection-status-btn{
 	margin-left: 30px;
 }
