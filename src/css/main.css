@@ -3,6 +3,7 @@ html {
 	min-height: 100%;
 }
 
+
 #connection-status-btn{
 	margin-left: 30px;
 }
@@ -112,6 +113,10 @@ html {
 	margin-top: 50px;
 }
 
+p {
+	font-family: 'Source Sans Pro';
+	line-height: 1.5;
+}
 
 .btn-preferencias {
 	margin-top: 50px;
