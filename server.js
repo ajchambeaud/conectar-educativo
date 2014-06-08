@@ -1,5 +1,5 @@
 // require node modules
-var express = require("express"),
+var express = require("express");
 var path = require("path");
 var nedb = require('nedb');
 var http = require('http');
@@ -7,12 +7,14 @@ var Api = require('educar-api.js');
 
 // cross platform paths
 var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
-databaseUrl = path.join (homedir, '.escritorio-educativo' ,  'recursos.db');
+var databaseUrl = path.join (homedir, '.escritorio-educativo' ,  'recursos.db');
+var configPath = path.join(homedir, ".escritorio-educativo", "config.json");
 
 console.log('Running on: ' + process.platform);
-console.log('Database: ' + databaseUrl)
+console.log('Database: ' + databaseUrl);
+console.log('Config: ' + configPath);
 
-config = require(path.join(homedir, ".escritorio_educativo", "config.json"));
+var config = require(configPath);
 
 //instance api-wrapper and nedb
 var api = new Api(config.apiKey);
