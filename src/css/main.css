@@ -157,3 +157,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .indicador {
 	margin-top: 11px;
 }
+
+.busqueda {
+	text-align: center;
+}
+
+.input-busqueda {
+	height: 33px;
+	width: 300px;
+	margin-right: 21px;
+	padding-left: 8px;
+	border: 1px solid rgb(224, 224, 224);
+}
+
+.nota {
+	color: rgb(205, 205, 205);
+	font-size: small;
+	margin-top: 15px;
+	margin-bottom: 5em;
+}

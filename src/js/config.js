@@ -19,6 +19,10 @@ app.config(function($routeProvider, $httpProvider) {
 	    templateUrl: 'templates/perfil.html',
 	    controller: 'PerfilController'
 	  }).
+      when('/categorias', {
+	    templateUrl: 'templates/categorias.html',
+	    controller: 'CategoriasController'
+	  }).
 			otherwise({redirectTo:'/home'});
 
 

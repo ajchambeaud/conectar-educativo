@@ -1,9 +1,39 @@
 var app = angular.module('app');
 
-app.controller('BuscarController', ['$http',function($http){
+app.controller('BuscarController', function($scope, $http, ApiFactory) {
   var busqueda = this;
+
   busqueda.buscando = "";
   busqueda.recurso = null;
+
+  $scope.data.juegos = [];
+  $scope.data.videos = [];
+
+  function alertar_error(data) {
+    alert(data);
+  }
+
+  $scope.listar_juegos = function() {
+    function success(data) {
+      $scope.data.juegos = data;
+    }
+
+    ApiFactory.listar_juegos(success, alertar_error);
+  }
+
+  $scope.listar_videos = function() {
+
+    function success(data) {
+      $scope.data.videos = data;
+    }
+
+    ApiFactory.listar_videos(success, alertar_error);
+  }
+
+
+
+
+
   $http.get('/temas').success(function(data){
     temas = data;
     for(var i in temas){
@@ -83,4 +113,4 @@ app.controller('BuscarController', ['$http',function($http){
       });
     }
   };
-}]);
+});

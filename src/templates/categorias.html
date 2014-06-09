@@ -1,0 +1,84 @@
+<div class="container" ng-controller="BuscarController as busqueda">
+
+
+  <div class='row'>
+    <h1>Categorias en educ.ar</h1>
+  </div>
+
+
+
+  <div class='row'>
+    <div class="col-xs-3">
+      <img data-src="holder.js/200x200/auto/sky" class="img-responsive" src="img/juegos.jpg">
+      <br/>
+      <button ng-click='listar_juegos()' class='btn btn-success'>Listar Juegos</button>
+      <br/>
+    </div>
+
+    <div class="col-xs-3">
+      <img class="img-responsive" src="img/videos.jpg">
+      <br/>
+      <button ng-click='listar_videos()' class='btn btn-success'>Listar Videos</button>
+      <br/>
+    </div>
+
+    <div class="col-xs-3">
+      <img class="img-responsive" src="img/secuencias.jpg">
+      <br/>
+      <button tooltip="sin implementar ..." class='btn btn-default'>Listar Secuencias</button>
+      <br/>
+    </div>
+
+    <div class="col-xs-3">
+      <img class="img-responsive" src="img/infografias.jpg">
+      <br/>
+      <button tooltip="sin implementar ..." class='btn btn-default'>Listar Infografias</button>
+      <br/>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class="col-xs-3">
+
+      <!-- TODO: convertir este ng-repeat en una directiva -->
+
+      <table class='table-bordered'>
+        <tr ng-repeat='juego in data.juegos.result.data'>
+          <td>
+            <h3>{{juego.titulo}}</h3>
+            <img ng-src='{{juego.icono_chico}}'>
+            <p>
+            {{juego.descripcion}}
+          </td>
+        </tr>
+      </table>
+
+    </div>
+
+    <div class="col-xs-3">
+
+      <!-- TODO: convertir este ng-repeat en una directiva -->
+
+      <table class='table-bordered'>
+        <tr ng-repeat='video in data.videos.result.data'>
+          <td>
+            <h3>{{video.titulo}}</h3>
+            <img ng-src='{{video.icono_chico}}'>
+            <p>
+            {{video.descripcion}}
+          </td>
+        </tr>
+      </table>
+
+    </div>
+
+    <div class="col-xs-3">
+    </div>
+
+    <div class="col-xs-3">
+    </div>
+  </div>
+
+
+</div>
+</div>
