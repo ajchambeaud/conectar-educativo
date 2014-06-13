@@ -17,5 +17,5 @@
   "webkit": {
     "plugin": true
   },
-  "node-remote": "<local>",
+  "node-remote": "<local>"
 }
