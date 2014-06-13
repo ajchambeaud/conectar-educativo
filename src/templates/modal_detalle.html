@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{data.detalle.result.titulo}}</h3>
+</div>
+
+<div class="modal-body">
+  <p>{{data.detalle.result.descripcion}}</p>
+
+  <img ng-src='{{data.detalle.result.icono_grande}}'>
+
+  <p>
+    <button ng-click='descargar_video(data.detalle)' class='btn btn-success'>Descargar</button>
+
+  <!-- <pre>
+    {{data.detalle.result|json}}
+  </pre>
+  -->
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="ok()">OK</button>
+  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

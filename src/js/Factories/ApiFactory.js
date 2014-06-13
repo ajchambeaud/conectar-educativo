@@ -16,8 +16,8 @@ app.factory("ApiFactory", function($http) {
           buscarSecuencias: api.hostname + "/0.9/recursos/secuencias?key=" + api.key + "&q=",
           buscarInfografias: api.hostname + "/0.9/recursos/infografias?key=" + api.key + "&q=",
           detalleJuegos: api.hostname + "/0.9/recursos/juegos/[id]?key=" + api.key,
-          detalleVideos: api.hostname + "/0.9/recursos/juegos/[id]?key=" + api.key,
-          detalleEbooks: api.hostname + "/0.9/recursos/juegos/[id]?key=" + api.key,
+          detalleVideos: api.hostname + "/0.9/recursos/videos/[id]?key=" + api.key,
+          detalleEbooks: api.hostname + "/0.9/recursos/ebooks/[id]?key=" + api.key,
           detalleSecuencias: api.hostname + "/0.9/recursos/juegos/[id]?key=" + api.key,
           detalleInfografias: api.hostname + "/0.9/recursos/juegos/[id]?key=" + api.key,
           obtenerCatalogacion: api.hostname + "/0.9/recursos/catalogacion?key=" + api.key,
@@ -35,6 +35,12 @@ app.factory("ApiFactory", function($http) {
 
   api.listar_videos = function(success_callback, error_callback) {
     $http.get(api.uri.recursos.buscarVideos + "").
+      success(success_callback).
+      error(error_callback);
+  }
+
+  api.obtener_detalle_video = function(id_video, success_callback, error_callback) {
+    $http.get(api.uri.recursos.detalleVideos.replace('[id]', id_video)).
       success(success_callback).
       error(error_callback);
   }

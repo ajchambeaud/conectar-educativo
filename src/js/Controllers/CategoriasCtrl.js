@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('CategoriasController', function($scope, $http, ApiFactory) {
+app.controller('CategoriasController', function($scope, $http, $modal, ApiFactory) {
 
   $scope.data.juegos = [];
   $scope.data.videos = [];
@@ -26,7 +26,37 @@ app.controller('CategoriasController', function($scope, $http, ApiFactory) {
     ApiFactory.listar_videos(success, alertar_error);
   }
 
-  $scope.abrir = function(recurso) {
+
+  var ModalDetalleCtrl = function ($scope, $modalInstance, detalle) {
+    $scope.data = {};
+    $scope.data.detalle = detalle;
+
+    $scope.ok = function () {
+      $modalInstance.close();
+    };
+
+    $scope.cancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
+  };
+
+
+  $scope.abrir_recurso = function(recurso) {
+    console.log({id: recurso.id});
+
+    function success(data) {
+
+      var modalInstance = $modal.open({
+        templateUrl: 'templates/modal_detalle.html',
+        controller: ModalDetalleCtrl,
+        resolve: {
+          detalle: function() {return data;}
+        }
+      });
+
+    }
+
+    ApiFactory.obtener_detalle_video(recurso.id, success, alertar_error);
   }
 
   $scope.ver_recurso_en_educar = function(recurso) {
