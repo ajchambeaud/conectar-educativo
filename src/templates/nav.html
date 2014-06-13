@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-inverse navbar-static-top main">
+
+<div class="container">
+
+  <div id="loaderDiv" loader>
+      <img src="./img/ajax-loader.gif" class="ajax-loader"/>
+  </div>
+
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <a href="#home" class="logo_wrapper"><img class="logo-img" src="img/logo-educar.png" alt="Logo de educ.ar"></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+    <indicador-red></indicador-red>
+
+    <ul class="nav navbar-nav choose_page navbar-right">
+
+            <li class="misrecursos" ng-class="getClass('/misrecursos')" >
+              <span class="indicador-descargas">3</span>
+              <a href="#misrecursos">Mis Recursos</a>
+            </li>
+
+            <li class="buscar" ng-class="getClass('/buscar')" ng-hide="nav.status=='offline'">
+              <a href="#buscar">Buscar</a>
+            </li>
+
+            <li class="categorias" ng-class="getClass('/categorias')" ng-hide="nav.status=='offline'">
+              <a href="#categorias">Categorias</a>
+            </li>
+
+            <li class="perfil" ng-class="getClass('/perfil')"><a href="#perfil">Perfil</a></li>
+
+    </ul>
+  </div>
+</div>
+</nav>

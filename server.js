@@ -36,14 +36,6 @@ app.get('/api', function (req, res) {
   res.send('API is running');
 });
 
-app.get('/status', function (req, res) {
-	require('dns').resolve('www.google.com', function(err) {
-	  if (err)
-	     res.send('offline');
-	  else
-	     res.send('online');
-	});
-});
 
 app.get('/temas', function(req, res){
   var successCallback = function(data) {

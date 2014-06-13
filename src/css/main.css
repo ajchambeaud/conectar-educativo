@@ -1,0 +1,208 @@
+html {
+	background: linear-gradient(to bottom, #FFF 0%,#F9F9F9 100%);
+	min-height: 100%;
+}
+
+
+#connection-status-btn{
+	margin-left: 30px;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+#busqueda_container h4{
+ cursor: pointer;
+}
+
+#loaderDiv {
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1100;
+}
+
+.ajax-loader {
+	position: fixed;
+	top: 60px;
+	margin-left: -32px;
+	margin-top: -32px;
+	display: block;
+	right: 10px;
+	width: 32px;
+	height: 32px;
+}
+
+
+.preferencias {
+	margin-top: 50px;
+}
+
+p {
+	font-family: 'Source Sans Pro';
+	line-height: 1.5;
+}
+
+.btn-preferencias {
+	margin-top: 50px;
+}
+
+body {
+    font-family: 'Source Sans Pro';
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Source Sans Pro';
+}
+
+.view-animate {
+  position:absolute;
+  top:100px;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+  transition:0.2s linear opacity;
+}
+
+.view-animate.ng-enter {
+  opacity: 0;
+}
+
+.view-animate.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.view-animate.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.indicador {
+	margin-top: 11px;
+}
+
+.busqueda {
+	text-align: center;
+}
+
+.input-busqueda {
+	height: 33px;
+	width: 300px;
+	margin-right: 21px;
+	padding-left: 8px;
+	border: 1px solid rgb(224, 224, 224);
+}
+
+.nota {
+	color: rgb(205, 205, 205);
+	font-size: small;
+	margin-top: 15px;
+	margin-bottom: 5em;
+}
+
+
+* {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+.modal-dialog {
+	width: 80% !important;
+}
+
+.indicador-descargas {
+	position: absolute;
+	min-width: 10px;
+	padding: 3px 7px;
+	font-size: 11px;
+	line-height: 1;
+	color: #ffffff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	background-color: #1A6274;
+	border-radius: 10px;
+	z-index: 20;
+	left: -6px;
+	top: -7px;
+}
