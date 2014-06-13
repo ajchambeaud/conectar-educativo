@@ -25,8 +25,6 @@ app.factory("RedFactory", function($timeout) {
     console.log("Verificando acceso a intenet ...");
 
     dns.resolve('google.com', 'A', function(err) {
-      console.log(err);
-      console.log(obj);
       $timeout(function() {
         if (err)
           definir_modo_offline();

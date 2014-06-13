@@ -1,6 +1,7 @@
 var app = angular.module('app');
+var gui = require('nw.gui');
 
-app.controller('CategoriasController', function($scope, $http, $modal, ApiFactory) {
+app.controller('CategoriasController', function($scope, $http, $modal, DescargasFactory, ApiFactory) {
 
   $scope.data.juegos = [];
   $scope.data.videos = [];
@@ -60,7 +61,7 @@ app.controller('CategoriasController', function($scope, $http, $modal, ApiFactor
   }
 
   $scope.ver_recurso_en_educar = function(recurso) {
-    window.open(recurso.visualizacion_educar);
+    gui.Shell.openExternal(recurso.visualizacion_educar);
   }
 
 });
