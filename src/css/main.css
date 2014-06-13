@@ -189,3 +189,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .modal-dialog {
 	width: 80% !important;
 }
+
+.indicador-descargas {
+	position: absolute;
+	min-width: 10px;
+	padding: 3px 7px;
+	font-size: 11px;
+	line-height: 1;
+	color: #ffffff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	background-color: #1A6274;
+	border-radius: 10px;
+	z-index: 20;
+	left: -6px;
+	top: -7px;
+}

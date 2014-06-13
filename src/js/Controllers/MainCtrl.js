@@ -5,6 +5,8 @@ app.controller('MainController', function($scope, $location, ApiFactory, RedFact
   $scope.data = {};
   $scope.data.online = RedFactory.obtenerModoOnline;
 
+  $scope.data.cantidad_descargas = 10;
+
   ApiFactory.set_api_key('263e0b0bccb1ae7310f913b404a351f3ab010f7f');
 
   // Función auxiliar para detectar la página actual y utilizarlo al momento
