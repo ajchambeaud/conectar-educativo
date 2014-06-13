@@ -26,4 +26,11 @@ app.controller('CategoriasController', function($scope, $http, ApiFactory) {
     ApiFactory.listar_videos(success, alertar_error);
   }
 
+  $scope.abrir = function(recurso) {
+  }
+
+  $scope.ver_recurso_en_educar = function(recurso) {
+    window.open(recurso.visualizacion_educar);
+  }
+
 });

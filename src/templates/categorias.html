@@ -1,4 +1,4 @@
-<div class="container" ng-controller="BuscarController as busqueda">
+<div class="container">
 
 
   <div class='row'>
@@ -66,6 +66,13 @@
             <img ng-src='{{video.icono_chico}}'>
             <p>
             {{video.descripcion}}
+
+            <br/>
+            <button ng-click='abrir_recurso(video)' class='btn btn-info'>Abrir</button>
+            <br/>
+            <button ng-click='ver_recurso_en_educar(video)' class='btn btn-info'>Ver online en educ.ar</button>
+
+            <pre>{{video|json}}</pre>
           </td>
         </tr>
       </table>
