@@ -163,8 +163,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .input-busqueda {
-	height: 33px;
-	width: 300px;
 	margin-right: 21px;
 	padding-left: 8px;
 	border: 1px solid rgb(224, 224, 224);
@@ -205,4 +203,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	z-index: 20;
 	left: -6px;
 	top: -7px;
+}
+
+
+.busqueda {
+	font-size: 30pt;
+	margin-top: 100px;
+}
+
+.busqueda .btn {
+	font-size: 20pt;
 }

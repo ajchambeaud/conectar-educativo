@@ -8,6 +8,17 @@ app.controller('BuscarController', function($scope, $http, ApiFactory) {
 
   $scope.data.juegos = [];
   $scope.data.videos = [];
+  $scope.data.texto_busqueda = "";
+
+  $scope.data.resultado = [];
+
+
+  $scope.buscar = function() {
+    $scope.data.resultado = [{
+      id: 123,
+      titulo: 'Hola mundo!'
+    }];
+  }
 
   function alertar_error(data) {
     alert(data);

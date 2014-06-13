@@ -2,19 +2,33 @@
 
 
   <div class='row'>
-    <h1>Buscar en educ.ar</h1>
 
-
-    <div class='busqueda'>
-      <input disabled type='text' class='input-busqueda' placeholder='¿Que estás buscando?'>
-      <button disabled class='btn btn-success'>Buscar</button>
-
-      <div class='nota'>(temporalmente deshabilitado)</div>
+    <div class='busqueda' ng-hide='data.resultado'>
+      <input type='text' ng-model='data.texto_busqueda' class='input-busqueda' placeholder='¿Que estás buscando?'>
+      <button ng-click='buscar()' class='btn btn-success'>Buscar</button>
     </div>
+
+    <div class='resultado-busqueda' ng-show='data.resultado'>
+
+      <input type='text' ng-model='data.texto_busqueda'>
+      <button class='btn btn-success'>Buscar de nuevo</button>
+
+      <table>
+        <tr>
+          <th>Titulo</th>
+        </tr>
+        <tr ng-repeat='resultado in data.resultado'>
+          <td>
+            {{resultado.titulo}}
+          </td>
+        </tr>
+      </table>
+
+
+    </div>
+
+
   </div>
-
-
-
 
 
 </div>
