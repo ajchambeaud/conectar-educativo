@@ -1,7 +1,5 @@
-public/* usr/share/escritorio-educativo/public
-index.html usr/share/escritorio-educativo/
+src/* usr/share/escritorio-educativo/src
 package.json usr/share/escritorio-educativo/
-server.js usr/share/escritorio-educativo/
 node_modules usr/share/escritorio-educativo/
 bin/escritorio-educativo usr/bin/
 debian/escritorio-educativo.desktop /usr/share/applications
