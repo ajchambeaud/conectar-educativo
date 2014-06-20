@@ -1,39 +1,30 @@
 var app = angular.module('app');
-var dns = require('dns');
 
-app.factory("RedFactory", function($timeout) {
+app.factory("RedFactory", function($window) {
   var obj = {};
   obj.texto = "...";
 
-  function definir_modo_online() {
+  obj.definir_modo_online = function() {
+    console.log("definiendo modo online");
     obj.online = true;
     obj.class = "btn-success";
     obj.texto = "online";
   }
 
-  function definir_modo_offline() {
+  obj.definir_modo_offline = function() {
+    console.log("definiendo modo offline");
     obj.online = false;
     obj.class = "btn-danger";
     obj.texto = "offline";
   }
 
-  // Realiza una consulta a la red para verificar si hay conexión o no.
-  //
-  // Esta función se llama de forma periódica, así se puede conocer el
-  // estado de la red en todo momento.
+  // Utiliza la api del browser para saber si hay internet.
   function consultar_acceso_a_internet() {
-    console.log("Verificando acceso a intenet ...");
-
-    dns.resolve('google.com', 'A', function(err) {
-      $timeout(function() {
-        if (err)
-          definir_modo_offline();
-        else
-          definir_modo_online();
-      }, 10);
-    });
-
-    $timeout(consultar_acceso_a_internet, 5000);
+    if ($window.navigator.onLine) {
+      obj.definir_modo_online();
+    } else {
+      obj.definir_modo_offline();
+    };
   }
 
   consultar_acceso_a_internet();
