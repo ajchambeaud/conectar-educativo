@@ -1,1 +1,1 @@
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'angularSpinner', 'ui.bootstrap']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'angularSpinner', 'ui.bootstrap', 'underscore']);
