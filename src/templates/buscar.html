@@ -3,27 +3,21 @@
 
   <div class='row'>
 
-    <div class='busqueda' ng-hide='data.resultado'>
+    <div class='busqueda' ng-hide='data.result'>
       <input type='text' ng-model='data.texto_busqueda' class='input-busqueda' placeholder='¿Que estás buscando?'>
       <button ng-click='buscar()' class='btn btn-success'>Buscar</button>
     </div>
 
-    <div class='resultado-busqueda' ng-show='data.resultado'>
+    <div class='resultado-busqueda' ng-show='data.result'>
 
       <input type='text' ng-model='data.texto_busqueda'>
-      <button class='btn btn-success'>Buscar de nuevo</button>
+      <button ng-click='buscar()' class='btn btn-success'>Buscar</button>
 
-      <table>
-        <tr>
-          <th>Titulo</th>
-        </tr>
-        <tr ng-repeat='resultado in data.resultado'>
-          <td>
-            {{resultado.titulo}}
-          </td>
-        </tr>
-      </table>
-
+      <div ng-repeat='recurso in data.recursos' class="bs-callout bs-callout-info">
+        <h4 class="{{recurso.entity}}" ng-bind-html="recurso.titulo | striptags"></h4>
+        <p ng-bind-html="recurso.descripcion | striptags"></p>
+        <hr/>
+      </div>
 
     </div>
 

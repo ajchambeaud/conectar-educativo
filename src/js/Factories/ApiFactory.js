@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.factory("ApiFactory", function($http) {
+app.factory("ApiFactory", function($http, $q) {
   var api = {};
 
   api.uri = {};
@@ -27,14 +27,47 @@ app.factory("ApiFactory", function($http) {
 
   definir_recursos();
 
-  api.listar_juegos = function(success_callback, error_callback) {
-    $http.get(api.uri.recursos.buscarJuegos + "").
+  api.buscar = function(data, success_callback, error_callback){
+    var juegos = $http.get(api.uri.recursos.buscarJuegos + JSON.stringify(data)),
+        videos = $http.get(api.uri.recursos.buscarVideos + JSON.stringify(data)),
+        ebooks = $http.get(api.uri.recursos.buscarEbooks + JSON.stringify(data)),
+        secuencias = $http.get(api.uri.recursos.buscarSecuencias + JSON.stringify(data)),
+        infografias = $http.get(api.uri.recursos.buscarInfografias + JSON.stringify(data));
+    $q.all([juegos, videos, ebooks, secuencias, infografias]).then(function(data) {
+      success_callback(data);
+    }, function(reason) {
+      error_callback(reason);
+    }, function(update) {
+      console.log(update);
+    });
+  }
+
+  api.listar_juegos = function(data, success_callback, error_callback) {
+    $http.get(api.uri.recursos.buscarJuegos + JSON.stringify(data)).
       success(success_callback).
       error(error_callback);
   }
 
-  api.listar_videos = function(success_callback, error_callback) {
-    $http.get(api.uri.recursos.buscarVideos + "").
+  api.listar_videos = function(data, success_callback, error_callback) {
+    $http.get(api.uri.recursos.buscarJuegos + JSON.stringify(data)).
+      success(success_callback).
+      error(error_callback);
+  }
+
+  api.listar_ebooks = function(data, success_callback, error_callback) {
+    $http.get(api.uri.recursos.buscarEbooks + JSON.stringify(data)).
+      success(success_callback).
+      error(error_callback);
+  }
+
+  api.listar_secuencias = function(data, success_callback, error_callback) {
+    $http.get(api.uri.recursos.buscarSecuencias + JSON.stringify(data)).
+      success(success_callback).
+      error(error_callback);
+  }
+
+  api.listar_infografias = function(data, success_callback, error_callback) {
+    $http.get(api.uri.recursos.buscarInfografias + JSON.stringify(data)).
       success(success_callback).
       error(error_callback);
   }
@@ -45,9 +78,9 @@ app.factory("ApiFactory", function($http) {
       error(error_callback);
   }
 
+
   api.set_api_key = function(key) {
     api.key = key;
-
     if (key)
       console.log("Definiendo la api key comenzada en", api.key.slice(0, 8) + "...");
     else

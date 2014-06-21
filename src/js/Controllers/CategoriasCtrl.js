@@ -15,7 +15,7 @@ app.controller('CategoriasController', function($scope, $http, $modal, Descargas
       $scope.data.juegos = data;
     }
 
-    ApiFactory.listar_juegos(success, alertar_error);
+    ApiFactory.listar_juegos({}, success, alertar_error);
   }
 
   $scope.listar_videos = function() {
@@ -24,7 +24,7 @@ app.controller('CategoriasController', function($scope, $http, $modal, Descargas
       $scope.data.videos = data;
     }
 
-    ApiFactory.listar_videos(success, alertar_error);
+    ApiFactory.listar_videos({}, success, alertar_error);
   }
 
 
