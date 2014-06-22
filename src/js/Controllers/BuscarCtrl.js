@@ -10,6 +10,7 @@ app.controller('BuscarController', function($scope, $http, ApiFactory, _) {
   $scope.data.infografias = [];
   $scope.data.recursos = [];
   $scope.data.result = false;
+  $scope.data.mostrar =  'todos';
 
   function alertar_error(data) {
     console.log("BUSQUEDA CONTROLLER -> ERROR");
@@ -18,39 +19,33 @@ app.controller('BuscarController', function($scope, $http, ApiFactory, _) {
 
   $scope.buscar = function(){
     $scope.data.recursos = [];
+    $scope.data.juegos = [];
+    $scope.data.videos = [];
+    $scope.data.ebooks = [];
+    $scope.data.secuencias = [];
+    $scope.data.infografias = [];
+
     function success(req) {
-      console.log(req);
       for(var i in req){
         var data = req[i].data;
+        $scope.data[data.entity + 's'] = data.result.data;
         _.each(data.result.data, function (recurso) {
           recurso.entity = data.entity;
           $scope.data.recursos.push(recurso);
         });
       }
       $scope.data.recursos = _.sortBy($scope.data.recursos, function(rec){ return -rec.puntaje; });
-      console.log($scope.data.recursos);
       $scope.data.result = true;
     };
-    console.log($scope.data.query);
+
     ApiFactory.buscar($scope.data.query, success, alertar_error);
   }
 
-  $scope.listar_juegos = function() {
-    function success(data) {
-      $scope.data.juegos = data;
-      $scope.data.result = true;
-    }
-    ApiFactory.listar_juegos({}, success, alertar_error);
+  $scope.mostrar = function(filtro) {
+    $scope.data.mostrar = filtro;
+    console.log($scope.data.mostrar);
+    console.log($scope.data[$scope.data.mostrar]);
   }
-
-  $scope.listar_videos = function() {
-    function success(data) {
-      $scope.data.videos = data;
-      $scope.data.result = true;
-    }
-    ApiFactory.listar_videos({}, success, alertar_error);
-  }
-
 
   var ModalDetalleCtrl = function ($scope, $modalInstance, detalle) {
     $scope.data = {};

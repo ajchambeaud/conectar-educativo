@@ -206,17 +206,21 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 
-.busqueda {
-	font-size: 30pt;
-	margin-top: 100px;
-}
-
-.busqueda .btn {
-	font-size: 20pt;
+.busqueda-input-gral {
+	margin: 60px auto;
+	width: 60%;
 }
 
 .busqueda-input-resultados{
 	padding-bottom: 20px;
 	padding-top: 10px;
 	width: 70%;
+}
+
+.busqueda-filtro-entidad{
+	margin-bottom: 20px;
+}
+
+.busqueda-filtro-entidad a{
+	cursor: pointer;
 }

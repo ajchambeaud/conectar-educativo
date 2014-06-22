@@ -1,10 +1,12 @@
 <div class="container">
 
-
   <div class='row'>
-    <div class='busqueda' ng-hide='data.result'>
-      <input type='text' ng-model='data.query.texto' class='input-busqueda' placeholder='¿Que estás buscando?'>
-      <button ng-click='buscar()' class='btn btn-success'>Buscar</button>
+
+    <div class="input-group input-group-lg busqueda-input-gral" ng-hide='data.result'>
+      <input type="text" ng-model='data.query.texto' class="form-control" placeholder='¿Que estás buscando?'>
+      <span class="input-group-btn">
+        <button ng-click='buscar()' class="btn btn-success" type="button">Buscar</button>
+      </span>
     </div>
 
     <div class='resultado-busqueda' ng-show='data.result'>
@@ -16,7 +18,32 @@
         </span>
       </div>
 
-      <div ng-class="recurso.entity" ng-repeat='recurso in data.recursos' class="bs-callout bs-callout-info">
+      <ul class="nav nav-tabs busqueda-filtro-entidad">
+        <li ng-class="{active: data.mostrar == 'todos'}">
+          <a ng-click="mostrar('todos')">Todos</a>
+        </li>
+        <li ng-class="{active: data.mostrar == 'juegos'}">
+          <a ng-click="mostrar('juegos')">Juegos</a>
+        </li>
+        <li ng-class="{active: data.mostrar == 'videos'}">
+          <a ng-click="mostrar('videos')">Videos</a>
+        </li>
+        <li ng-class="{active: data.mostrar == 'ebooks'}">
+          <a ng-click="mostrar('ebooks')">Ebooks</a>
+        </li>
+        <li ng-class="{active: data.mostrar == 'secuencias'}">
+          <a ng-click="mostrar('secuencias')">Secuencias</a>
+        </li>
+        <li ng-class="{active: data.mostrar == 'infografias'}">
+          <a ng-click="mostrar('infografias')">Infografias</a>
+        </li>
+      </ul>
+
+      <div ng-hide="(data.mostrar == 'todos' && data.recursos) || data[data.mostrar]" class="sin-resultados">
+        <p>No se encontraron resultados</p>
+      </div>
+
+      <div ng-show="data.mostrar == 'todos' || data.mostrar == (recurso.entity+'s')" ng-class="recurso.entity" ng-repeat='recurso in data.recursos' class="bs-callout bs-callout-info">
         <h4 ng-bind-html="recurso.titulo | striptags"></h4>
         <p ng-bind-html="recurso.descripcion | striptags"></p>
         <span class="label label-primary">{{recurso.entity}}</span>
@@ -25,9 +52,7 @@
 
     </div>
 
-
   </div>
-
 
 </div>
 </div>
