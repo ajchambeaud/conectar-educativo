@@ -205,9 +205,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	top: -7px;
 }
 
+.busqueda-previa img{
+	display: block;
+	position: relative;
+	margin: 65px auto;
+}
 
 .busqueda-input-gral {
-	margin: 60px auto;
+	margin: 40px auto;
 	width: 60%;
 }
 

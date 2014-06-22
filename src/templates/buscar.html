@@ -2,14 +2,19 @@
 
   <div class='row'>
 
-    <div class="input-group input-group-lg busqueda-input-gral" ng-hide='data.result'>
-      <input type="text" ng-model='data.query.texto' class="form-control" placeholder='¿Que estás buscando?'>
-      <span class="input-group-btn">
-        <button ng-click='buscar()' class="btn btn-success" type="button">Buscar</button>
-      </span>
-    </div>
 
-    <div class='resultado-busqueda' ng-show='data.result'>
+    <div class="busqueda-previa" ng-hide='data.result'>
+      <img src="img/logo_educar.gif">
+      <div class="input-group input-group-lg busqueda-input-gral">
+        <input type="text" ng-model='data.query.texto' class="form-control" placeholder='¿Que estás buscando?'>
+        <span class="input-group-btn">
+          <button ng-click='buscar()' class="btn btn-success" type="button">Buscar</button>
+        </span>
+      </div>
+    </diV>
+
+
+    <div class='resultado-busqueda' ng-show='data.result' infinite-scroll="busquedaPagingFunction()">
 
       <div class="input-group busqueda-input-resultados">
         <input ng-model='data.query.texto' type="text" class="form-control">
