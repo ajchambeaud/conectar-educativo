@@ -2,20 +2,24 @@
 
 
   <div class='row'>
-
     <div class='busqueda' ng-hide='data.result'>
-      <input type='text' ng-model='data.texto_busqueda' class='input-busqueda' placeholder='¿Que estás buscando?'>
+      <input type='text' ng-model='data.query.texto' class='input-busqueda' placeholder='¿Que estás buscando?'>
       <button ng-click='buscar()' class='btn btn-success'>Buscar</button>
     </div>
 
     <div class='resultado-busqueda' ng-show='data.result'>
 
-      <input type='text' ng-model='data.texto_busqueda'>
-      <button ng-click='buscar()' class='btn btn-success'>Buscar</button>
+      <div class="input-group busqueda-input-resultados">
+        <input ng-model='data.query.texto' type="text" class="form-control">
+        <span class="input-group-btn">
+          <button ng-click='buscar()' class="btn btn-default" type="button">Buscar</button>
+        </span>
+      </div>
 
-      <div ng-repeat='recurso in data.recursos' class="bs-callout bs-callout-info">
-        <h4 class="{{recurso.entity}}" ng-bind-html="recurso.titulo | striptags"></h4>
+      <div ng-class="recurso.entity" ng-repeat='recurso in data.recursos' class="bs-callout bs-callout-info">
+        <h4 ng-bind-html="recurso.titulo | striptags"></h4>
         <p ng-bind-html="recurso.descripcion | striptags"></p>
+        <span class="label label-primary">{{recurso.entity}}</span>
         <hr/>
       </div>
 

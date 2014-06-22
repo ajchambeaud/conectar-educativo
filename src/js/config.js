@@ -65,7 +65,9 @@ app.factory('httpInterceptor', function ($q, $rootScope, $log) {
                 $rootScope.$broadcast("loader_hide");
             }
 
-            return $q.reject(response);
+            //return $q.reject(response);
+						console.log(response);
+						return response || $q.when(response);
         }
     };
 });

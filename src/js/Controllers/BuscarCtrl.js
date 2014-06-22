@@ -2,6 +2,7 @@ var app = angular.module('app');
 var gui = require('nw.gui');
 
 app.controller('BuscarController', function($scope, $http, ApiFactory, _) {
+  $scope.data.query = {};
   $scope.data.juegos = [];
   $scope.data.videos = [];
   $scope.data.ebooks = [];
@@ -11,10 +12,12 @@ app.controller('BuscarController', function($scope, $http, ApiFactory, _) {
   $scope.data.result = false;
 
   function alertar_error(data) {
-    alert(data);
+    console.log("BUSQUEDA CONTROLLER -> ERROR");
+    console.log(data);
   }
 
   $scope.buscar = function(){
+    $scope.data.recursos = [];
     function success(req) {
       console.log(req);
       for(var i in req){
@@ -24,10 +27,12 @@ app.controller('BuscarController', function($scope, $http, ApiFactory, _) {
           $scope.data.recursos.push(recurso);
         });
       }
+      $scope.data.recursos = _.sortBy($scope.data.recursos, function(rec){ return -rec.puntaje; });
       console.log($scope.data.recursos);
       $scope.data.result = true;
     };
-    ApiFactory.buscar({}, success, alertar_error);
+    console.log($scope.data.query);
+    ApiFactory.buscar($scope.data.query, success, alertar_error);
   }
 
   $scope.listar_juegos = function() {

@@ -28,55 +28,65 @@ app.factory("ApiFactory", function($http, $q) {
   definir_recursos();
 
   api.buscar = function(data, success_callback, error_callback){
+    var result = [];
+    var error = [];
+    function push(r) { result.push(r); }
+    function error(e) { error.push(e); }
+
+    console.log(api.uri.recursos.buscarJuegos + JSON.stringify(data));
+
     var juegos = $http.get(api.uri.recursos.buscarJuegos + JSON.stringify(data)),
         videos = $http.get(api.uri.recursos.buscarVideos + JSON.stringify(data)),
         ebooks = $http.get(api.uri.recursos.buscarEbooks + JSON.stringify(data)),
         secuencias = $http.get(api.uri.recursos.buscarSecuencias + JSON.stringify(data)),
         infografias = $http.get(api.uri.recursos.buscarInfografias + JSON.stringify(data));
-    $q.all([juegos, videos, ebooks, secuencias, infografias]).then(function(data) {
-      success_callback(data);
-    }, function(reason) {
-      error_callback(reason);
-    }, function(update) {
-      console.log(update);
+
+    $q.all([
+      juegos.then(push).catch(error),
+      videos.then(push).catch(error),
+      ebooks.then(push).catch(error),
+      secuencias.then(push).catch(error),
+      infografias.then(push).catch(error)
+    ]).then(function() {
+      success_callback(result);
     });
-  }
+  };
 
   api.listar_juegos = function(data, success_callback, error_callback) {
     $http.get(api.uri.recursos.buscarJuegos + JSON.stringify(data)).
       success(success_callback).
       error(error_callback);
-  }
+  };
 
   api.listar_videos = function(data, success_callback, error_callback) {
     $http.get(api.uri.recursos.buscarJuegos + JSON.stringify(data)).
       success(success_callback).
       error(error_callback);
-  }
+  };
 
   api.listar_ebooks = function(data, success_callback, error_callback) {
     $http.get(api.uri.recursos.buscarEbooks + JSON.stringify(data)).
       success(success_callback).
       error(error_callback);
-  }
+  };
 
   api.listar_secuencias = function(data, success_callback, error_callback) {
     $http.get(api.uri.recursos.buscarSecuencias + JSON.stringify(data)).
       success(success_callback).
       error(error_callback);
-  }
+  };
 
   api.listar_infografias = function(data, success_callback, error_callback) {
     $http.get(api.uri.recursos.buscarInfografias + JSON.stringify(data)).
       success(success_callback).
       error(error_callback);
-  }
+  };
 
   api.obtener_detalle_video = function(id_video, success_callback, error_callback) {
     $http.get(api.uri.recursos.detalleVideos.replace('[id]', id_video)).
       success(success_callback).
       error(error_callback);
-  }
+  };
 
 
   api.set_api_key = function(key) {
@@ -87,7 +97,7 @@ app.factory("ApiFactory", function($http, $q) {
       console.log("No se definió la api key, se deshabilitarán las funcionalidades de búsqueda.");
 
     definir_recursos();
-  }
+  };
 
   return api;
 });
