@@ -3,6 +3,8 @@ var gui = require('nw.gui');
 
 app.controller('BuscarController', function($scope, $http, ApiFactory, _) {
   $scope.data.query = {};
+  $scope.data.query.limit = 10;
+  $scope.data.query.offset = 0;
   $scope.data.juegos = [];
   $scope.data.videos = [];
   $scope.data.ebooks = [];
@@ -18,6 +20,8 @@ app.controller('BuscarController', function($scope, $http, ApiFactory, _) {
   }
 
   $scope.buscar = function(){
+    $scope.data.query.limit = 10;
+    $scope.data.query.offset = 0;
     $scope.data.recursos = [];
     $scope.data.juegos = [];
     $scope.data.videos = [];
@@ -39,6 +43,30 @@ app.controller('BuscarController', function($scope, $http, ApiFactory, _) {
     };
 
     ApiFactory.buscar($scope.data.query, success, alertar_error);
+  }
+
+  $scope.busquedaPagingFunction = function(){
+    if($scope.data.recursos.length > 0){
+      $scope.data.query.offset += 10;
+
+      function success(req) {
+        var recursos = [];
+        for(var i in req){
+          console.log(req);
+          var data = req[i].data;
+          $scope.data[data.entity + 's'].concat(data.result.data);
+          _.each(data.result.data, function (recurso) {
+            recurso.entity = data.entity;
+            recursos.push(recurso);
+          });
+        }
+        recursos = _.sortBy(recursos, function(rec){ return -rec.puntaje; });
+        $scope.data.recursos = _.union($scope.data.recursos, recursos);
+        $scope.data.result = true;
+      };
+
+      ApiFactory.buscar($scope.data.query, success, alertar_error);
+    }
   }
 
   $scope.mostrar = function(filtro) {

@@ -30,7 +30,7 @@ app.factory("ApiFactory", function($http, $q) {
   api.buscar = function(data, success_callback, error_callback){
     var result = [];
     var error = [];
-    function push(r) { result.push(r); }
+    function push(r) { if(r.status == 200) result.push(r); }
     function error(e) { error.push(e); }
 
     console.log(api.uri.recursos.buscarJuegos + JSON.stringify(data));
