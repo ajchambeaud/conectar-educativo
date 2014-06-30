@@ -59,7 +59,7 @@ app.factory("ApiFactory", function($http, $q) {
   };
 
   api.listar_videos = function(data, success_callback, error_callback) {
-    $http.get(api.uri.recursos.buscarJuegos + JSON.stringify(data)).
+    $http.get(api.uri.recursos.buscarVideos + JSON.stringify(data)).
       success(success_callback).
       error(error_callback);
   };
