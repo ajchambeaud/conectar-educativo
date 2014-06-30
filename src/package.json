@@ -12,7 +12,8 @@
     "resizable": true,
     "width": 850,
     "height": 600,
-    "min_width": 810
+    "min_width": 810,
+    "min_height": 400
   },
   "webkit": {
     "plugin": true

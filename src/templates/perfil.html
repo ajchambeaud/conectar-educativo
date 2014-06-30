@@ -32,6 +32,10 @@
     </label>
   </div>
 
+  <div class="form-group">
+    <label>Directorio de descargas</label>
+    <input disabled ng-model='data.perfil.path_descargas' type="text" class="form-control">
+  </div>
 
 
   <button ng-click='guardar()' ng-disabled='data.sin_cambios' class="btn btn-primary btn-preferencias">Guardar</button>

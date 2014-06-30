@@ -7,6 +7,7 @@ app.controller('PerfilController', function($scope, PerfilFactory) {
   /* Se utiliza para deshabilitar el botón guardar. */
   $scope.data.sin_cambios = false;
   $scope.data.perfil = PerfilFactory.perfil;
+  $scope.data.perfil.path_descargas = PerfilFactory.obtener_path_descargas();
 
   /* Busca re-habilitar el botón guardar si se produce algún cambio. */
   $scope.$watch('data.perfil.nombre', function(new_val, old_val) {

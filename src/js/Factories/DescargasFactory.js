@@ -3,9 +3,8 @@ var http = require('http');
 
 var app = angular.module('app');
 
-var ruta_descargas = './';
 
-app.factory("DescargasFactory", function(DataBus) {
+app.factory("DescargasFactory", function(DataBus, PerfilFactory) {
   var obj = {};
 
   obj.descargas_en_curso = [];
@@ -20,6 +19,7 @@ app.factory("DescargasFactory", function(DataBus) {
     }
 
     var nombre = (Math.random(0, 1000) + 1000) + '.mp4';
+    var ruta_descargas = PerfilFactory.obtener_path_descargas();
     var ruta_completa = ruta_descargas + nombre;
 
     var file = fs.createWriteStream(ruta_completa);
