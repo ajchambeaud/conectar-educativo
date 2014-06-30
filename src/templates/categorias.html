@@ -39,7 +39,7 @@
 
       <!-- TODO: convertir este ng-repeat en una directiva -->
 
-      <table class='table-bordered'>
+      <table class='table-bordered table-listado'>
         <tr ng-repeat='juego in data.juegos.result.data'>
           <td>
             <h3>{{juego.titulo}}</h3>
@@ -56,7 +56,7 @@
 
       <!-- TODO: convertir este ng-repeat en una directiva -->
 
-      <table class='table-bordered'>
+      <table class='table-bordered table-listado'>
         <tr ng-repeat='video in data.videos.result.data'>
           <td>
             <h3>{{video.titulo}}</h3>
@@ -64,12 +64,15 @@
             <p>
             {{video.descripcion}}
 
-            <br/>
-            <button ng-click='abrir_recurso(video)' class='btn btn-info'>Abrir</button>
-            <br/>
-            <button ng-click='ver_recurso_en_educar(video)' class='btn btn-info'>Ver online en educ.ar</button>
+            <div class='bloque-tags'>
+              <span ng-repeat='e in video.etiquetas' class="label label-success">{{e.descripcion}}</span>
+            </div>
 
-            <pre>{{video|json}}</pre>
+            <div class='bloque-botones'>
+              <button ng-click='abrir_recurso(video)' class='btn btn-info'>Abrir</button>
+              <button ng-click='ver_recurso_en_educar(video)' class='btn btn-info'>Ver online en educ.ar</button>
+            </div>
+
           </td>
         </tr>
       </table>

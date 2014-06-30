@@ -238,3 +238,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .progress {
 	background-color: #B9B9B9 !important;
 }
+
+.bloque-tags span {
+	margin: 1px;
+}
+
+.bloque-botones button {
+	margin: 1px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.table-listado td {
+	padding: 20px;
+}
