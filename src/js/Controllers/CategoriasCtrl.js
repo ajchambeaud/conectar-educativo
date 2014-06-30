@@ -32,6 +32,15 @@ app.controller('CategoriasController', function($scope, $http, $modal, Descargas
     $scope.data = {};
     $scope.data.detalle = detalle;
 
+    $scope.descargar_video = function(detalle) {
+      if (detalle.status.code == 200) {
+        DescargasFactory.descargar_video(detalle);
+        $modalInstance.close();
+      } else {
+        alert("ERROR: " + detalle.status.message);
+      }
+    }
+
     $scope.ok = function () {
       $modalInstance.close();
     };
@@ -42,8 +51,8 @@ app.controller('CategoriasController', function($scope, $http, $modal, Descargas
   };
 
 
+
   $scope.abrir_recurso = function(recurso) {
-    console.log({id: recurso.id});
 
     function success(data) {
 
