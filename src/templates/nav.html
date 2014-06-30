@@ -16,10 +16,10 @@
 
     <indicador-red></indicador-red>
 
-    <ul class="nav navbar-nav choose_page navbar-right">
+    <ul ng-controller='NavController' class="nav navbar-nav choose_page navbar-right">
 
             <li class="misrecursos" ng-class="getClass('/misrecursos')" >
-              <span class="indicador-descargas">3</span>
+              <span class="indicador-descargas">{{data.cantidad_descargas_en_curso}}</span>
               <a href="#misrecursos">Mis Recursos</a>
             </li>
 
