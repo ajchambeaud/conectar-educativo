@@ -14,7 +14,7 @@ app.factory("DescargasFactory", function(DataBus) {
     var objeto = {
       progreso: 0,
       transmitido_en_bytes: 0,
-      total_en_bytes: 5000 * 1000,            /* TODO: obtener de la API, no se puede calcular de otra forma :( */
+      total_en_bytes: 60321853,            /* TODO: obtener de la API, no se puede calcular de otra forma :( */
       tipo: 'video',
       estado: 'descargando',            /* descargando | terminado | error */
       detalle: detalle_del_video,
@@ -37,7 +37,8 @@ app.factory("DescargasFactory", function(DataBus) {
             });
 
             res.on('end', function() {
-                objeto_descarga.transmitido = objeto_descarga.size;
+                console.log("TOTAL", objeto.transmitido_en_bytes);
+                objeto.transmitido_en_bytes = objeto.total_en_bytes;
                 objeto.estado = 'terminado';
             });
 
