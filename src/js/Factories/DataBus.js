@@ -7,6 +7,7 @@ var app = angular.module('app');
  * Eventos conocidos:
  *
  *     'inicia-descarga'
+ *     'termina-descarga'
  *
  */
 app.factory('DataBus', function($rootScope) {

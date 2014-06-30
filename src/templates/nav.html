@@ -19,7 +19,7 @@
     <ul ng-controller='NavController' class="nav navbar-nav choose_page navbar-right">
 
             <li class="misrecursos" ng-class="getClass('/misrecursos')" >
-              <span class="indicador-descargas">{{data.cantidad_descargas_en_curso}}</span>
+              <span class="indicador-descargas" ng-show='data.cantidad_descargas_en_curso > 0'>{{data.cantidad_descargas_en_curso}}</span>
               <a href="#misrecursos">Mis Recursos</a>
             </li>
 
