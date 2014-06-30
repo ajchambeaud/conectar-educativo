@@ -1,6 +1,6 @@
 html {
-	background: linear-gradient(to bottom, #FFF 0%,#F9F9F9 100%);
 	min-height: 100%;
+  overflow-y: scroll;
 }
 
 
@@ -228,4 +228,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .busqueda-filtro-entidad a{
 	cursor: pointer;
+}
+
+.col-progreso {
+	width: 150px;
 }
