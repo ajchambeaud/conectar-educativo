@@ -52,13 +52,14 @@
         </thead>
         <tbody>
 
-          <tr>
-            <td colspan='3' align='center'>Sin recursos</td>
+          <tr ng-show="data.recursos_almacenados.length == 0">
+            <td colspan='4' align='center'>Sin recursos</td>
           </tr>
 
-          <tr ng-repeat="recurso in misrecursos.recursos">
-            <td>{{recurso.titulo}}</td>
-            <td>{{recurso.descripcion}}</td>
+          <tr ng-repeat="recurso in data.recursos_almacenados">
+            <td>{{recurso.result.titulo}}</td>
+            <td>{{recurso.result.descripcion}}</td>
+            <td><button disabled class='btn btn-success'>Ver</button></td>
           </tr>
         </tbody>
       </table>

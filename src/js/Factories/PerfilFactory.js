@@ -34,7 +34,10 @@ app.factory("PerfilFactory", function() {
       fs.mkdirSync(dir_path);
 
     // Recupera las preferencias desde el archivo .json
-    obj.perfil = JSON.parse(fs.readFileSync(config_path));
+    if (fs.existsSync(config_path)) {
+      console.log(config_path);
+      obj.perfil = JSON.parse(fs.readFileSync(config_path));
+    }
   }
 
   obj.guardar = function(nuevo_perfil) {
@@ -43,7 +46,7 @@ app.factory("PerfilFactory", function() {
     // Escribe las preferencias en el archivo.
     fs.writeFile(config_path, angular.toJson(obj.perfil), function(error) {
       if (error)
-        alert(error)
+        alert(error);
     });
   }
 
