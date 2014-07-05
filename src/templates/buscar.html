@@ -49,7 +49,7 @@
       </div>
 
       <div ng-show="data.mostrar == 'todos' || data.mostrar == (recurso.entity+'s')" ng-class="recurso.entity" ng-repeat='recurso in data.recursos' class="bs-callout bs-callout-info">
-        <h4 ng-bind-html="recurso.titulo | striptags"></h4>
+        <h4 class="busqueda-ver-detalle" ng-click="abrir_recurso(recurso)" ng-bind-html="recurso.titulo | striptags"></h4>
         <p ng-bind-html="recurso.descripcion | striptags"></p>
         <span class="label label-primary">{{recurso.entity}}</span>
         <hr/>

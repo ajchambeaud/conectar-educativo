@@ -1,7 +1,7 @@
 var app = angular.module('app');
 var gui = require('nw.gui');
 
-app.controller('BuscarController', function($scope, $http, ApiFactory, _) {
+app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, _) {
   $scope.data.query = {};
   $scope.data.query.limit = 10;
   $scope.data.query.offset = 0;
@@ -93,18 +93,20 @@ app.controller('BuscarController', function($scope, $http, ApiFactory, _) {
     console.log({id: recurso.id});
 
     function success(data) {
+      var template = "";
 
+      data.detalle.result.entity
+      
       var modalInstance = $modal.open({
-        templateUrl: 'templates/modal_detalle.html',
+        templateUrl: 'templates/modal_detalle_video.html',
         controller: ModalDetalleCtrl,
         resolve: {
           detalle: function() {return data;}
         }
       });
-
     }
 
-    ApiFactory.obtener_detalle_video(recurso.id, success, alertar_error);
+    ApiFactory.obtener_detalle(recurso, success, alertar_error);
   }
 
   $scope.ver_recurso_en_educar = function(recurso) {
