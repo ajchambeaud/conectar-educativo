@@ -6,6 +6,7 @@
 
   <div class="row">
     <button class='btn btn-success' ng-click='test_descargar()'>Iniciar descarga de prueba</button>
+    <button class='btn btn-success' ng-click='test_descargar_rapido()'>Iniciar descarga rápida</button>
   </div>
 
   <div class="row">
@@ -16,7 +17,7 @@
           <tr>
             <th>Titulo</th>
             <th>Descripcion</th>
-            <th class='col-progreso'>Progreso</th>
+            <th colspan=2>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -29,9 +30,13 @@
           <tr ng-repeat="recurso in data.descargas_en_curso" ng-show="data.descargas_en_curso.length > 0">
             <td>{{recurso.detalle.result.titulo}}</td>
             <td>{{recurso.detalle.result.descripcion}}</td>
+
             <td ng-show="recurso.estado == 'error'">ERROR</td>
-            <td ng-show="recurso.estado == 'descargando'"><progressbar value="recurso.progreso" class="progress-striped active" type='success'>{{recurso.progreso}}%</progressbar></td>
+            <td class='col-progreso' ng-show="recurso.estado == 'descargando'"><progressbar value="recurso.progreso" class="progress-striped active" type='success'>{{recurso.progreso}}%</progressbar></td>
             <td ng-show="recurso.estado == 'terminado'">OK</td>
+
+            <td ng-show="recurso.estado == 'descargando'"><button class='btn btn-danger btn-xs'>cancelar</button></td>
+            <td ng-show="recurso.estado == 'terminado'">  <button class='btn btn-success btn-xs'>abrir</button></td>
           </tr>
         </tbody>
       </table>
@@ -53,6 +58,11 @@
         </thead>
         <tbody>
 
+          <tr ng-show="data.recursos_almacenados == null">
+            <td colspan='4' align='center'>
+              <img src='img/cargando.gif'/>
+          </tr>
+
           <tr ng-show="data.recursos_almacenados.length == 0">
             <td colspan='4' align='center'>Sin recursos</td>
           </tr>
@@ -60,7 +70,7 @@
           <tr ng-repeat="recurso in data.recursos_almacenados">
             <td>{{recurso.result.titulo}}</td>
             <td>{{recurso.result.descripcion}}</td>
-            <td><button disabled class='btn btn-success'>Ver</button></td>
+            <td><button disabled class='btn btn-success btn-xs'>abrir</button></td>
           </tr>
         </tbody>
       </table>
