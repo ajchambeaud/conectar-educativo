@@ -38,6 +38,7 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory) {
                 objeto.transmitido_en_bytes = objeto.total_en_bytes;
                 objeto.estado = 'terminado';
                 DataBus.emit('termina-descarga', {});
+                objeto.progreso = Math.floor((objeto.transmitido_en_bytes / objeto.total_en_bytes) * 100)
             });
 
             res.on('close', function (){

@@ -95,10 +95,28 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, _
     function success(data) {
       var template = "";
 
-      data.detalle.result.entity
-      
+      switch (recurso.entity) {
+        case "juego":
+            template = 'templates/modal_detalle_juego.html';
+            break;
+        case "video":
+            template = 'templates/modal_detalle_video.html';
+            break;
+        case "ebook":
+            template = 'templates/modal_detalle_ebook.html';
+            break;
+        case "secuencia":
+            template = 'templates/modal_detalle_secuencia.html';
+            break;
+        case "infografia":
+            template = 'templates/modal_detalle_infografia.html';
+            break;
+        default:
+            break;
+      }
+
       var modalInstance = $modal.open({
-        templateUrl: 'templates/modal_detalle_video.html',
+        templateUrl: template,
         controller: ModalDetalleCtrl,
         resolve: {
           detalle: function() {return data;}

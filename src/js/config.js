@@ -66,7 +66,6 @@ app.factory('httpInterceptor', function ($q, $rootScope, $log) {
             }
 
             //return $q.reject(response);
-						console.log(response);
 						return response || $q.when(response);
         }
     };
