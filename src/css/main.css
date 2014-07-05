@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	border-radius: 10px;
 	z-index: 20;
 	left: -6px;
-	top: -7px;
+	top: 1px;
 }
 
 .busqueda-previa img{
@@ -251,4 +251,37 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .table-listado td {
 	padding: 20px;
+}
+
+.main {
+  transition:0.2s linear padding;
+}
+
+
+.navbar-reducido {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	padding: 0;
+	font-size: 80%;
+}
+
+.navbar-reducido .ajax-loader {
+	top: 40px;
+}
+
+.main img {
+	width: 100%;
+	transition-property: height, width;
+  transition-duration: 0.2s;
+}
+
+.navbar-reducido img {
+	width: 75%;
+	padding-top: 5px;
+}
+
+.progress-bar span {
+	padding: 10px;
 }
