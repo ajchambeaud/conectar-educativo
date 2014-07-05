@@ -271,13 +271,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	top: 40px;
 }
 
-.main img {
+.main img.logo-img {
 	width: 100%;
 	transition-property: height, width;
   transition-duration: 0.2s;
 }
 
-.navbar-reducido img {
+.navbar-reducido img.logo-img {
 	width: 75%;
 	padding-top: 5px;
 }
