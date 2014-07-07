@@ -6,3 +6,10 @@ app.filter('striptags', function($sce) {
     }
   }
 );
+
+app.filter('trustUrl', function($sce) {
+    return function(text) {
+      return $sce.trustAsResourceUrl(text);
+    }
+  }
+);

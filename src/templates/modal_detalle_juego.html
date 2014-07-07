@@ -4,6 +4,11 @@
 
 <div class="modal-body">
   <p>{{data.detalle.result.descripcion}}</p>
+  <center>
+    <object type="application/x-shockwave-flash" ng-attr-data="{{data.detalle.result.url | trustUrl}}" width="400" height="300">
+      <param name="allowFullScreen" value="true" />
+    </object>
+  </center>
 </div>
 
 <div class="modal-footer">

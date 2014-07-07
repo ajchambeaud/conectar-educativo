@@ -86,6 +86,12 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, _
     $scope.cancel = function () {
       $modalInstance.dismiss('cancel');
     };
+
+    $scope.abrir_pdf = function() {
+      console.log("LOG --> ABRIR PDF");
+      console.log($scope.data.detalle);
+      gui.Shell.openExternal($scope.data.detalle.result.url + "&extension=.pdf");
+    }
   };
 
 
@@ -103,6 +109,9 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, _
             template = 'templates/modal_detalle_video.html';
             break;
         case "ebook":
+            data.corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
+            data.mozillaPdfjsUrl = "http://mozilla.github.io/pdf.js/web/viewer.html?file=";
+            data.result.url = encodeURIComponent(data.result.url);
             template = 'templates/modal_detalle_ebook.html';
             break;
         case "secuencia":

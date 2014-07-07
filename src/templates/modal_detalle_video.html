@@ -3,7 +3,10 @@
 </div>
 
 <div class="modal-body">
-  <p>{{data.detalle.result.descripcion}}</p>
+  <video width="100%" controls>
+    <source ng-src="{{data.detalle.result.url | trustUrl}}" type="video/mp4">
+  </video>
+  <p>{{data.detalle.result.descripcion | striptags}}</p>
 </div>
 
 <div class="modal-footer">
