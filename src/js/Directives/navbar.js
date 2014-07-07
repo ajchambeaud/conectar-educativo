@@ -10,15 +10,11 @@ app.directive('navbar', function ($window) {
       function actualizar() {
         	var scrollTop = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
 
-          console.log(scrollTop);
-
-          if (scrollTop > 0) {
+          if (scrollTop > 0)
             $elem[0].classList.add("navbar-reducido");
-          } else {
+          else
             $elem[0].classList.remove("navbar-reducido");
-          }
       }
-
 
       $window.on('scroll', actualizar);
     }
