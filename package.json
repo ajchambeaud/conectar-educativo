@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "nedb": "^0.8.13"
+    "nedb": "~0.8.0"
   }
 }

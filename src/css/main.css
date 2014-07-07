@@ -271,8 +271,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	top: 40px;
 }
 
+<<<<<<< HEAD
 .main img.logo-img {
 	width: 100%;
+=======
+.main img {
+	/*width: 100%;*/
+>>>>>>> 2cd058cce229341fc73d5e9f30333e2538b2b2dd
 	transition-property: height, width;
   transition-duration: 0.2s;
 }
@@ -284,4 +289,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .progress-bar span {
 	padding: 10px;
+}
+
+.resultado-busqueda h4.busqueda-ver-detalle{
+	cursor: pointer;
 }

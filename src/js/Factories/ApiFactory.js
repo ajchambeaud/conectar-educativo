@@ -18,8 +18,8 @@ app.factory("ApiFactory", function($http, $q) {
           detalleJuegos: api.hostname + "/0.9/recursos/juegos/[id]?key=" + api.key,
           detalleVideos: api.hostname + "/0.9/recursos/videos/[id]?key=" + api.key,
           detalleEbooks: api.hostname + "/0.9/recursos/ebooks/[id]?key=" + api.key,
-          detalleSecuencias: api.hostname + "/0.9/recursos/juegos/[id]?key=" + api.key,
-          detalleInfografias: api.hostname + "/0.9/recursos/juegos/[id]?key=" + api.key,
+          detalleSecuencias: api.hostname + "/0.9/recursos/secuencias/[id]?key=" + api.key,
+          detalleInfografias: api.hostname + "/0.9/recursos/infografias/[id]?key=" + api.key,
           obtenerCatalogacion: api.hostname + "/0.9/recursos/catalogacion?key=" + api.key,
           ramaCatalogacion: api.hostname + "/0.9/recursos/catalogacion/[id]?key=" + api.key,
     };
@@ -82,8 +82,56 @@ app.factory("ApiFactory", function($http, $q) {
       error(error_callback);
   };
 
-  api.obtener_detalle_video = function(id_video, success_callback, error_callback) {
-    $http.get(api.uri.recursos.detalleVideos.replace('[id]', id_video)).
+  api.obtener_detalle = function(recurso, success_callback, error_callback) {
+    console.log(recurso);
+    switch (recurso.entity) {
+      case "juego":
+          api.obtener_detalle_juego(recurso.id, success_callback, error_callback);
+          break;
+      case "video":
+          api.obtener_detalle_video(recurso.id, success_callback, error_callback);
+          break;
+      case "ebook":
+          api.obtener_detalle_ebook(recurso.id, success_callback, error_callback);
+          break;
+      case "secuencia":
+          api.obtener_detalle_secuencia(recurso.id, success_callback, error_callback);
+          break;
+      case "infografia":
+          api.obtener_detalle_infografia(recurso.id, success_callback, error_callback);
+          break;
+      default:
+          break;
+    }
+  };
+
+  api.obtener_detalle_video = function(id, success_callback, error_callback) {
+    var uri = api.uri.recursos.detalleVideos.replace('[id]', id);
+    $http.get(uri).
+      success(success_callback).
+      error(error_callback);
+  };
+
+  api.obtener_detalle_juego = function(id, success_callback, error_callback) {
+    $http.get(api.uri.recursos.detalleJuegos.replace('[id]', id)).
+      success(success_callback).
+      error(error_callback);
+  };
+
+  api.obtener_detalle_secuencia = function(id, success_callback, error_callback) {
+    $http.get(api.uri.recursos.detalleSecuencias.replace('[id]', id)).
+      success(success_callback).
+      error(error_callback);
+  };
+
+  api.obtener_detalle_infografia = function(id, success_callback, error_callback) {
+    $http.get(api.uri.recursos.detalleInfografias.replace('[id]', id)).
+      success(success_callback).
+      error(error_callback);
+  };
+
+  api.obtener_detalle_ebook = function(id, success_callback, error_callback) {
+    $http.get(api.uri.recursos.detalleEbooks.replace('[id]', id)).
       success(success_callback).
       error(error_callback);
   };
