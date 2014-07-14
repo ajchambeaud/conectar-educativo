@@ -7,3 +7,8 @@ function procesar_tecla(e, id_boton_buscar) {
         return false;
     }
 }
+
+window.mostrar_herramientas_de_desarrollo = function() {
+    gui.Window.get().showDevTools();
+}
+
