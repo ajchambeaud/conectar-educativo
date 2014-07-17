@@ -329,3 +329,8 @@ a.boton-about:hover {
 	color: white;
 	text-decoration: none;
 }
+
+.img-about {
+	max-width: 100%;
+	margin: auto;
+}
