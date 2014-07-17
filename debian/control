@@ -10,7 +10,7 @@ Homepage: https://github.com/hugoruscitti/escritorio-educativo
 
 Package: escritorio-educativo
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, node-webkit (>= 0.6.0)
+Depends: ${shlibs:Depends}, ${misc:Depends}, node-webkit
 Description: Permite acceder a los recursos de educ.ar offline.
  Esta aplicación permite descargar y acceder a los recursos
  de educ.ar de forma offline.
