@@ -310,3 +310,22 @@ p {
 	margin-top: 1em;
 	margin-bottom: 2em;
 }
+
+
+.boton-about {
+	position: fixed;
+	right: 20px;
+	top: 34px;
+}
+
+a.boton-about {
+	color: rgb(167, 167, 167);
+	width: 20px;
+	text-align: center;
+}
+
+
+a.boton-about:hover {
+	color: white;
+	text-decoration: none;
+}
