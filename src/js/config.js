@@ -23,6 +23,10 @@ app.config(function($routeProvider, $httpProvider) {
 	    templateUrl: 'templates/categorias.html',
 	    controller: 'CategoriasController'
 	  }).
+      when('/descargas', {
+	    templateUrl: 'templates/descargas.html',
+	    controller: 'DescargasController'
+	  }).
 			otherwise({redirectTo:'/home'});
 
 

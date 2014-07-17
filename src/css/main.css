@@ -301,7 +301,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 
-.home p {
+p {
 	margin-top: 1.5em;
+	font-size: 16px;
+}
 
+.botones {
+	margin-top: 1em;
+	margin-bottom: 2em;
 }

@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="row">
+    <h1>Descargas</h1>
+  </div>
+
+  <div class="row botones">
+    <button class='btn btn-success' ng-click='test_descargar()'>Iniciar descarga de prueba</button>
+    <button class='btn btn-success' ng-click='test_descargar_rapido()'>Iniciar descarga rápida</button>
+  </div>
+
+  <div class="row">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th colspan=2>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+          <tr ng-show="data.descargas_en_curso.length == 0">
+            <td colspan='4' align='center'>No hay descargas en curso aún</td>
+          </tr>
+
+          <tr ng-repeat="recurso in data.descargas_en_curso" ng-show="data.descargas_en_curso.length > 0">
+            <td>{{recurso.detalle.result.titulo}}</td>
+            <td>{{recurso.detalle.result.descripcion}}</td>
+
+            <td ng-show="recurso.estado == 'error'">ERROR</td>
+            <td class='col-progreso' ng-show="recurso.estado == 'descargando'"><progressbar value="recurso.progreso" class="progress-striped active" type='success'>{{recurso.progreso}}%</progressbar></td>
+            <td ng-show="recurso.estado == 'terminado'">OK</td>
+
+            <td ng-show="recurso.estado == 'descargando'"><button class='btn btn-danger btn-xs'>cancelar</button></td>
+            <td ng-show="recurso.estado == 'terminado'">  <button class='btn btn-success btn-xs'>abrir</button></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
