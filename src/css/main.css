@@ -291,3 +291,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .resultado-busqueda h4.busqueda-ver-detalle{
 	cursor: pointer;
 }
+
+.home p {
+	font-size: 16px;
+}
+
+.img-logo {
+	float: right;
+}
+
+
+.home p {
+	margin-top: 1.5em;
+
+}
