@@ -311,6 +311,13 @@ p {
 	position: fixed;
 	right: 20px;
 	top: 34px;
+
+	transition-property: top;
+  transition-duration: 0.2s;
+}
+
+.navbar-reducido a.boton-about {
+	top: 20px;
 }
 
 a.boton-about {
@@ -319,9 +326,8 @@ a.boton-about {
 	text-align: center;
 }
 
-
 a.boton-about:hover {
-	color: white;
+	color: black;
 	text-decoration: none;
 }
 

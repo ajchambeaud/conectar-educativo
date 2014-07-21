@@ -1,19 +1,26 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-xs-6">
+    <div class="col-xs-12">
 
     <h1>Perfil de usuario</h1>
 
     <p>Indicanos tus preferencias, así la aplicación te puede presentar
       la información de manera personalizada.</p>
+    </div>
+  </div>
 
+  <div class="row">
     <form role="form" class="preferencias">
+    <div class="col-xs-6">
+
 
   <div class="form-group">
     <label for="exampleInputEmail1">Tu nombre</label>
     <input ng-model='data.perfil.nombre' type="text" class="form-control" id="exampleInputEmail1" placeholder="Tu nombre completo">
   </div>
+
+
 
   <div class="form-group">
     <label for="exampleInputEmail1">Nivel</label>
@@ -26,11 +33,19 @@
 
   </div>
 
+
+
+
   <div class="checkbox">
     <label>
       <input type="checkbox"> ¿Sos docente?
     </label>
   </div>
+</div>
+
+
+      <div class="col-xs-6">
+
 
   <div class="form-group">
     <label>Directorio de descargas</label>
@@ -40,9 +55,15 @@
   <p><a href onclick='mostrar_herramientas_de_desarrollo()'>Mostrar herramientas de desarrollo</a>.
 
   <p>
+  </div>
+</div>
+
+<div class='row'>
+      <div class="col-xs-12">
 
 
   <button ng-click='guardar()' ng-disabled='data.sin_cambios' class="btn btn-primary btn-preferencias">Guardar</button>
+</div>
 </form>
 
 
