@@ -27,8 +27,6 @@ app.factory("RecursosFactory", function() {
     obj.db.insert(recurso, function(err, result) {
       if (err)
         console.log({'Error': err});
-      else
-        console.log({'Success': result});
     });
   }
 

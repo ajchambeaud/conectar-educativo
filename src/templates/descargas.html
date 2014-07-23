@@ -29,12 +29,15 @@
             <td>{{recurso.detalle.result.titulo}}</td>
             <td>{{recurso.detalle.result.descripcion}}</td>
 
-            <td ng-show="recurso.estado == 'error'">ERROR</td>
             <td class='col-progreso' ng-show="recurso.estado == 'descargando'"><progressbar value="recurso.progreso" class="progress-striped active" type='success'>{{recurso.progreso}}%</progressbar></td>
-            <td ng-show="recurso.estado == 'terminado'">OK</td>
+            <td ng-show="recurso.estado === 'cancelado'">CANCELADO</td>
+            <td ng-show="recurso.estado === 'error'">ERROR</td>
+            <td ng-show="recurso.estado === 'terminado'">OK</td>
 
-            <td ng-show="recurso.estado == 'descargando'"><button class='btn btn-danger btn-xs'>cancelar</button></td>
-            <td ng-show="recurso.estado == 'terminado'">  <button class='btn btn-success btn-xs'>abrir</button></td>
+            <td ng-show="recurso.estado === 'descargando'" ng-click='cancelar(recurso)'><button class='btn btn-danger btn-xs'><i class='glyphicon glyphicon-remove'></i></button></td>
+            <td ng-show="recurso.estado === 'cancelado'" ng-click='borrar(recurso)'><button class='btn btn-xs'><i class='glyphicon glyphicon-remove'></i></button></td>
+            <td ng-show="recurso.estado === 'error'" ng-click='borrar(recurso)'><button class='btn btn-xs'><i class='glyphicon glyphicon-remove'></i></button></td>
+            <td ng-show="recurso.estado === 'terminado'">  <button class='btn btn-success btn-xs'><i class='glyphicon glyphicon-folder-open'></i></button></td>
           </tr>
         </tbody>
       </table>
