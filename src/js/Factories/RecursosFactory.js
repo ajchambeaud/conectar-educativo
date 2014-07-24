@@ -17,7 +17,7 @@ app.factory("RecursosFactory", function() {
       if (err)
         error_callback(err);
       else
-        callback(result)
+        callback(result);
     });
 
   }

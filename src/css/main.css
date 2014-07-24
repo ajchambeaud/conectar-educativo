@@ -354,3 +354,14 @@ div.panel-logos {
 	text-align: center;
 	padding-top: 20px;
 }
+
+
+div.panel-buscador {
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+.input-buscador {
+	display: inline;
+	width: 150px;
+}

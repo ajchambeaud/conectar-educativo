@@ -24,6 +24,13 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
   // Cuando termina la descarga actualiza el listado de mis-recursos.
   DataBus.on('termina-descarga', $scope, function(data) {
     actualizar_listado_recursos();
+
+    RecursosFactory.listar_recursos(function(data) {
+      console.log(data);
+    }, function(error) {
+      console.log(error);
+    });
+    
   });
 
   /* Observa los datos accesibles desde aquí constantemente, porque

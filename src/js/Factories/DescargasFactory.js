@@ -12,7 +12,7 @@ function rmdir(directorio, callback) {
   });
 };
 
-app.factory("DescargasFactory", function(DataBus, PerfilFactory) {
+app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory) {
   var obj = {};
 
   obj.descargas_en_curso = [];
@@ -43,6 +43,7 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory) {
         callback.call(this, mensaje_error, "");
 
       } else {
+
         fs.mkdirSync(directorio_recurso);
 
         var file = fs.createWriteStream(ruta_completa);
@@ -63,15 +64,19 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory) {
 
                 res.on('end', function() {
                     objeto.transmitido_en_bytes = objeto.total_en_bytes;
-                    objeto.estado = 'terminado';
-                    DataBus.emit('termina-descarga', {});
                     objeto.progreso = Math.floor((objeto.transmitido_en_bytes / objeto.total_en_bytes) * 100)
+                    objeto.estado = 'terminado';
+                    RecursosFactory.agregar_recurso(objeto.detalle);
+
+                    DataBus.emit('termina-descarga', objeto.detalle);
                 });
 
                 res.on('close', function () {
                     objeto.estado = 'error';
                     rmdir(directorio_recurso);
-                    DataBus.emit('termina-descarga', {});
+                    RecursosFactory.agregar_recurso(objeto.detalle);
+
+                    DataBus.emit('termina-descarga', objeto.detalle);
                 });
 
             }).
