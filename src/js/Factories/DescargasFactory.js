@@ -28,7 +28,6 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory) {
 
     http.get(objeto.detalle.result.url, function(res) {
             objeto.total_en_bytes = res.headers['content-length'];
-            console.log("Iniciando descarga del objeto", objeto);
 
             res.on('data', function(chunk) {
                 file.write(chunk);
@@ -48,7 +47,7 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory) {
                 objeto.progreso = Math.floor((objeto.transmitido_en_bytes / objeto.total_en_bytes) * 100)
             });
 
-            res.on('close', function (){
+            res.on('close', function () {
                 objeto.estado = 'error';
                 fs.unlink(ruta_completa);
                 DataBus.emit('termina-descarga', {});
