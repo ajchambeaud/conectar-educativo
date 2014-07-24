@@ -340,3 +340,17 @@ a.boton-about:hover {
 .btn-xs {
 	margin-right: 2px;
 }
+
+.modal-content {
+	border-radius: 0;
+}
+
+.modal-dialog {
+	padding-top: 10px !important;
+
+}
+
+div.panel-logos {
+	text-align: center;
+	padding-top: 20px;
+}
