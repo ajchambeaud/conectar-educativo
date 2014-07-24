@@ -335,3 +335,8 @@ a.boton-about:hover {
 	max-width: 100%;
 	margin: auto;
 }
+
+
+.btn-xs {
+	margin-right: 2px;
+}

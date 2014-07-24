@@ -12,6 +12,10 @@ app.directive('botonAbout', function($http, $modal){
       var ModalAboutCtrl = function ($scope, $modalInstance) {
         $scope.data = {};
 
+          $scope.visitar = function(url) {
+            nw.Shell.openExternal(url);
+          }
+
         $scope.ok = function () {
           $modalInstance.close();
         };
