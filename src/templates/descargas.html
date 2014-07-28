@@ -15,7 +15,7 @@
           <tr>
             <th>Titulo</th>
             <th>Descripcion</th>
-            <th colspan=2>Acciones</th>
+            <th colspan=2 class='col-acciones'>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +30,7 @@
             <td>{{recurso.detalle.result.descripcion}}</td>
 
             <td class='col-progreso' ng-show="recurso.estado == 'descargando'"><progressbar value="recurso.progreso" class="progress-striped active" type='success'>{{recurso.progreso}}%</progressbar></td>
+
             <td ng-show="recurso.estado === 'cancelado'">CANCELADO</td>
             <td ng-show="recurso.estado === 'error'">ERROR</td>
             <td ng-show="recurso.estado === 'terminado'">OK</td>
@@ -38,7 +39,7 @@
             <td ng-show="recurso.estado === 'cancelado'" ng-click='borrar(recurso)'><button class='btn btn-xs'><i class='glyphicon glyphicon-remove'></i></button></td>
             <td ng-show="recurso.estado === 'error'" ng-click='borrar(recurso)'><button class='btn btn-xs'><i class='glyphicon glyphicon-remove'></i></button></td>
 
-            <td ng-show="recurso.estado === 'terminado'">
+            <td class='col-botones' ng-show="recurso.estado === 'terminado'">
               <button class='btn btn-success btn-xs'><i class='glyphicon glyphicon-folder-open'></i></button><button class='btn btn-xs' ng-click='borrar(recurso)'><i class='glyphicon glyphicon-remove'></i></button>
             </td>
 

@@ -124,11 +124,15 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory
                     if (objeto.transmitido_en_bytes == objeto.total_en_bytes) {
                         objeto.transmitido_en_bytes = objeto.total_en_bytes;
                         objeto.progreso = Math.floor((objeto.transmitido_en_bytes / objeto.total_en_bytes) * 100)
-                        objeto.estado = 'terminado';
-                        RecursosFactory.agregar_recurso(objeto.detalle);
 
-                        fs.renameSync(directorio_recurso_temporal, directorio_recurso);
-                        crear_miniatura(directorio_recurso);
+                        if (fs.existsSync(directorio_recurso_temporal)) {
+                          objeto.estado = 'terminado';
+                          fs.renameSync(directorio_recurso_temporal, directorio_recurso);
+                          crear_miniatura(directorio_recurso);
+                          RecursosFactory.agregar_recurso(objeto.detalle);
+                        } else {
+                          objeto.estado = 'error';
+                        }
 
                         DataBus.emit('termina-descarga', objeto.detalle);
                     }

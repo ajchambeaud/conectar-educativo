@@ -365,3 +365,12 @@ div.panel-buscador {
 	display: inline;
 	width: 150px;
 }
+
+
+.col-acciones {
+	width: 200px;
+}
+
+.col-botones {
+	width: 50px;
+}
