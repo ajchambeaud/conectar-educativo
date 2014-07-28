@@ -1,5 +1,37 @@
 var app = angular.module('app');
 
+/*
+ * Filtra una lista de recursos pero conservando los que realmente
+ * existan en el directorio de recursos, y que no estén dos o mas
+ * veces en la lista original.
+ */
+function filtrar_existentes_y_no_duplicados(lista_de_recursos, path_recursos) {
+  var recursos = lista_de_recursos;
+  var listado_directorios = fs.readdirSync(path_recursos);
+
+  var recursos_filtrados = recursos.filter(function(e) {
+    return (listado_directorios.indexOf(e.result.id.toString()) > -1);
+  });
+
+  var tmp_agregados = [];
+  var recursos_sin_duplicar = [];
+
+  for (var i in recursos_filtrados) {
+    var item = recursos_filtrados[i];
+    var item_id = item.result.id;
+
+    if (tmp_agregados.indexOf(item_id) === -1) {
+      tmp_agregados.push(item_id);
+      recursos_sin_duplicar.push(item);
+    }
+  }
+
+  return recursos_sin_duplicar;
+}
+
+
+
+
 app.controller('MisRecursosController', function($http, $scope, $timeout, DataBus, DescargasFactory, RecursosFactory, PerfilFactory) {
   var timer = null;
   var misRecursos = this;
@@ -8,7 +40,8 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
 
   function actualizar_listado_recursos() {
     RecursosFactory.listar_recursos(function(data) {
-      $scope.data.recursos_almacenados = data;
+      var path_recursos = PerfilFactory.obtener_path_descargas();
+      $scope.data.recursos_almacenados = filtrar_existentes_y_no_duplicados(data, path_recursos);
     }, function(error) {
       console.log(error);
     });
@@ -42,8 +75,5 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
     timer = $timeout(actualizar, 500, true);
   }
 
-
-
   actualizar();
-
 });
