@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('MisRecursosController', function($http, $scope, $timeout, DataBus, DescargasFactory, RecursosFactory) {
+app.controller('MisRecursosController', function($http, $scope, $timeout, DataBus, DescargasFactory, RecursosFactory, PerfilFactory) {
   var timer = null;
   var misRecursos = this;
 
@@ -30,8 +30,10 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
     }, function(error) {
       console.log(error);
     });
-    
+
   });
+
+  $scope.path_recursos = PerfilFactory.obtener_path_descargas();
 
   /* Observa los datos accesibles desde aquí constantemente, porque
      descargasFactory cambia periódicamente.
@@ -39,6 +41,8 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
   function actualizar() {
     timer = $timeout(actualizar, 500, true);
   }
+
+
 
   actualizar();
 

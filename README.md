@@ -1,7 +1,9 @@
 Escritorio Educativo (demo)
 =============================
 
-Aplicación de escritorio pensada para realizar búsquedas y consumir offline los recursos del portal educ.ar, basada en el stack de tecnologías: node-webkit, nedb, express, rest y angular.js
+Aplicación de escritorio pensada para realizar búsquedas y consumir offline
+los recursos del portal educ.ar, basada en el stack de
+tecnologías: node-webkit, nedb, express, rest y angular.js
 
 
 ```
@@ -11,23 +13,20 @@ Aplicación de escritorio pensada para realizar búsquedas y consumir offline lo
   cd ..
 ```
 
+También es importante tener instalado el comando `ffmpegthumbnailer`, y
+`node-webkit`
+
 <a href="https://github.com/rogerwang/node-webkit#downloads" target="_blank">Descarga</a> el binario de node-webkit para tu plataforma y usalo para ejecutar la aplicación.
 
 ```
   nw escritorio-educativo
 ```
 
-Mas información
+# Mas información
 
+Recomendamos estos links para conocer mas sobre las tecnologías que
+estamos utilizando:
 
-Más información sobre node-webkit
-
-https://github.com/rogerwang/node-webkit
-
-Información para distribuir esta aplicacion en linux, mac y windows.
-
-https://github.com/rogerwang/node-webkit/wiki/How-to-package-and-distribute-your-apps
-
-Boilerplate tomado como punto de partida para este proyecto.
-
-https://github.com/buberdds/node-webkit-nedb-rest-angular
+- https://github.com/rogerwang/node-webkit
+- https://github.com/rogerwang/node-webkit/wiki/How-to-package-and-distribute-your-apps
+- https://github.com/buberdds/node-webkit-nedb-rest-angular

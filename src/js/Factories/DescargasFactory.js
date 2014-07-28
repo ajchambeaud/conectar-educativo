@@ -2,6 +2,7 @@ var fs = require('fs');
 var http = require('http');
 var path = require('path');
 var child = require('child_process');
+var ffthumb = require('ffthumb');
 
 var app = angular.module('app');
 
@@ -11,6 +12,24 @@ function rmdir(directorio, callback) {
       callback.apply(this, arguments);
   });
 };
+
+
+function crear_miniatura(directorio) {
+  var ruta_completa = path.join(directorio, 'video.mp4');
+  var ruta_salida = path.join(directorio, 'thumb.png');
+
+  function on_error(error) {
+    alert(error);
+  }
+
+  var ff = new ffthumb.obj();
+
+  ff.create(ruta_completa).
+     output(ruta_salida).
+     size('200').
+     error(on_error).
+     done();
+}
 
 app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory) {
   var obj = {};
@@ -40,7 +59,9 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory
       if (existe) {
 
         var mensaje_error = "El directorio '" + directorio_recurso + "' ya existe, parece que el recurso ya se descargó.";
-        callback.call(this, mensaje_error, "");
+        
+        if (callback)
+          callback.call(this, mensaje_error, "");
 
       } else {
 
@@ -63,19 +84,22 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory
                 });
 
                 res.on('end', function() {
-                    objeto.transmitido_en_bytes = objeto.total_en_bytes;
-                    objeto.progreso = Math.floor((objeto.transmitido_en_bytes / objeto.total_en_bytes) * 100)
-                    objeto.estado = 'terminado';
-                    RecursosFactory.agregar_recurso(objeto.detalle);
 
-                    DataBus.emit('termina-descarga', objeto.detalle);
+                    // Si la descarga es exitosa ...
+                    if (objeto.transmitido_en_bytes == objeto.total_en_bytes) {
+                        objeto.transmitido_en_bytes = objeto.total_en_bytes;
+                        objeto.progreso = Math.floor((objeto.transmitido_en_bytes / objeto.total_en_bytes) * 100)
+                        objeto.estado = 'terminado';
+                        RecursosFactory.agregar_recurso(objeto.detalle);
+                        crear_miniatura(directorio_recurso);
+                        DataBus.emit('termina-descarga', objeto.detalle);
+                    }
+
                 });
 
                 res.on('close', function () {
                     objeto.estado = 'error';
                     rmdir(directorio_recurso);
-                    RecursosFactory.agregar_recurso(objeto.detalle);
-
                     DataBus.emit('termina-descarga', objeto.detalle);
                 });
 
