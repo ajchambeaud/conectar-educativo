@@ -7,6 +7,7 @@
     <source ng-src="{{data.detalle.result.url | trustUrl}}" type="video/mp4">
   </video>
   <p>{{data.detalle.result.descripcion | striptags}}</p>
+  <button ng-click='descargar_video(data.detalle)' class='btn btn-success'>Descargar</button>
 </div>
 
 <div class="modal-footer">
