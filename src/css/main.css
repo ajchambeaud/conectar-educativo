@@ -53,12 +53,7 @@ html {
 .main {
   padding: 20px;
 }
-@media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-}
+
 .main .page-header {
   margin-top: 0;
 }
@@ -316,6 +311,13 @@ p {
 	position: fixed;
 	right: 20px;
 	top: 34px;
+
+	transition-property: top;
+  transition-duration: 0.2s;
+}
+
+.navbar-reducido a.boton-about {
+	top: 20px;
 }
 
 a.boton-about {
@@ -324,13 +326,51 @@ a.boton-about {
 	text-align: center;
 }
 
-
 a.boton-about:hover {
-	color: white;
+	color: black;
 	text-decoration: none;
 }
 
 .img-about {
 	max-width: 100%;
 	margin: auto;
+}
+
+
+.btn-xs {
+	margin-right: 2px;
+}
+
+.modal-content {
+	border-radius: 0;
+}
+
+.modal-dialog {
+	padding-top: 10px !important;
+
+}
+
+div.panel-logos {
+	text-align: center;
+	padding-top: 20px;
+}
+
+
+div.panel-buscador {
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+.input-buscador {
+	display: inline;
+	width: 150px;
+}
+
+
+.col-acciones {
+	width: 200px;
+}
+
+.col-botones {
+	width: 50px;
 }

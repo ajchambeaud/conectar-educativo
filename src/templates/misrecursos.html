@@ -4,10 +4,15 @@
     <h1>Mis Recursos</h1>
   </div>
 
+  <div class="row panel-buscador">
+    <input class='form-control input-buscador' type="input" ng-model='filtro' placeholder='filtro'>
+  </div>
+
   <div class="row">
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
+            <th>Miniatura</th>
             <th>Titulo</th>
             <th>Descripcion</th>
             <th>Acciones</th>
@@ -20,11 +25,12 @@
               <img src='img/cargando.gif'/>
           </tr>
 
-          <tr ng-show="data.recursos_almacenados.length == 0">
-            <td colspan='4' align='center'>Sin recursos</td>
+          <tr ng-show="(data.recursos_almacenados | filter:filtro).length == 0">
+            <td colspan='4' align='center'>Sin recursos para mostrar</td>
           </tr>
 
-          <tr ng-repeat="recurso in data.recursos_almacenados">
+          <tr ng-repeat="recurso in data.recursos_almacenados | filter:filtro">
+            <td><img width=100 ng-src='{{path_recursos}}/{{recurso.result.id}}/thumb.png'></td>
             <td>{{recurso.result.titulo}}</td>
             <td>{{recurso.result.descripcion}}</td>
             <td><button disabled class='btn btn-success btn-xs'>abrir</button></td>

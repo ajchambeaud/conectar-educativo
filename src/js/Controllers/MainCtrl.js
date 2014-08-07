@@ -1,4 +1,5 @@
 var app = angular.module('app');
+var nw = require('nw.gui');
 
 app.controller('MainController', function($scope, $location, ApiFactory, RedFactory) {
 

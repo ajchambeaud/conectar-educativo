@@ -17,7 +17,7 @@ app.factory("RecursosFactory", function() {
       if (err)
         error_callback(err);
       else
-        callback(result)
+        callback(result);
     });
 
   }
@@ -27,8 +27,6 @@ app.factory("RecursosFactory", function() {
     obj.db.insert(recurso, function(err, result) {
       if (err)
         console.log({'Error': err});
-      else
-        console.log({'Success': result});
     });
   }
 

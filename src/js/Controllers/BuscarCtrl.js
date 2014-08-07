@@ -1,7 +1,7 @@
 var app = angular.module('app');
 var gui = require('nw.gui');
 
-app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, _) {
+app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, DescargasFactory, _) {
   $scope.data.query = {};
   $scope.data.query.limit = 10;
   $scope.data.query.offset = 0;
@@ -92,6 +92,15 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, _
       console.log($scope.data.detalle);
       gui.Shell.openExternal($scope.data.detalle.result.url + "&extension=.pdf");
     }
+
+    $scope.descargar_video = function(detalle) {
+      if (detalle.status.code == 200) {
+        DescargasFactory.descargar_video(detalle);
+        $modalInstance.close();
+      } else {
+        alert("ERROR: " + detalle.status.message);
+      }
+    }
   };
 
 
@@ -139,4 +148,6 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, _
   $scope.ver_recurso_en_educar = function(recurso) {
     gui.Shell.openExternal(recurso.visualizacion_educar);
   }
+
+
 });
