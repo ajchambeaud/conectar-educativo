@@ -37,6 +37,8 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
   var misRecursos = this;
 
   $scope.data.recursos_almacenados = null;
+  $scope.data.tipo_de_vista = 'lista';
+
 
   function actualizar_listado_recursos() {
     RecursosFactory.listar_recursos(function(data) {
@@ -53,6 +55,11 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
     if (timer)
       $timeout.cancel(timer);
   });
+
+  $scope.abrir = function(recurso) {
+    console.log(recurso);
+    alert("Pendiente, visualizar el recurso: " + recurso.result.titulo);
+  }
 
   // Cuando termina la descarga actualiza el listado de mis-recursos.
   DataBus.on('termina-descarga', $scope, function(data) {

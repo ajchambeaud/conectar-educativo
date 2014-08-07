@@ -374,3 +374,16 @@ div.panel-buscador {
 .col-botones {
 	width: 50px;
 }
+
+
+.item {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	vertical-align: top;
+	border: 1px solid rgb(213, 213, 213);
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	background-color: #f9f9f9;
+}
