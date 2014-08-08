@@ -3,6 +3,9 @@ var nw = require('nw.gui');
 
 app.controller('MainController', function($scope, $location, ApiFactory, RedFactory) {
 
+  $scope.visitar = function(url) {
+    nw.Shell.openExternal(url);
+  }
 
   $scope.data = {};
   $scope.data.online = RedFactory.obtenerModoOnline;

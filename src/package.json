@@ -13,7 +13,7 @@
     "width": 850,
     "height": 600,
     "min_width": 810,
-    "min_height": 400
+    "min_height": 550
   },
   "webkit": {
     "plugin": true

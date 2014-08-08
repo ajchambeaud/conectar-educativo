@@ -4,13 +4,25 @@
 
 
     <div class="busqueda-previa" ng-hide='data.result'>
-      <img src="img/logo_educar.gif">
+
+      <img src="img/logo-conectar-sm.png">
+
       <div class="input-group input-group-lg busqueda-input-gral">
         <input type="text" onkeydown="return procesar_tecla(event, 'buscar')" ng-model='data.query.texto' class="form-control" placeholder='¿Que estás buscando?'>
         <span class="input-group-btn">
           <button ng-click='buscar()' id='buscar' class="btn btn-success" type="button">Buscar</button>
         </span>
       </div>
+
+      <div class='nota-buscador'>
+        <a href ng-click='visitar("http://datosabiertos.educ.ar")'><img class='logo-inline' src='img/logo-educar-sm.png'></a>
+
+        <p>Potenciado por <a href ng-click='visitar("http://educ.ar")'>educ.ar</a> y
+        su <a href ng-click='visitar("http://datosabiertos.educ.ar")'>API pública de datos</a>.
+
+        <p></p>
+      </div>
+
     </diV>
 
 
