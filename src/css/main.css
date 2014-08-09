@@ -409,3 +409,8 @@ img.logo-inline {
 	margin: 0;
 	padding: 0;
 }
+
+
+.item img {
+	border: 1px solid #ccc;
+}

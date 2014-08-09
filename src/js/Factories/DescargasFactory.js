@@ -18,12 +18,13 @@ function rmdir(directorio) {
  * Genera una miniatura llamada thumb.png en el directorio del
  * recurso.
  */
-function crear_miniatura(directorio) {
+function crear_miniatura(directorio, done_callback) {
   var ruta_completa = path.join(directorio, 'video.mp4');
   var ruta_salida = path.join(directorio, 'thumb.png');
 
   function on_error(error) {
     alert(error);
+    done_callback.call(this);
   }
 
   var ff = new ffthumb.obj();
@@ -32,6 +33,7 @@ function crear_miniatura(directorio) {
      output(ruta_salida).
      size('200').
      error(on_error).
+     success(done_callback).
      done();
 }
 
@@ -79,7 +81,6 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory
 
       // Verifica además si el recurso se está descargando ...
       if (fs.existsSync(directorio_recurso_temporal)) {
-        console.log("pepe");
 
         if (existe_en_lista_descargas_en_curso(obj, id_recurso)) {
           existe = true;
@@ -128,13 +129,17 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory
                         if (fs.existsSync(directorio_recurso_temporal)) {
                           objeto.estado = 'terminado';
                           fs.renameSync(directorio_recurso_temporal, directorio_recurso);
-                          crear_miniatura(directorio_recurso);
-                          RecursosFactory.agregar_recurso(objeto.detalle);
+
+                          crear_miniatura(directorio_recurso, function() {
+                            RecursosFactory.agregar_recurso(objeto.detalle);
+                            DataBus.emit('termina-descarga', objeto.detalle);
+                          });
+
                         } else {
                           objeto.estado = 'error';
+                          DataBus.emit('termina-descarga', objeto.detalle);
                         }
 
-                        DataBus.emit('termina-descarga', objeto.detalle);
                     }
 
                 });
