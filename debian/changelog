@@ -1,3 +1,21 @@
+escritorio-educativo (0.5) unstable; urgency=low
+
+  * Actualizando. 
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Mon, 11 Aug 2014 17:40:01 +0200
+
+escritorio-educativo (0.4) unstable; urgency=low
+
+  * Actualizando el paquete con el visor offline. 
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Fri, 11 Jul 2014 20:15:12 +0200
+
+escritorio-educativo (0.3) unstable; urgency=low
+
+  * Actualizando paquete debian. 
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Mon, 16 Jun 2014 19:50:33 +0200
+
 escritorio-educativo (0.2) unstable; urgency=low
 
   * Cambiando la arquitectura para usar servicios en lugar de un webserver. 
