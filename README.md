@@ -1,5 +1,5 @@
-Escritorio Educativo (demo)
-=============================
+Conectar Educativo
+==================
 
 Aplicación de escritorio pensada para realizar búsquedas y consumir offline
 los recursos del portal educ.ar, basada en el stack de

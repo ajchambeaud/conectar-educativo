@@ -1,0 +1,6 @@
+src/* usr/share/conectar-educativo/src
+package.json usr/share/conectar-educativo/
+node_modules usr/share/conectar-educativo/
+bin/conectar-educativo usr/bin/
+debian/conectar-educativo.desktop /usr/share/applications
+debian/conectar-educativo.svg /usr/share/icons/hicolor/scalable/apps

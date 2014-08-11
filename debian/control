@@ -8,10 +8,16 @@ Homepage: https://github.com/hugoruscitti/escritorio-educativo
 #Vcs-Git: git://git.debian.org/collab-maint/escritorio-educativo.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/escritorio-educativo.git;a=summary
 
-Package: escritorio-educativo
+Package: conectar-educativo
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, node-webkit
 Description: Permite acceder a los recursos de educ.ar offline.
  Esta aplicación permite descargar y acceder a los recursos
  de educ.ar de forma offline.
 
+
+Package: escritorio-educativo
+Architecture: all
+Depends: ${misc:Depends}, node-webkit
+Description: Paquete transitorio.
+ Paquete transitorio.

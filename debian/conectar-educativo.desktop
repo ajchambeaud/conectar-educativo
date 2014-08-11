@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=escritorio-educativo
+Name=conectar-educativo
 Comment=Una aplicación para descargar y ver los recursos de educ.ar offline
-Exec=/usr/bin/escritorio-educativo
+Exec=/usr/bin/conectar-educativo
 Terminal=false
 Type=Application
-Icon=escritorio-educativo
+Icon=conectar-educativo
 Categories=GNOME;GTK;Huayra;Network;

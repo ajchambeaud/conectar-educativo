@@ -7,8 +7,8 @@ var Api = require('educar-api.js');
 
 // cross platform paths
 var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
-var databaseUrl = path.join (homedir, '.escritorio-educativo' ,  'recursos.db');
-var configPath = path.join(homedir, ".escritorio-educativo", "config.json");
+var databaseUrl = path.join (homedir, '.conectar-educativo' ,  'recursos.db');
+var configPath = path.join(homedir, ".conectar-educativo", "config.json");
 
 console.log('Running on: ' + process.platform);
 console.log('Database: ' + databaseUrl);

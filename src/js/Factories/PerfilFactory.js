@@ -3,7 +3,7 @@ var fs = require('fs');
 var path = require('path');
 
 var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
-var dir_path = path.join(homedir, ".escritorio-educativo");
+var dir_path = path.join(homedir, ".conectar-educativo");
 var path_descargas = path.join(homedir, "Compartido/");
 var config_path = path.join(dir_path, "config.json");
 

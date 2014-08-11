@@ -1,6 +1,0 @@
-src/* usr/share/escritorio-educativo/src
-package.json usr/share/escritorio-educativo/
-node_modules usr/share/escritorio-educativo/
-bin/escritorio-educativo usr/bin/
-debian/escritorio-educativo.desktop /usr/share/applications
-debian/escritorio-educativo.svg /usr/share/icons/hicolor/scalable/apps

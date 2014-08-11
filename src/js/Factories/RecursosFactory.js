@@ -3,7 +3,7 @@ var nedb = require('nedb');
 var path = require('path');
 
 var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
-var dir_path = path.join(homedir, ".escritorio-educativo");
+var dir_path = path.join(homedir, ".conectar-educativo");
 var databaseUrl = path.join(dir_path, "recursos.db");
 
 app.factory("RecursosFactory", function() {
