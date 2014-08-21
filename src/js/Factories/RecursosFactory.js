@@ -11,6 +11,10 @@ app.factory("RecursosFactory", function() {
 
   obj.db = new nedb({filename: databaseUrl, autoload: true});
 
+  obj.consultar_si_existe_recurso = function(id, callback) {
+    callback.call(this, false);
+  }
+
   obj.listar_recursos = function(callback, error_callback) {
 
     obj.db.find({}, function(err, result) {

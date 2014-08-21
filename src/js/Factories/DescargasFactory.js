@@ -56,6 +56,10 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory
 
   obj.descargas_en_curso = [];
 
+  obj.existe_descarga_en_curso = function(id) {
+    return false;
+  }
+
   obj.descargar_video = function(detalle_del_video, callback) {
     var id_random = Math.floor(Math.random(1000) * 1000);
     var id_recurso = detalle_del_video.result.id;

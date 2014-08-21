@@ -414,3 +414,8 @@ img.logo-inline {
 .item img {
 	border: 1px solid #ccc;
 }
+
+
+.label-normal {
+	background-color: #ccc;
+}

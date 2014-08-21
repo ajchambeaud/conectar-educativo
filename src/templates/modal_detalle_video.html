@@ -8,6 +8,10 @@
   </video>
   <p>{{data.detalle.result.descripcion | striptags}}</p>
   <button ng-click='descargar_video(data.detalle)' class='btn btn-success'>Descargar</button>
+
+  <boton-descarga recurso="data.detalle" ng-click='descargar_video(data.detalle)'></boton-descarga>
+
+
 </div>
 
 <div class="modal-footer">

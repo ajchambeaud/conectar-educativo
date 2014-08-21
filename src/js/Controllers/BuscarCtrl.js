@@ -3,6 +3,7 @@ var gui = require('nw.gui');
 
 app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, DescargasFactory, _) {
   $scope.data.query = {};
+  $scope.data.buscando = false;
   $scope.data.query.limit = 10;
   $scope.data.query.offset = 0;
   $scope.data.juegos = [];
@@ -28,6 +29,7 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, D
     $scope.data.ebooks = [];
     $scope.data.secuencias = [];
     $scope.data.infografias = [];
+    $scope.data.buscando = true;
 
     function success(req) {
       for(var i in req){

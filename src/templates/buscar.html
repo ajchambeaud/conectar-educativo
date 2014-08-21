@@ -10,7 +10,10 @@
       <div class="input-group input-group-lg busqueda-input-gral">
         <input type="text" onkeydown="return procesar_tecla(event, 'buscar')" ng-model='data.query.texto' class="form-control" placeholder='¿Que estás buscando?'>
         <span class="input-group-btn">
-          <button ng-click='buscar()' id='buscar' class="btn btn-success" type="button">Buscar</button>
+          <button ng-disabled='data.buscando' ng-click='buscar()' id='buscar' class="btn btn-success" type="button">
+            <span ng-show='!data.buscando'>Buscar</span>
+            <span ng-show='data.buscando'>Buscando</span>
+          </button>
         </span>
       </div>
 
@@ -62,8 +65,9 @@
 
       <div ng-show="data.mostrar == 'todos' || data.mostrar == (recurso.entity+'s')" ng-class="recurso.entity" ng-repeat='recurso in data.recursos' class="bs-callout bs-callout-info">
         <h4 class="busqueda-ver-detalle" ng-click="abrir_recurso(recurso)" ng-bind-html="recurso.titulo | striptags"></h4>
+        <a ng-click="abrir_recurso(recurso)" href>abrir recurso</a>
         <p ng-bind-html="recurso.descripcion | striptags"></p>
-        <span class="label label-primary">{{recurso.entity}}</span>
+        <span class="label label-normal">{{recurso.entity}}</span>
         <hr/>
       </div>
 
