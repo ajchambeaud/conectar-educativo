@@ -1,18 +1,26 @@
 var app = angular.module('app');
 var nedb = require('nedb');
 var path = require('path');
+var fs = require('fs');
 
 var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
 var dir_path = path.join(homedir, ".conectar-educativo");
 var databaseUrl = path.join(dir_path, "recursos.db");
 
-app.factory("RecursosFactory", function() {
+app.factory("RecursosFactory", function(PerfilFactory) {
   var obj = {};
 
   obj.db = new nedb({filename: databaseUrl, autoload: true});
 
   obj.consultar_si_existe_recurso = function(id, callback) {
-    callback.call(this, false);
+    var ruta_descargas = PerfilFactory.obtener_path_descargas();
+    var directorio_del_recurso = path.join(ruta_descargas, id.toString());
+
+    fs.exists(directorio_del_recurso, function(status) {
+      console.log(status);
+      callback.call(this, status);
+    });
+
   }
 
   obj.listar_recursos = function(callback, error_callback) {

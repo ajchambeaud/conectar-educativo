@@ -57,6 +57,12 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory
   obj.descargas_en_curso = [];
 
   obj.existe_descarga_en_curso = function(id) {
+
+    for (var i in obj.descargas_en_curso) {
+      if (id == obj.descargas_en_curso[i].detalle.result.id)
+        return true;
+    }
+
     return false;
   }
 
