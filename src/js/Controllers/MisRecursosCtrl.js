@@ -32,7 +32,7 @@ function filtrar_existentes_y_no_duplicados(lista_de_recursos, path_recursos) {
 
 
 
-app.controller('MisRecursosController', function($http, $scope, $timeout, DataBus, DescargasFactory, RecursosFactory, PerfilFactory) {
+app.controller('MisRecursosController', function($http, $scope, $timeout, DataBus, DescargasFactory, RecursosFactory, PerfilFactory, $modal) {
   var timer = null;
   var misRecursos = this;
 
@@ -57,8 +57,30 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
   });
 
   $scope.abrir = function(recurso) {
-    console.log(recurso);
-    alert("Pendiente, visualizar el recurso: " + recurso.result.titulo);
+
+    var ModalDetalleVideoOfflineCtrl = function ($scope, $modalInstance, detalle) {
+      $scope.data = {};
+      $scope.data.detalle = detalle;
+
+      var ruta_descargas = PerfilFactory.obtener_path_descargas();
+      var path_recurso = path.join(ruta_descargas, detalle.id.toString(), 'video.mp4');
+      $scope.data.path_recurso = path_recurso;
+
+      $scope.ok = function () {
+        $modalInstance.close();
+      };
+
+    };
+
+    var template = 'templates/modal_offline_detalle_video.html';
+    var modalInstance = $modal.open({
+      templateUrl: template,
+      controller: ModalDetalleVideoOfflineCtrl,
+      resolve: {
+        detalle: function() {return recurso;}
+      }
+    });
+    
   }
 
   // Cuando termina la descarga actualiza el listado de mis-recursos.
