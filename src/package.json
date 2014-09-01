@@ -1,10 +1,10 @@
 {
-  "name": "DemoMiEscritorio",
-  "description": "Demo Escritorio Educar",
+  "name": "ConectarEdutativo",
+  "description": "Conectar Educativo",
   "version": "0.0.2",
   "main": "index.html",
   "window": {
-    "title": "Escritorio Educativo",
+    "title": "Conectar Educativo",
     "toolbar": true,
     "frame": true,
     "position": "center",
