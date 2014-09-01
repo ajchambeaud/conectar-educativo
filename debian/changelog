@@ -1,3 +1,15 @@
+escritorio-educativo (0.7) unstable; urgency=low
+
+  * Arreglos menores.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Mon, 01 Sep 2014 18:57:37 +0200
+
+escritorio-educativo (0.6) unstable; urgency=low
+
+  * Implementando el visor offline. 
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Mon, 25 Aug 2014 21:46:05 +0200
+
 escritorio-educativo (0.5) unstable; urgency=low
 
   * Actualizando. 
