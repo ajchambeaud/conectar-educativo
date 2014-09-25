@@ -10,7 +10,10 @@ var app = angular.module('app');
  * Elimina un directorio completo, por mas que tenga archivos dentro.
  */
 function rmdir(directorio) {
-  child.execSync('rm -rf ' + directorio);
+  if (child.execSync)
+    child.execSync('rm -rf ' + directorio);
+  else
+    child.exec('rm -rf ' + directorio, function() {});
 }
 
 

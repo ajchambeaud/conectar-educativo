@@ -11,9 +11,9 @@
     "fullscreen": false,
     "resizable": true,
     "width": 850,
-    "height": 600,
+    "height": 550,
     "min_width": 810,
-    "min_height": 550
+    "min_height": 450
   },
   "webkit": {
     "plugin": true
