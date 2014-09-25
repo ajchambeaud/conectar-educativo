@@ -58,9 +58,9 @@
         </div>
 
         <div class='item' ng-repeat="recurso in data.recursos_almacenados | filter:filtro">
-          <a href ng-click='abrir(recurso)'><img width=175 ng-src='{{path_recursos}}/{{recurso.result.id}}/thumb.png'></a>
+          <a href ng-click='abrir(recurso.result)'><img width=175 ng-src='{{path_recursos}}/{{recurso.result.id}}/thumb.png'></a>
           <br/>
-          <a href ng-click='abrir(recurso)'>{{recurso.result.titulo}}</a>
+          <a href ng-click='abrir(recurso.result)'>{{recurso.result.titulo}}</a>
         </div>
 
 
