@@ -6,6 +6,7 @@ all:
 	@echo " $(V)deps$(N)         Instala las dependencias necesarias."
 	@echo " $(V)test_linux$(N)   Prueba la aplicacion usando nodewebkit en linux."
 	@echo " $(V)test_mac$(N)     Prueba la aplicacion usando nodewebkit en mac osx."
+	@echo " $(V)run_tests$(N)    Ejecuta todos los tests de la aplicación."
 	@echo ""
 
 deps:
@@ -17,5 +18,8 @@ test_linux:
 test_mac:
 	@echo "Cuidado - se está usando la version de nodewebkit del sistema."
 	open -a /Applications/node-webkit.app src
+
+run_tests:
+	./node_modules/karma/bin/karma start
 
 .PHONY: test
