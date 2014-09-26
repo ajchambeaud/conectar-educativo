@@ -15,8 +15,49 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/lib/angular.js',
-      'src/lib/angular-mocks.js',
+      "lib/jquery-2.1.1.js",
+      "lib/underscore.js",
+      "lib/angular.js",
+      "lib/angular-route.js",
+      "lib/angular-mocks.js",
+      "lib/angular-animate.js",
+      'lib/ng-infinite-scroll.min.js',
+
+      "lib/angular-resource.js",
+      "lib/ui-bootstrap-tpls.js",
+
+      "lib/spin.js",
+      "lib/angular-spinner.js",
+
+      "js/underscore.js",
+      "js/app.js",
+      "js/config.js",
+
+      "js/Controllers/NavCtrl.js",
+      "js/Controllers/MainCtrl.js",
+      "js/Controllers/BuscarCtrl.js",
+      "js/Controllers/HomeCtrl.js",
+      "js/Controllers/MisRecursosCtrl.js",
+      "js/Controllers/DescargasCtrl.js",
+      "js/Controllers/PerfilCtrl.js",
+      "js/Controllers/CategoriasCtrl.js",
+
+      "js/Directives/botonDescarga.js",
+      "js/Directives/indicadorRed.js",
+      "js/Directives/botonAbout.js",
+      "js/Directives/loader.js",
+      "js/Directives/menuPrincipalDirective.js",
+      "js/Directives/navbar.js",
+
+      "js/Factories/DataBus.js",
+      "js/Factories/RedFactory.js",
+      "js/Factories/DescargasFactory.js",
+      "js/Factories/PerfilFactory.js",
+      "js/Factories/RecursosFactory.js",
+      "js/Factories/ApiFactory.js",
+
+      "js/Filters/striptags.js",
+
       'src/tests/*.js'
     ],
 
