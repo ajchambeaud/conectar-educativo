@@ -1,11 +1,13 @@
 <div class="modal-header">
+  <button class="close float-right" ng-click="ok()">x</button>
   <h3 class="modal-title">{{data.detalle.result.titulo}}</h3>
 </div>
 
 <div class="modal-body">
-  <video width="100%" controls>
-    <source ng-src="{{data.detalle.result.url | trustUrl}}" type="video/mp4">
-  </video>
+
+
+  <reproductor ruta='data.detalle.result.url'></reproductor>
+
   <p>{{data.detalle.result.descripcion | striptags}}</p>
   <boton-descarga recurso-id="data.detalle.result.id" ng-click='descargar_video(data.detalle)'></boton-descarga>
 

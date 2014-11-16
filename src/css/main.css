@@ -192,6 +192,27 @@ p {
 	width: 80% !important;
 }
 
+.modal-body {
+	border: 1px solid red;
+	position: relative;
+}
+
+.img.poster {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.video-js {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 110;
+}
+
 .indicador-descargas {
 	position: absolute;
 	min-width: 10px;
@@ -420,6 +441,11 @@ img.logo-inline {
 	background-color: #ccc;
 }
 
-video::-webkit-media-controls-fullscreen-button {
-        display: none;
-    }
+.vjs-fullscreen-control { opacity: 0.1; }
+.vjs-volume-control { margin-right: 20px; }
+
+
+
+.float-right {
+	float: right;
+}

@@ -83,7 +83,7 @@ app.factory("ApiFactory", function($http, $q) {
   };
 
   api.obtener_detalle = function(recurso, success_callback, error_callback) {
-    console.log(recurso);
+    
     switch (recurso.entity) {
       case "juego":
           api.obtener_detalle_juego(recurso.id, success_callback, error_callback);
