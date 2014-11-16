@@ -419,3 +419,7 @@ img.logo-inline {
 .label-normal {
 	background-color: #ccc;
 }
+
+video::-webkit-media-controls-fullscreen-button {
+        display: none;
+    }
