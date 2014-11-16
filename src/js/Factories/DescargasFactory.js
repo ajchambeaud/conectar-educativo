@@ -16,6 +16,9 @@ function rmdir(directorio) {
     child.exec('rm -rf ' + directorio, function() {});
 }
 
+function copiar_archivo(desde, hasta) {
+  fs.createReadStream(desde).pipe(fs.createWriteStream(hasta));
+}
 
 /**
  * Genera una miniatura llamada thumb.png en el directorio del
@@ -24,10 +27,12 @@ function rmdir(directorio) {
 function crear_miniatura(directorio, done_callback) {
   var ruta_completa = path.join(directorio, 'video.mp4');
   var ruta_salida = path.join(directorio, 'thumb.png');
+  var ruta_sinimagen = path.join('img', 'sinimagen.png');
 
   function on_error(error) {
     alert(error);
     done_callback.call(this);
+    copiar_archivo(ruta_sinimagen, ruta_salida);
   }
 
   var ff = new ffthumb.obj();
