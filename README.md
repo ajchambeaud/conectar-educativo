@@ -6,6 +6,8 @@ los recursos del portal educ.ar, basada en el stack de
 tecnologías: node-webkit, nedb, express, rest y angular.js
 
 
+![](preview/app.png)
+
 ```
   git clone https://github.com/ajchambeaud/conectar-educativo
   cd conectar-educativo
