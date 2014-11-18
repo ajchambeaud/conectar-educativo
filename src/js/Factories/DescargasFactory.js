@@ -1,4 +1,5 @@
 var fs = require('fs');
+var fsextra = require('fs-extra');
 var http = require('http');
 var path = require('path');
 var child = require('child_process');
@@ -10,10 +11,7 @@ var app = angular.module('app');
  * Elimina un directorio completo, por mas que tenga archivos dentro.
  */
 function rmdir(directorio) {
-  if (child.execSync)
-    child.execSync('rm -rf ' + directorio);
-  else
-    child.exec('rm -rf ' + directorio, function() {});
+  fsextra.deleteSync(directorio);
 }
 
 function copiar_archivo(desde, hasta) {
@@ -106,6 +104,7 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory
           // Elimina el directorio, dado que puede ser una descarga vieja, a causa
           // de que el programa ha fallado o algo así.
           rmdir(directorio_recurso_temporal);
+          existe = false;
         }
       }
 
