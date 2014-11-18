@@ -17,6 +17,10 @@ app.controller('PerfilController', function($scope, PerfilFactory) {
 
   $scope.explorar_directorio_descargas = function() {
     var path = $scope.data.perfil.path_descargas;
+
+    if (process.platform === "win32")
+      path = "c:" + path;
+
     gui.Shell.openItem(path);
   }
 

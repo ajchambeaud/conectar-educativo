@@ -11,7 +11,11 @@ var app = angular.module('app');
  * Elimina un directorio completo, por mas que tenga archivos dentro.
  */
 function rmdir(directorio) {
-  fsextra.deleteSync(directorio);
+  try {
+    fsextra.deleteSync(directorio);
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function copiar_archivo(desde, hasta) {
@@ -28,7 +32,8 @@ function crear_miniatura(directorio, done_callback) {
   var ruta_sinimagen = path.join('img', 'sinimagen.png');
 
   function on_error(error) {
-    alert(error);
+    //alert(error);
+    console.error(error);
     done_callback.call(this);
     copiar_archivo(ruta_sinimagen, ruta_salida);
   }
@@ -145,7 +150,9 @@ app.factory("DescargasFactory", function(DataBus, PerfilFactory, RecursosFactory
 
                         if (fs.existsSync(directorio_recurso_temporal)) {
                           objeto.estado = 'terminado';
-                          fs.renameSync(directorio_recurso_temporal, directorio_recurso);
+                          //fs.renameSync(directorio_recurso_temporal, directorio_recurso);
+                          fsextra.copySync(directorio_recurso_temporal, directorio_recurso, undefined, true);
+                          rmdir(directorio_recurso_temporal);
 
                           crear_miniatura(directorio_recurso, function() {
                             RecursosFactory.agregar_recurso(objeto.detalle);
