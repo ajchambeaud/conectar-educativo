@@ -2,13 +2,9 @@
   "dependencies": {
     "nedb": "~0.8.0",
     "grunt": "^0.4.5",
-    "grunt-node-webkit-builder": "^0.1.21",
-    "ffthumb": "0.0.4",
-    "karma": "^0.12.23",
-    "karma-nodewebkit-launcher": "0.0.8"
+    "grunt-node-webkit-builder": "^0.3.0",
+    "ffthumb": "0.0.4"
   },
   "devDependencies": {
-    "karma-jasmine": "^0.1.5",
-    "karma-chrome-launcher": "^0.1.4"
   }
 }

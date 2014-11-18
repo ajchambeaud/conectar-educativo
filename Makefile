@@ -4,6 +4,7 @@ V=\x1b[32;01m
 all:
 	@echo ""
 	@echo " $(V)deps$(N)         Instala las dependencias necesarias."
+	@echo " $(V)dist$(N)         Genera las versiones compiladas de la aplicación."
 	@echo " $(V)test_linux$(N)   Prueba la aplicacion usando nodewebkit en linux."
 	@echo " $(V)test_mac$(N)     Prueba la aplicacion usando nodewebkit en mac osx."
 	@echo " $(V)run_tests$(N)    Ejecuta todos los tests de la aplicación."
@@ -22,4 +23,7 @@ test_mac:
 run_tests:
 	./node_modules/karma/bin/karma start
 
-.PHONY: test
+dist:
+	grunt nodewebkit
+
+.PHONY: test dist

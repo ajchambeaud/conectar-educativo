@@ -1,5 +1,5 @@
 {
-  "name": "ConectarEdutativo",
+  "name": "ConectarEducativo",
   "description": "Conectar Educativo",
   "version": "0.0.2",
   "main": "index.html",
@@ -14,9 +14,6 @@
     "height": 550,
     "min_width": 810,
     "min_height": 450
-  },
-  "webkit": {
-    "plugin": true
   },
   "node-remote": "<local>"
 }
