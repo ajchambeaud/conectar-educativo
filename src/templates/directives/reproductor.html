@@ -1,0 +1,19 @@
+  <div class='alert alert-danger' id='motivoError' ng-show='data.error'>
+    <p>
+    Lo sentimos, pero el video parece estar en un formato desconocido. Pulsá
+    el botón "Ver con VLC" para reproducirlo de todas formas.
+    </p>
+
+    <p>
+      <button class='btn btn-warning' ng-click='verConVLC()'>Ver con VLC</button>
+    </p>
+
+  </div>
+
+  <video id="myvideo" class="vjs-big-play-centered video-js vjs-default-skin"
+    controls preload="auto" width="100%" height=500 poster="img/fondo.png">
+
+    <source id="video_source" ng-src="{{1}}" type="video/mp4" />
+
+    <p class="vjs-no-js">Error</p>
+  <video/>
