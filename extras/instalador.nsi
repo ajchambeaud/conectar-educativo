@@ -17,7 +17,7 @@
 
   ;Default installation folder
   InstallDir "c:\conectar-educativo"
-  
+
   ;Get installation folder from registry if available
   InstallDirRegKey HKCU "conectar-educativo\conectar-educativo" ""
 
@@ -43,14 +43,14 @@
 
 
 
-  
+
   ;Start Menu Folder Page Configuration
-  !define MUI_STARTMENUPAGE_REGISTRY_ROOT "HKCU" 
-  !define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\Modern UI Test" 
+  !define MUI_STARTMENUPAGE_REGISTRY_ROOT "HKCU"
+  !define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\Modern UI Test"
   !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME "Start Menu Folder"
-  
+
   !insertmacro MUI_PAGE_STARTMENU Application $StartMenuFolder
-  
+
   !insertmacro MUI_PAGE_INSTFILES
 
 !define MUI_FINISHPAGE_RUN "$instdir\conectar-educativo.exe"
@@ -74,7 +74,7 @@ FunctionEnd
 
 ;--------------------------------
 ;Languages
- 
+
   !insertmacro MUI_LANGUAGE "Spanish"
 
 ;--------------------------------
@@ -83,7 +83,7 @@ FunctionEnd
 Section "Dummy Section" SecDummy
 
   SetOutPath "$INSTDIR"
-  
+
   File "conectar-educativo.exe"
   File "credits.html"
   File "ffmpegsumo.dll"
@@ -93,20 +93,20 @@ Section "Dummy Section" SecDummy
   File "nw.pak"
   File "nwsnapshot.exe"
 
-  
+
   ;Store installation folder
   WriteRegStr HKCU "conectar-educativo\conectar-educativo " "" $INSTDIR
-  
+
   ;Create uninstaller
   WriteUninstaller "$INSTDIR\desinstalar.exe"
-  
+
   !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
-    
+
     ;Create shortcuts
     CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
     CreateShortcut "$SMPROGRAMS\$StartMenuFolder\desinstalar.lnk" "$INSTDIR\desinstalar.exe"
     CreateShortCut "$SMPROGRAMS\$StartMenuFolder\conectar-educativo.lnk" "$INSTDIR\conectar-educativo.exe"
-  
+
   !insertmacro MUI_STARTMENU_WRITE_END
 
 SectionEnd
@@ -120,12 +120,12 @@ Section "Uninstall"
   Delete "$INSTDIR\Uninstall.exe"
 
   RMDir "$INSTDIR"
-  
+
   !insertmacro MUI_STARTMENU_GETFOLDER Application $StartMenuFolder
-    
+
   Delete "$SMPROGRAMS\$StartMenuFolder\desinstalar.lnk"
   RMDir "$SMPROGRAMS\$StartMenuFolder"
-  
+
   DeleteRegKey /ifempty HKCU "Software\Modern UI Test"
 
 SectionEnd

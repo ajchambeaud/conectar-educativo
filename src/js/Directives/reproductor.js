@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.directive('reproductor', function($http, $modal){
+app.directive('reproductor', function($http, $modal, VLC){
 
   return {
      scope: {
@@ -11,7 +11,7 @@ app.directive('reproductor', function($http, $modal){
       $scope.data.error = false;
 
       $scope.verConVLC = function() {
-        alert("TODO: ejecutar el comando: vlc " + $scope.ruta);
+        VLC.reproducir($scope.ruta);
       };
     },
     restrict: 'E',
