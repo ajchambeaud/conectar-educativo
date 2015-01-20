@@ -19,6 +19,7 @@ rm -r -f distwin/*
 #cp conectar-educativo.nw /Users/hugoruscitti/shared/
 
 cp extras/bins/* distwin/
+cp extras/instalador.nsi distwin/
 mv conectar-educativo.nw distwin/
 cat distwin/nw.exe distwin/conectar-educativo.nw > distwin/conectar-educativo.exe
 rm distwin/nw.exe distwin/conectar-educativo.nw 
@@ -26,3 +27,4 @@ rm distwin/nw.exe distwin/conectar-educativo.nw
 cp -rf distwin ../../shared/
 
 
+echo "El instalador está en el directorio shared/distwin, solo queda compilar el instalador."

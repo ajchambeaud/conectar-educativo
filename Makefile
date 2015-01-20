@@ -1,3 +1,5 @@
+VERSION="0.3.0"
+
 N=\x1b[0m
 V=\x1b[32;01m
 
@@ -19,7 +21,12 @@ test_linux:
 	nw src
 
 distwin:
+	rm -r -f distwin
 	sh extras/distwin.sh
+	makensis distwin/instalador.nsi
+	mv distwin/conectar-educativo_0.3.0.exe dist/
+	open dist
+
 
 test_mac:
 	@echo "Cuidado - se está usando la version de nodewebkit del sistema."
