@@ -7,10 +7,18 @@ app.factory('VLC', function($rootScope) {
 
 
     vlc.reproducir = function(ruta) {
+      var comando = null;
 
-      // TODO: consultar si está en windows, linux o mac. La ruta
-      //       al binario va a cambiar en cada plataforma.
-      var comando = 'VLCPortable\\VLCPortable.exe "' + ruta + '"';
+      /* Seleccionado el comando correcto para lanzar VLC */
+      if (process.platform === 'win32' || process.platform === 'win64')
+        comando = 'VLCPortable\\VLCPortable.exe "' + ruta + '"';
+
+      if (process.platform === 'linux')
+        comando = "vlc";
+
+      if (process.platform === 'darwin')
+        comando = "open -a VLC --args ";
+
 
       child = exec(comando,
         function (error, stdout, stderr) {
