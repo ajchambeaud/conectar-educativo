@@ -14,10 +14,10 @@ app.factory('VLC', function($rootScope) {
         comando = 'VLCPortable\\VLCPortable.exe "' + ruta + '"';
 
       if (process.platform === 'linux')
-        comando = "vlc";
+        comando = 'vlc "' + ruta + '"';
 
       if (process.platform === 'darwin')
-        comando = "open -a VLC --args ";
+        comando = 'open -a VLC --args "' + ruta + '"';
 
 
       child = exec(comando,
