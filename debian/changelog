@@ -1,3 +1,15 @@
+escritorio-educativo (0.10-2) unstable; urgency=low
+
+  * Haciendo que el fallback de VLC funcione de forma multiplataforma. 
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Mon, 02 Feb 2015 14:24:46 +0100
+
+escritorio-educativo (0.10-1) unstable; urgency=low
+
+  * Comenzando a implementar el fallback a VLC.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Mon, 19 Jan 2015 15:07:43 +0100
+
 escritorio-educativo (0.10) unstable; urgency=low
 
   * Implementando video.js
