@@ -1,3 +1,9 @@
+escritorio-educativo (0.10-3) unstable; urgency=low
+
+  * Agregando boton para abrir juegos en el navegador.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Fri, 06 Feb 2015 18:48:56 +0100
+
 escritorio-educativo (0.10-2) unstable; urgency=low
 
   * Haciendo que el fallback de VLC funcione de forma multiplataforma. 
