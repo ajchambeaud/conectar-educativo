@@ -95,6 +95,11 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, D
       gui.Shell.openExternal($scope.data.detalle.result.url + "&extension=.pdf");
     }
 
+    $scope.abrir_en_navegador = function(record) {
+      gui.Shell.openExternal(record.url);
+      console.log(record.url);
+    };
+
     $scope.descargar_video = function(detalle) {
       if (detalle.status.code == 200) {
         DescargasFactory.descargar_video(detalle);

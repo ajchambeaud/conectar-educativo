@@ -13,7 +13,7 @@
     "width": 850,
     "height": 550,
     "min_width": 810,
-    "min_height": 450
+    "min_height": 550
   },
   "node-remote": "<local>"
 }

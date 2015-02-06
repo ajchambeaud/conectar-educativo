@@ -30,7 +30,7 @@ distwin:
 
 test_mac:
 	@echo "Cuidado - se está usando la version de nodewebkit del sistema."
-	open -a /Applications/node-webkit.app src
+	open -a /Applications/node-webkit.app --args /Users/hugoruscitti/proyectos/conectar-educativo/src
 
 run_tests:
 	./node_modules/karma/bin/karma start
