@@ -11,153 +11,12 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="256"
    height="256"
-   id="svg3272"
+   id="svg3069"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="conectar-educativo.svg">
+   sodipodi:docname="Documento nuevo 3">
   <defs
-     id="defs3274">
-    <inkscape:path-effect
-       effect="skeletal"
-       id="path-effect3199"
-       is_visible="true"
-       pattern="M 0,5 C 0,2.24 2.24,0 5,0 7.76,0 10,2.24 10,5 10,7.76 7.76,10 5,10 2.24,10 0,7.76 0,5 z"
-       copytype="single_stretched"
-       prop_scale="1"
-       scale_y_rel="false"
-       spacing="0"
-       normal_offset="0"
-       tang_offset="0"
-       prop_units="false"
-       vertical_pattern="false"
-       fuse_tolerance="0" />
-    <inkscape:path-effect
-       effect="skeletal"
-       id="path-effect9230"
-       is_visible="true"
-       pattern="M 0,5 C 0,2.24 2.24,0 5,0 7.76,0 10,2.24 10,5 10,7.76 7.76,10 5,10 2.24,10 0,7.76 0,5 z"
-       copytype="single_stretched"
-       prop_scale="1"
-       scale_y_rel="false"
-       spacing="0"
-       normal_offset="0"
-       tang_offset="0"
-       prop_units="false"
-       vertical_pattern="false"
-       fuse_tolerance="0" />
-    <inkscape:path-effect
-       effect="skeletal"
-       id="path-effect8934"
-       is_visible="true"
-       pattern="m 231.32421,416.23945 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
-       copytype="single_stretched"
-       prop_scale="0.2"
-       scale_y_rel="false"
-       spacing="0"
-       normal_offset="0"
-       tang_offset="0"
-       prop_units="false"
-       vertical_pattern="false"
-       fuse_tolerance="0" />
-    <inkscape:path-effect
-       effect="skeletal"
-       id="path-effect8938"
-       is_visible="true"
-       pattern="m 233.09197,430.63412 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
-       copytype="single_stretched"
-       prop_scale="0.3"
-       scale_y_rel="false"
-       spacing="0"
-       normal_offset="0"
-       tang_offset="0"
-       prop_units="false"
-       vertical_pattern="false"
-       fuse_tolerance="0" />
-    <inkscape:path-effect
-       effect="skeletal"
-       id="path-effect8942"
-       is_visible="true"
-       pattern="m 234.85974,425.58336 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
-       copytype="single_stretched"
-       prop_scale="0.3"
-       scale_y_rel="false"
-       spacing="0"
-       normal_offset="0"
-       tang_offset="0"
-       prop_units="false"
-       vertical_pattern="false"
-       fuse_tolerance="0" />
-    <inkscape:path-effect
-       effect="skeletal"
-       id="path-effect8942-2"
-       is_visible="true"
-       pattern="m 230.82246,340.58605 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
-       copytype="single_stretched"
-       prop_scale="0.3"
-       scale_y_rel="false"
-       spacing="0"
-       normal_offset="0"
-       tang_offset="0"
-       prop_units="false"
-       vertical_pattern="false"
-       fuse_tolerance="0" />
-    <inkscape:path-effect
-       effect="skeletal"
-       id="path-effect8934-9"
-       is_visible="true"
-       pattern="m 231.32421,416.23945 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
-       copytype="single_stretched"
-       prop_scale="0.2"
-       scale_y_rel="false"
-       spacing="0"
-       normal_offset="0"
-       tang_offset="0"
-       prop_units="false"
-       vertical_pattern="false"
-       fuse_tolerance="0" />
-    <inkscape:path-effect
-       effect="skeletal"
-       id="path-effect8938-6"
-       is_visible="true"
-       pattern="m 233.09197,430.63412 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
-       copytype="single_stretched"
-       prop_scale="0.3"
-       scale_y_rel="false"
-       spacing="0"
-       normal_offset="0"
-       tang_offset="0"
-       prop_units="false"
-       vertical_pattern="false"
-       fuse_tolerance="0" />
-    <inkscape:path-effect
-       effect="skeletal"
-       id="path-effect8942-8"
-       is_visible="true"
-       pattern="m 234.85974,425.58336 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
-       copytype="single_stretched"
-       prop_scale="0.3"
-       scale_y_rel="false"
-       spacing="0"
-       normal_offset="0"
-       tang_offset="0"
-       prop_units="false"
-       vertical_pattern="false"
-       fuse_tolerance="0" />
-    <inkscape:path-effect
-       effect="skeletal"
-       id="path-effect8942-2-6"
-       is_visible="true"
-       pattern="m 230.82246,340.58605 c 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 z"
-       copytype="single_stretched"
-       prop_scale="0.3"
-       scale_y_rel="false"
-       spacing="0"
-       normal_offset="0"
-       tang_offset="0"
-       prop_units="false"
-       vertical_pattern="false"
-       fuse_tolerance="0" />
-  </defs>
+     id="defs3071" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -165,30 +24,23 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="273.09035"
-     inkscape:cy="111.96888"
+     inkscape:zoom="0.7"
+     inkscape:cx="111.69428"
+     inkscape:cy="91.738032"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="850"
-     inkscape:window-height="461"
-     inkscape:window-x="306"
-     inkscape:window-y="233"
-     inkscape:window-maximized="0"
-     showguides="true"
-     inkscape:guide-bbox="true">
-    <sodipodi:guide
-       orientation="1,0"
-       position="389.28571,116.42857"
-       id="guide3044" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="248.57143,52.142857"
-       id="guide3064" />
-  </sodipodi:namedview>
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="560"
+     inkscape:window-height="450"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="0" />
   <metadata
-     id="metadata3277">
+     id="metadata3074">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -203,42 +55,23 @@
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-796.36218)">
-    <text
-       xml:space="preserve"
-       style="font-size:193.32585144px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="13.488344"
-       y="892.27875"
-       id="text3015"
-       sodipodi:linespacing="125%"
-       transform="scale(0.89105983,1.1222591)"><tspan
-         sodipodi:role="line"
-         id="tspan3017"
-         x="13.488344"
-         y="892.27875"
-         style="font-weight:bold;-inkscape-font-specification:Sans Bold"><tspan
-           id="tspan3025"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000080;font-family:Sans;-inkscape-font-specification:Sans Bold">C</tspan></tspan></text>
-    <rect
-       style="fill:#88aa00"
-       id="rect3024"
-       width="88.571426"
-       height="31.428572"
-       x="152"
-       y="968.79077" />
-    <rect
-       style="fill:#88aa00"
-       id="rect3024-7"
-       width="88.571426"
-       height="31.428572"
-       x="152"
-       y="904.50507" />
-    <rect
-       style="fill:#88aa00"
-       id="rect3024-7-2"
-       width="88.571426"
-       height="31.428572"
-       x="152"
-       y="843.79077" />
+     transform="translate(-275.72833,-303.62056)">
+    <g
+       transform="matrix(1.1341664,0,0,1.1341664,248.42426,204.54952)"
+       id="g3052"
+       inkscape:export-filename="/home/alumno/Dropbox/huayra/Huayra_3.0/conectar_educativo.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3832-1-4"
+         d="m 231.83209,269.72198 c -8e-5,3.97134 -0.77713,7.68367 -2.33098,11.13694 -1.38134,3.28071 -3.36704,6.21601 -5.95703,8.80605 -2.59024,2.58996 -5.61168,4.66201 -9.06498,6.21593 -3.45353,1.38132 -7.07951,2.07201 -10.87784,2.07201 l -67.59897,0 c -26.41789,0 -48.950908,-9.32397 -67.598847,-27.97193 -18.647955,-18.64788 -27.971831,-41.26717 -27.971831,-67.85786 0,-26.41784 9.323876,-48.95079 27.971831,-67.59887 18.820737,-18.82043 41.353437,-28.23076 67.598847,-28.23096 l 67.59897,0 c 3.79833,2e-4 7.42431,0.77722 10.87784,2.33102 3.4533,1.38151 6.47474,3.36718 9.06498,5.95696 2.58999,2.5902 4.57569,5.61186 5.95703,9.06499 1.55385,3.45351 2.3309,7.07951 2.33098,10.87799 -8e-5,3.97148 -0.77713,7.68381 -2.33098,11.13695 -1.38134,3.28084 -3.36704,6.21614 -5.95703,8.80605 -2.59024,2.59008 -5.61168,4.66209 -9.06498,6.21596 -3.45353,1.38144 -7.07951,2.07214 -10.87784,2.07201 l -67.59897,0 c -10.878,1.3e-4 -20.20193,3.88507 -27.97195,11.65495 -7.59727,7.59741 -11.396004,16.83508 -11.395826,27.71295 -1.78e-4,10.70545 3.798556,20.02939 11.395826,27.97194 7.94263,7.59735 17.2665,11.39608 27.97195,11.39595 l 67.59897,0 c 3.79833,1.3e-4 7.42431,0.77709 10.87784,2.33103 3.4533,1.38138 6.47474,3.36704 9.06498,5.95701 2.58999,2.59002 4.57569,5.61167 5.95703,9.06493 1.55385,3.45339 2.3309,7.07938 2.33098,10.878"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff9955;fill-opacity:1;stroke:none;font-family:Technique BRK;-inkscape-font-specification:Technique BRK" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3822-2-7"
+         d="m 231.83209,202.12312 c -8e-5,3.97147 -0.77713,7.68374 -2.33098,11.137 -1.38134,3.28072 -3.36704,6.21602 -5.95703,8.80599 -2.59024,2.59002 -5.61168,4.66203 -9.06498,6.21596 -3.45353,1.38137 -7.07951,2.07207 -10.87784,2.072 l -67.59897,0 c -7.59741,7e-5 -14.15865,-2.76264 -19.68397,-8.28796 -5.52527,-5.52527 -8.28798,-12.17298 -8.28798,-19.94299 0,-3.79855 0.6907,-7.42455 2.07214,-10.87799 1.5538,-3.45321 3.53948,-6.47486 5.95701,-9.06494 2.58984,-2.5899 5.52514,-4.57557 8.80592,-5.95701 3.45314,-1.55387 7.16541,-2.33089 11.13688,-2.33102 l 67.59897,0 c 3.79833,1.3e-4 7.42431,0.77715 10.87784,2.33102 3.4533,1.38144 6.47474,3.36711 9.06498,5.95701 2.58999,2.59008 4.57569,5.61173 5.95703,9.06494 1.55385,3.45344 2.3309,7.07944 2.33098,10.87799"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#aa4400;fill-opacity:1;stroke:none;font-family:Technique BRK;-inkscape-font-specification:Technique BRK" />
+    </g>
   </g>
 </svg>
