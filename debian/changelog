@@ -1,3 +1,10 @@
+escritorio-educativo (0.10-4) unstable; urgency=low
+
+  * Arreglos generales.
+  * Actualizacion del icono del menu.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Thu, 26 Feb 2015 21:16:35 +0100
+
 escritorio-educativo (0.10-3) unstable; urgency=low
 
   * Agregando boton para abrir juegos en el navegador.
