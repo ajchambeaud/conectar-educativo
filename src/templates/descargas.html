@@ -35,7 +35,7 @@
 
             <td ng-show="recurso.estado === 'cancelado'">CANCELADO</td>
             <td ng-show="recurso.estado === 'error'">ERROR</td>
-            <td ng-show="recurso.estado === 'terminado'">OK</td>
+            <td ng-show="recurso.estado === 'terminado'">Descargado</td>
 
             <td ng-show="recurso.estado === 'descargando'" ng-click='cancelar(recurso)'><button class='btn btn-danger btn-xs'><i class='glyphicon glyphicon-remove'></i></button></td>
             <td ng-show="recurso.estado === 'cancelado'" ng-click='borrar(recurso)'><button class='btn btn-xs'><i class='glyphicon glyphicon-remove'></i></button></td>
