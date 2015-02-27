@@ -8,14 +8,14 @@ app.factory("RedFactory", function($window) {
     console.log("definiendo modo online");
     obj.online = true;
     obj.class = "btn-success";
-    obj.texto = "online";
+    obj.texto = "conectado";
   }
 
   obj.definir_modo_offline = function() {
     console.log("definiendo modo offline");
     obj.online = false;
     obj.class = "btn-danger";
-    obj.texto = "offline";
+    obj.texto = "sin conexión";
   }
 
   // Utiliza la api del browser para saber si hay internet.
