@@ -1,3 +1,9 @@
+escritorio-educativo (1:0.3.1) unstable; urgency=low
+
+  * Arreglos generales.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Fri, 27 Feb 2015 14:52:33 +0100
+
 escritorio-educativo (0.10-4) unstable; urgency=low
 
   * Arreglos generales.
