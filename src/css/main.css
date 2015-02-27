@@ -447,3 +447,12 @@ img.logo-inline {
 .float-right {
 	float: right;
 }
+
+
+.busqueda-ver-detalle {
+	color: #428bca;
+}
+
+.busqueda-ver-detalle:hover {
+	text-decoration: underline;
+}
