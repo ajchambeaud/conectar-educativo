@@ -47,6 +47,14 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, D
     ApiFactory.buscar($scope.data.query, success, alertar_error);
   }
 
+  $scope.no_ingreso_busqueda = function() {
+    if ($scope.data.query.texto === undefined) {
+      return true;
+    }
+    
+    return (! /\w+/.test($scope.data.query.texto));
+  };
+
   $scope.busquedaPagingFunction = function(){
     if($scope.data.recursos.length > 0){
       $scope.data.query.offset += 10;
