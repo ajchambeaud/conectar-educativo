@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     user-select: none;
 }
 
-p {
+p, h1, h2, h3, h4, td, a {
     -webkit-user-select: text;
     -khtml-user-select: text;
     -moz-user-select: text;
