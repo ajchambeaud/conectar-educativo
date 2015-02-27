@@ -15,6 +15,33 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, D
   $scope.data.result = false;
   $scope.data.mostrar =  'todos';
 
+
+  $scope.$watch('data.juegos', function() {
+    $scope.data.cantidad_juegos = $scope.data.juegos.length;
+  });
+
+  $scope.$watch('data.videos', function() {
+    $scope.data.cantidad_videos = $scope.data.videos.length;
+  });
+
+  $scope.$watch('data.ebooks', function() {
+    $scope.data.cantidad_ebooks = $scope.data.ebooks.length;
+  });
+
+  $scope.$watch('data.secuencias', function() {
+    $scope.data.cantidad_secuencias = $scope.data.secuencias.length;
+  });
+
+  $scope.$watch('data.infografias', function() {
+    $scope.data.cantidad_infografias = $scope.data.infografias.length;
+  });
+
+
+
+
+
+
+
   function alertar_error(data) {
     console.log("BUSQUEDA CONTROLLER -> ERROR");
     console.log(data);
@@ -51,9 +78,10 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, D
     if ($scope.data.query.texto === undefined) {
       return true;
     }
-    
+
     return (! /\w+/.test($scope.data.query.texto));
   };
+
 
   $scope.busquedaPagingFunction = function(){
     if($scope.data.recursos.length > 0){

@@ -34,7 +34,7 @@
       <div class="input-group busqueda-input-resultados">
         <input type="text" onkeydown="return procesar_tecla(event, 'buscar_en_detalle')" ng-model='data.query.texto' class="form-control">
         <span class="input-group-btn">
-          <button ng-click='buscar()' id='buscar_en_detalle' class="btn btn-default" type="button">Buscar</button>
+          <button ng-click='buscar()' ng-disabled='no_ingreso_busqueda()' id='buscar_en_detalle' class="btn btn-success" type="button">Buscar</button>
         </span>
       </div>
 
@@ -43,19 +43,19 @@
           <a ng-click="mostrar('todos')">Todos</a>
         </li>
         <li ng-class="{active: data.mostrar == 'juegos'}">
-          <a ng-click="mostrar('juegos')">Juegos</a>
+          <a ng-click="mostrar('juegos')">Juegos <cantidad model='data.cantidad_juegos'></cantidad></a>
         </li>
         <li ng-class="{active: data.mostrar == 'videos'}">
-          <a ng-click="mostrar('videos')">Videos</a>
+          <a ng-click="mostrar('videos')">Videos <cantidad model='data.cantidad_videos'></cantidad></a>
         </li>
         <li ng-class="{active: data.mostrar == 'ebooks'}">
-          <a ng-click="mostrar('ebooks')">Ebooks</a>
+          <a ng-click="mostrar('ebooks')">Ebooks <cantidad model='data.cantidad_ebooks'></cantidad></a>
         </li>
         <li ng-class="{active: data.mostrar == 'secuencias'}">
-          <a ng-click="mostrar('secuencias')">Secuencias</a>
+          <a ng-click="mostrar('secuencias')">Secuencias <cantidad model='data.cantidad_secuencias'></cantidad></a>
         </li>
         <li ng-class="{active: data.mostrar == 'infografias'}">
-          <a ng-click="mostrar('infografias')">Infografias</a>
+          <a ng-click="mostrar('infografias')">Infografias <cantidad model='data.cantidad_infografias'></cantidad></a>
         </li>
       </ul>
 
@@ -67,7 +67,7 @@
         <h4 class="busqueda-ver-detalle" ng-click="abrir_recurso(recurso)" ng-bind-html="recurso.titulo | striptags"></h4>
 
         <p ng-bind-html="recurso.descripcion | striptags"></p>
-        <span class="label label-normal">{{recurso.entity}}</span>
+        <span class="label label-warning">{{recurso.entity}}</span>
         <hr/>
       </div>
 
