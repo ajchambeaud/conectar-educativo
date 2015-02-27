@@ -1,3 +1,15 @@
+escritorio-educativo (1:0.3.2-2) unstable; urgency=low
+
+  * Actualizando el paquete debian.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Fri, 27 Feb 2015 18:51:50 +0100
+
+escritorio-educativo (1:0.3.2-1) unstable; urgency=low
+
+  * Arreglo menor.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Fri, 27 Feb 2015 18:44:25 +0100
+
 escritorio-educativo (1:0.3.2) unstable; urgency=low
 
   * cambiar "on line" por "conectado" y "offline" y "sin conexión".
