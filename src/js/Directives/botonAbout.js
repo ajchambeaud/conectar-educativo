@@ -4,7 +4,7 @@ app.directive('botonAbout', function($http, $modal){
 
   return {
     restrict: 'E',
-    template: "<a href ng-click='mostrar_dialogo_about()' class='boton-about'><i class='glyphicon glyphicon-question-sign'></i></a>",
+    template: "<a href ng-click='mostrar_dialogo_about()' class='boton-about'><i class='glyphicon glyphicon-info-sign'></i></a>",
     controller: function($scope){
       $scope.data = {};
       $scope.mostrar_dialogo_about = function() {
