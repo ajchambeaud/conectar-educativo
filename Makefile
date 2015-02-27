@@ -1,7 +1,7 @@
-VERSION="0.3.0"
+VERSION="0.3.1"
 
-N=\x1b[0m
-V=\x1b[32;01m
+N=[0m
+V=[01;32m
 
 all:
 	@echo ""
