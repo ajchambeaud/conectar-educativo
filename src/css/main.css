@@ -456,3 +456,14 @@ img.logo-inline {
 .busqueda-ver-detalle:hover {
 	text-decoration: underline;
 }
+
+
+.modal-dialog {
+	overflow: hidden;
+}
+
+.modal.in .modal-dialog {
+	left:0;
+	right:0;
+	overflow: hidden;
+}

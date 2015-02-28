@@ -38,6 +38,7 @@ app.directive('botonDescarga', function() {
         $scope.$apply();
 
       });
+
     }
   };
 });
