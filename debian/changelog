@@ -1,3 +1,9 @@
+escritorio-educativo (1:0.3.2-3) unstable; urgency=low
+
+  * Arreglos varios.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Mon, 02 Mar 2015 19:50:15 +0100
+
 escritorio-educativo (1:0.3.2-2) unstable; urgency=low
 
   * Actualizando el paquete debian.
