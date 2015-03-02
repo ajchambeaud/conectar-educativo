@@ -463,7 +463,16 @@ img.logo-inline {
 }
 
 .modal.in .modal-dialog {
-	left:0;
-	right:0;
-	overflow: hidden;
+	left: 0;
+	right: 0;
+	overflow-y: scroll;
+	top: 0;
+	bottom: 10px;
+	position: absolute;
+	overflow-x: hidden;
+}
+
+
+.conectarNavegador {
+	margin-bottom: 5px;
 }
