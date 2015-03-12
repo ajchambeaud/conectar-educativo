@@ -27,6 +27,10 @@ app.config(function($routeProvider, $httpProvider) {
 	    templateUrl: 'templates/descargas.html',
 	    controller: 'DescargasController'
 	  }).
+      when('/script', {
+	    templateUrl: 'templates/script.html',
+	    controller: 'ScriptController'
+	  }).
 			otherwise({redirectTo:'/home'});
 
 
