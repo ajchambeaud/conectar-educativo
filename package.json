@@ -4,7 +4,8 @@
     "grunt": "^0.4.5",
     "grunt-node-webkit-builder": "^0.3.0",
     "ffthumb": "0.0.4",
-    "fs-extra": "^0.12.0"
+    "fs-extra": "^0.12.0",
+    "underscore": "^1.8.2"
   },
   "devDependencies": {}
 }

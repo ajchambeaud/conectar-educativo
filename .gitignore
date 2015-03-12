@@ -7,3 +7,4 @@ distwin/
 cache/
 dist/
 extras/bins/
+*.swp
