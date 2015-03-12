@@ -85,14 +85,14 @@ for recurso in recursos:
         try:
             shutil.copy(
                 os.path.join(RECURSOS_ORIGEN, data['screenshot']),
-                os.path.join(RECURSOS_DESTINO, str(data['id']), 'thumb.jpg')
+                os.path.join(RECURSOS_DESTINO, str(data['id']), 'thumb.png')
             )
         except:
             pass
         try:
             shutil.copy(
                 os.path.join(RECURSOS_ORIGEN, data['archivo']),
-                os.path.join(RECURSOS_DESTINO, str(data['id']), 'video')
+                os.path.join(RECURSOS_DESTINO, str(data['id']), 'video.mp4')
             )
         except:
             print os.path.join(RECURSOS_ORIGEN, data['archivo'])
