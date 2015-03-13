@@ -11,9 +11,9 @@
     "fullscreen": false,
     "resizable": true,
     "width": 850,
-    "height": 550,
+    "height": 500,
     "min_width": 810,
-    "min_height": 550
+    "min_height": 500
   },
   "node-remote": "<local>"
 }
