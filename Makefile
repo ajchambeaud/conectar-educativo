@@ -35,7 +35,19 @@ test_mac:
 run_tests:
 	./node_modules/karma/bin/karma start
 
-dist:
-	grunt nodewebkit
+version:
+	@bumpversion --current-version ${VERSION} patch src/package.json Makefile src/templates/modal_about --list
+	@echo "Ahora es recomendable escribir el comando que genera los tags y sube todo a github:"
+	@echo ""
+	@echo "make ver_sync"
+	@echo ""
+
+ver_sync:
+	git commit -am 'release ${VERSION}'
+	git tag '${VERSION}'
+	git push
+	git push --all
+	git push --tags
+
 
 .PHONY: test dist distwin
