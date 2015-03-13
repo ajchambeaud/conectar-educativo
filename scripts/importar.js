@@ -2,7 +2,7 @@ var nedb = require('nedb');
 var path = require('path');
 var fs = require('fs');
 var _ = require('underscore');
-var recursos = require('./recursos.json');
+var recursos = require('./data.json');
 
 
 var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;

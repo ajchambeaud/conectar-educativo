@@ -13,7 +13,7 @@
 
   ;Name and file
   Name "conectar-educativo"
-  OutFile "conectar-educativo_0.3.0.exe"
+  OutFile "conectar-educativo_0.3.4.exe"
 
   ;Default installation folder
   InstallDir "c:\conectar-educativo"
