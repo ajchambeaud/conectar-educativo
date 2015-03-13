@@ -29,7 +29,7 @@ distwin:
 	rm -r -f distwin
 	sh extras/distwin.sh
 	makensis distwin/instalador.nsi
-	mv distwin/conectar-educativo_0.3.0.exe dist/
+	mv distwin/conectar-educativo_0.3.4.exe dist/
 	open dist
 
 
