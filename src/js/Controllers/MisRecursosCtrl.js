@@ -57,12 +57,14 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
   });
 
   $scope.abrir = function(recurso) {
+    var entity = recurso.entity;
+    recurso = recurso.result;
+    var ruta_descargas = PerfilFactory.obtener_path_descargas();
 
     var ModalDetalleVideoOfflineCtrl = function ($scope, $modalInstance, detalle) {
       $scope.data = {};
       $scope.data.detalle = detalle;
 
-      var ruta_descargas = PerfilFactory.obtener_path_descargas();
       var path_recurso = path.join(ruta_descargas, detalle.id.toString(), 'video.mp4');
       $scope.data.path_recurso = path_recurso;
 
@@ -72,15 +74,38 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
 
     };
 
-    var template = 'templates/modal_offline_detalle_video.html';
-    var modalInstance = $modal.open({
-      templateUrl: template,
-      controller: ModalDetalleVideoOfflineCtrl,
-      resolve: {
-        detalle: function() {return recurso;}
-      }
-    });
-    
+    var ruta_video = path.join(ruta_descargas, recurso.id.toString(), 'video.mp4')
+    var ruta_flash = path.join(ruta_descargas, recurso.id.toString(), 'contenido.swf')
+    var ruta_html = path.join(ruta_descargas, recurso.id.toString(), 'index.htm')
+
+    if (path.existsSync(ruta_video)) {
+      var template = 'templates/modal_offline_detalle_video.html';
+      var controller = ModalDetalleVideoOfflineCtrl;
+
+      var modalInstance = $modal.open({
+        templateUrl: template,
+        controller: controller,
+        resolve: {
+          detalle: function() {return recurso;}
+        }
+      });
+    }
+
+    if (path.existsSync(ruta_flash)) {
+      var gui = require('nw.gui');
+      gui.Shell.openExternal(ruta_flash);
+      console.log(ruta_flash);
+    }
+
+    if (path.existsSync(ruta_html)) {
+      var gui = require('nw.gui');
+      gui.Shell.openExternal(ruta_html);
+      console.log(ruta_html);
+    }
+
+
+
+
   }
 
   // Cuando termina la descarga actualiza el listado de mis-recursos.
