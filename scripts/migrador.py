@@ -12,6 +12,33 @@ import time
 import xml.etree.ElementTree as ET
 
 
+def nombre_funcional(id_tipo):
+    data = {
+        2: 'video',
+        7: 'flash',
+        1: 'html'
+    }
+    return data[id_tipo]
+
+
+def crear_carpeta(destino, id_recurso):
+    try:
+        os.makedirs(os.path.join(destino, str(id_recurso)))
+    except OSError, e:
+        if e.errno != 17:
+            raise
+        pass
+
+def crear_html(ruta):
+    html = '''
+<object width="100" height="100">
+    <param name="movie" value="flash.swf">
+    <embed src="flash.swf" width="750" height="562"></embed>
+</object>
+'''
+    with open(ruta, 'w') as fp:
+        fp.write(html)
+
 def leer_xml(ruta, tipo_funcional):
     tree = ET.parse(ruta)
     root = tree.getroot()
@@ -42,7 +69,9 @@ def leer_xml(ruta, tipo_funcional):
 
         # Encontrar contenido
         if tipo_funcional ==  1:
-            data['archivo'] = root.find('tipo_funcional').find('unidadhtml').find('index_file').text
+            data['carpeta'] = os.path.dirname(
+                root.find('tipo_funcional').find('unidadhtml').find('index_file').text
+            )
 
         elif tipo_funcional == 7:
             data['archivo'] = root.find('tipo_funcional').find('flash').find('file').text
@@ -77,13 +106,42 @@ def migrar_contenidos(origen, destino, tipo_funcional):
                 'entity': 'video'
             }
 
-            # Crear carpeta
-            try:
-                os.makedirs(os.path.join(destino, str(data['id'])))
-            except OSError, e:
-                if e.errno != 17:
+            # Copiar contenido
+            if tipo_funcional == 1: # HTML
+                try:
+                    shutil.copytree(
+                        os.path.join(origen, data['carpeta']),
+                        os.path.join(destino, str(data['id']))
+                    )
+                except:
+                    print('  --> ', os.path.join(origen, data['carpeta']))
                     raise
-                pass
+
+            elif tipo_funcional == 7: # FLASH
+                crear_carpeta(destino, data['id'])
+
+                try:
+                    shutil.copy(
+                        os.path.join(origen, data['archivo']),
+                        os.path.join(destino, str(data['id']), 'flash.swf')
+                    )
+                    crear_html(os.path.join(destino, str(data['id']), 'index.htm'))
+
+                except:
+                    print('  --> ', os.path.join(origen, data['carpeta']))
+                    raise
+
+            elif tipo_funcional == 2: #VIDEO
+                crear_carpeta(destino, data['id'])
+
+                try:
+                    shutil.copy(
+                        os.path.join(origen, data['archivo']),
+                        os.path.join(destino, str(data['id']), 'video.mp4')
+                    )
+                except:
+                    print('  --> ', os.path.join(origen, data['archivo']))
+                    raise
 
             # Copiar miniatura
             try:
@@ -94,27 +152,10 @@ def migrar_contenidos(origen, destino, tipo_funcional):
             except:
                 pass
 
-            # Copiar contenido
-            if tipo_funcional == 1: # HTML
-                pass
-
-            elif tipo_funcional == 7: # FLASH
-                pass
-
-            elif tipo_funcional == 2: #VIDEO
-                try:
-                    shutil.copy(
-                        os.path.join(origen, data['archivo']),
-                        os.path.join(destino, str(data['id']), 'video.mp4')
-                    )
-                except:
-                    print('  --> ', os.path.join(origen, data['archivo']))
-
-
             # Agregar dict al JSON
             ce_recursos['recursos'].append(ce_data)
 
-    with open('./data.json', 'w') as fp:
+    with open('./data_%s.json' % nombre_funcional(tipo_funcional), 'w') as fp:
         fp.write(json.dumps(ce_recursos, fp, indent=4, ensure_ascii=False).encode('utf-8'))
 
 
