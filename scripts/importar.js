@@ -5,7 +5,7 @@ var _ = require('underscore');
 var recursos = require('./data.json');
 
 
-var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
+var homedir = (process.platform === 'win32') ? "F:\\conectar-educativo" : "/media/DATOS/conectar-educativo";
 var dir_path = path.join(homedir, ".conectar-educativo");
 var databaseUrl = path.join(dir_path, "recursos.db");
 

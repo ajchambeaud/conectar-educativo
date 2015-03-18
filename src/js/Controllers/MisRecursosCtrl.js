@@ -75,7 +75,7 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
     };
 
     var ruta_video = path.join(ruta_descargas, recurso.id.toString(), 'video.mp4')
-    var ruta_flash = path.join(ruta_descargas, recurso.id.toString(), 'contenido.swf')
+    var ruta_flash = path.join(ruta_descargas, recurso.id.toString(), 'flash.swf')
     var ruta_html = path.join(ruta_descargas, recurso.id.toString(), 'index.htm')
 
     if (path.existsSync(ruta_video)) {
