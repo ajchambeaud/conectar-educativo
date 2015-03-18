@@ -75,7 +75,7 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
     };
 
     var ruta_video = path.join(ruta_descargas, recurso.id.toString(), 'video.mp4')
-    var ruta_flash = path.join(ruta_descargas, recurso.id.toString(), 'flash.swf')
+    //var ruta_flash = path.join(ruta_descargas, recurso.id.toString(), 'flash.swf')
     var ruta_html = path.join(ruta_descargas, recurso.id.toString(), 'index.htm')
 
     if (path.existsSync(ruta_video)) {
@@ -91,16 +91,16 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
       });
     }
 
-    if (path.existsSync(ruta_flash)) {
-      var gui = require('nw.gui');
-      gui.Shell.openExternal(ruta_flash);
-      console.log(ruta_flash);
-    }
+    //if (path.existsSync(ruta_flash)) {
+    //  var gui = require('nw.gui');
+    //  gui.Shell.openExternal(ruta_flash);
+    //  console.log(ruta_flash);
+    //}
 
     if (path.existsSync(ruta_html)) {
       var gui = require('nw.gui');
-      gui.Shell.openExternal(ruta_html);
       console.log(ruta_html);
+      gui.Shell.openExternal('file://'+ruta_html);
     }
 
 
