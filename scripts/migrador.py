@@ -72,6 +72,7 @@ def leer_xml(ruta, tipo_funcional):
             data['carpeta'] = os.path.dirname(
                 root.find('tipo_funcional').find('unidadhtml').find('index_file').text
             )
+            data['index'] = root.find('tipo_funcional').find('unidadhtml').find('index_file').text.split('/')[-1]
 
         elif tipo_funcional == 7:
             data['archivo'] = root.find('tipo_funcional').find('flash').find('file').text
@@ -113,6 +114,13 @@ def migrar_contenidos(origen, destino, tipo_funcional):
                         os.path.join(origen, data['carpeta']),
                         os.path.join(destino, str(data['id']))
                     )
+
+                    if data['index'] != 'index.htm':
+                        os.rename(
+                            os.path.join(destino, str(data['id']), data['index']),
+                            os.path.join(destino, str(data['id']), 'index.htm')
+                        )
+
                 except:
                     print('  --> ', os.path.join(origen, data['carpeta']))
                     raise
