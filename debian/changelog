@@ -1,4 +1,10 @@
-escritorio-educativo (1:0.3.4) Cambios de ruta; urgency=medium
+escritorio-educativo (1:0.3.5) unstable; urgency=medium
+
+  * Arreglos de changelog
+
+ -- Ignacio Juan Martín Benedetti <tranceway@gmail.com>  Fri, 20 Mar 2015 11:46:36 -0300
+
+escritorio-educativo (1:0.3.4) unstable; urgency=medium
 
   * Arreglo de rutas para la partición de datos.
 
