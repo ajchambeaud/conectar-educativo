@@ -11,7 +11,7 @@ app.factory('VLC', function($rootScope) {
 
       /* Seleccionado el comando correcto para lanzar VLC */
       if (process.platform === 'win32' || process.platform === 'win64')
-        comando = 'VLCPortable\\VLCPortable.exe "' + ruta + '"';
+        comando = 'c:\\conectar-educativo\\VLCPortable\\VLCPortable.exe "' + ruta + '"';
 
       if (process.platform === 'linux')
         comando = 'vlc "' + ruta + '"';
