@@ -1,3 +1,10 @@
+escritorio-educativo (1:0.3.6) unstable; urgency=low
+
+  * Mejorando la búsqueda para que se haga con un botón en lugar de hacerse
+    como un filtro mientras se escribe.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Mon, 30 Mar 2015 21:40:42 +0200
+
 escritorio-educativo (1:0.3.5) unstable; urgency=medium
 
   * Arreglos de changelog
