@@ -11,10 +11,15 @@
       <label class="btn btn-success" ng-model="data.tipo_de_vista" btn-radio="'grilla'" uncheckable><i class='glyphicon glyphicon-th'></i></label>
     </div>
 
-    <input class='form-control input-buscador' type="input" ng-model='filtro' placeholder='filtro'>
+    <input ng-keyup="$event.keyCode == 13 ? buscar() : null" class='form-control input-buscador' type="input" ng-model='data.busqueda' placeholder='Buscar'>
+    <button ng-click='buscar()' class='btn btn-success'>Buscar</button>
   </div>
 
   <div class="row">
+
+    <div ng-show='filtro' class='alert alert-warning'>
+      Solo se muestran algunos resultados de búsqueda. <a href='' ng-click='limpiar()'>¿Querés ver todos los resultados?</a>
+    </div>
 
       <table class="table table-striped table-bordered"
              ng-show='data.tipo_de_vista === "lista"'>
