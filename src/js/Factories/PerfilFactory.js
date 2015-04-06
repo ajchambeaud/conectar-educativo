@@ -2,7 +2,23 @@ var app = angular.module('app');
 var fs = require('fs');
 var path = require('path');
 
-var homedir = (process.platform === 'win32') ? "F:\\conectar-educativo" : "/media/DATOS/conectar-educativo";
+if (process.platform === 'win32') {
+    if (fs.existsSync("F:\\conectar-educativo")) {
+        var homedir = "F:\\conectar-educativo";
+    }
+    else {
+        var homedir = process.USERPROFILE;
+    }
+}
+else {
+    if (fs.existsSync("/media/DATOS/conectar-educativo")) {
+        var homedir = "/media/DATOS/conectar-educativo";
+    }
+    else {
+        var homedir = process.env.HOME;
+    }
+}
+
 var dir_path = path.join(homedir, ".conectar-educativo");
 var path_descargas = path.join(homedir, "Compartido/");
 var config_path = path.join(dir_path, "config.json");
