@@ -30,7 +30,8 @@ distwin:
 	sh extras/distwin.sh
 	makensis distwin/instalador.nsi
 	mv distwin/conectar-educativo_0.3.4.exe dist/
-	open dist
+	@echo "Build completo: el archivo se encuentra en dist"
+#	open dist
 
 
 test_mac:

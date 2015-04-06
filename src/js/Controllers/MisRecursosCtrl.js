@@ -38,6 +38,7 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
 
   $scope.data.recursos_almacenados = null;
   $scope.data.tipo_de_vista = 'lista';
+  $scope.data.busqueda = '';
 
 
   function actualizar_listado_recursos() {
@@ -119,6 +120,15 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
     });
 
   });
+
+  $scope.buscar = function() {
+    $scope.filtro = $scope.data.busqueda;
+  };
+
+  $scope.limpiar = function() {
+    $scope.data.busqueda = "";
+    $scope.filtro = "";
+  };
 
   $scope.path_recursos = PerfilFactory.obtener_path_descargas();
 
