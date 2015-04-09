@@ -1,3 +1,9 @@
+escritorio-educativo (1:0.3.7) unstable; urgency=medium
+
+  * Arreglo de rutas
+
+ -- Ignacio Juan Martín Benedetti <tranceway@gmail.com>  Thu, 09 Apr 2015 11:49:42 -0300
+
 escritorio-educativo (1:0.3.6) unstable; urgency=low
 
   * Mejorando la búsqueda para que se haga con un botón en lugar de hacerse
