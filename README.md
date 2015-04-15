@@ -24,6 +24,12 @@ También es importante tener instalado el comando `ffmpegthumbnailer`, y
   nw conectar-educativo
 ```
 
+## Tecnologías utilizadas
+
+* nodewebkit
+* angularjs
+* nedb
+
 # Mas información
 
 Recomendamos estos links para conocer mas sobre las tecnologías que
