@@ -40,22 +40,22 @@
 
       <ul class="nav nav-tabs busqueda-filtro-entidad">
         <li ng-class="{active: data.mostrar == 'todos'}">
-          <a ng-click="mostrar('todos')">Todos</a>
+          <a ng-click="mostrar('todos')" href="#">Todos</a>
         </li>
         <li ng-class="{active: data.mostrar == 'juegos'}">
-          <a ng-click="mostrar('juegos')">Juegos <cantidad model='data.cantidad_juegos'></cantidad></a>
+          <a ng-click="mostrar('juegos')" href="#">Juegos <cantidad model='data.cantidad_juegos'></cantidad></a>
         </li>
         <li ng-class="{active: data.mostrar == 'videos'}">
-          <a ng-click="mostrar('videos')">Videos <cantidad model='data.cantidad_videos'></cantidad></a>
+          <a ng-click="mostrar('videos')" href="#">Videos <cantidad model='data.cantidad_videos'></cantidad></a>
         </li>
         <li ng-class="{active: data.mostrar == 'ebooks'}">
-          <a ng-click="mostrar('ebooks')">Ebooks <cantidad model='data.cantidad_ebooks'></cantidad></a>
+          <a ng-click="mostrar('ebooks')" href="#">Ebooks <cantidad model='data.cantidad_ebooks'></cantidad></a>
         </li>
         <li ng-class="{active: data.mostrar == 'secuencias'}">
-          <a ng-click="mostrar('secuencias')">Secuencias <cantidad model='data.cantidad_secuencias'></cantidad></a>
+          <a ng-click="mostrar('secuencias')" href="#">Secuencias <cantidad model='data.cantidad_secuencias'></cantidad></a>
         </li>
         <li ng-class="{active: data.mostrar == 'infografias'}">
-          <a ng-click="mostrar('infografias')">Infografias <cantidad model='data.cantidad_infografias'></cantidad></a>
+          <a ng-click="mostrar('infografias')" href="#">Infografias <cantidad model='data.cantidad_infografias'></cantidad></a>
         </li>
       </ul>
 
@@ -64,7 +64,7 @@
       </div>
 
       <div ng-show="data.mostrar == 'todos' || data.mostrar == (recurso.entity+'s')" ng-class="recurso.entity" ng-repeat='recurso in data.recursos' class="bs-callout bs-callout-info">
-        <h4 class="busqueda-ver-detalle" ng-click="abrir_recurso(recurso)" ng-bind-html="recurso.titulo | striptags"></h4>
+        <h4 class="busqueda-ver-detalle"><a href="#" ng-click="abrir_recurso(recurso)" ng-bind-html="recurso.titulo | striptags"></a></h4>
 
         <p ng-bind-html="recurso.descripcion | striptags"></p>
         <span class="label label-warning">{{recurso.entity}}</span>
