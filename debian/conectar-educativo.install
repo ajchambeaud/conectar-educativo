@@ -1,4 +1,5 @@
 src/* usr/share/conectar-educativo/src
+scripts/* usr/share/conectar-educativo/scripts
 package.json usr/share/conectar-educativo/
 node_modules usr/share/conectar-educativo/
 bin/conectar-educativo usr/bin/
