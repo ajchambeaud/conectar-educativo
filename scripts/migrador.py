@@ -178,7 +178,7 @@ if __name__ == '__main__':
     parser.add_argument("destino",
                         help='Carpeta para contenidos de Conectar Educativo.',
                         nargs='?',
-                        default='/home/alumno/ConectarEducativo')
+                        default='/media/DATOS/conectar-educativo/Compartido/')
 
     parser.add_argument("--recurso",
                         help='Tipo de recurso a migrar',
