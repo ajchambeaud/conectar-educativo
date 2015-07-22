@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <button class="close float-right" ng-click="ok()">x</button>
+  <button class="close float-right" ng-click="ok()"><i class='glyphicon glyphicon-remove'></i></button>
   <h4 class="modal-title">{{data.detalle.result.titulo}}</h4>
 </div>
 
@@ -11,9 +11,8 @@
   <p>{{data.detalle.result.descripcion | striptags}}</p>
   <boton-descarga recurso-id="data.detalle.result.id" ng-click='descargar_video(data.detalle)'></boton-descarga>
 
-
 </div>
 
 <div class="modal-footer">
-  <button class="btn btn-primary" ng-click="ok()">OK</button>
+  <button class="btn btn-primary" ng-click="ok()">Cerrar</button>
 </div>

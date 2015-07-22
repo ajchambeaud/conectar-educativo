@@ -1,6 +1,6 @@
 html {
 	min-height: 100%;
-  overflow-y: scroll;
+	overflow-y: auto;
 }
 
 
@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     user-select: none;
 }
 
-p {
+p, h1, h2, h3, h4, td, a {
     -webkit-user-select: text;
     -khtml-user-select: text;
     -moz-user-select: text;
@@ -446,4 +446,33 @@ img.logo-inline {
 
 .float-right {
 	float: right;
+}
+
+
+.busqueda-ver-detalle {
+	color: #428bca;
+}
+
+.busqueda-ver-detalle:hover {
+	text-decoration: underline;
+}
+
+
+.modal-dialog {
+	overflow: hidden;
+}
+
+.modal.in .modal-dialog {
+	left: 0;
+	right: 0;
+	overflow-y: scroll;
+	top: 0;
+	bottom: 10px;
+	position: absolute;
+	overflow-x: hidden;
+}
+
+
+.conectarNavegador {
+	margin-bottom: 5px;
 }

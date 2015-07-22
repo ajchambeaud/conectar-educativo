@@ -38,6 +38,7 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
 
   $scope.data.recursos_almacenados = null;
   $scope.data.tipo_de_vista = 'lista';
+  $scope.data.busqueda = '';
 
 
   function actualizar_listado_recursos() {
@@ -57,12 +58,14 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
   });
 
   $scope.abrir = function(recurso) {
+    var entity = recurso.entity;
+    recurso = recurso.result;
+    var ruta_descargas = PerfilFactory.obtener_path_descargas();
 
     var ModalDetalleVideoOfflineCtrl = function ($scope, $modalInstance, detalle) {
       $scope.data = {};
       $scope.data.detalle = detalle;
 
-      var ruta_descargas = PerfilFactory.obtener_path_descargas();
       var path_recurso = path.join(ruta_descargas, detalle.id.toString(), 'video.mp4');
       $scope.data.path_recurso = path_recurso;
 
@@ -72,15 +75,38 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
 
     };
 
-    var template = 'templates/modal_offline_detalle_video.html';
-    var modalInstance = $modal.open({
-      templateUrl: template,
-      controller: ModalDetalleVideoOfflineCtrl,
-      resolve: {
-        detalle: function() {return recurso;}
-      }
-    });
-    
+    var ruta_video = path.join(ruta_descargas, recurso.id.toString(), 'video.mp4')
+    //var ruta_flash = path.join(ruta_descargas, recurso.id.toString(), 'flash.swf')
+    var ruta_html = path.join(ruta_descargas, recurso.id.toString(), 'index.htm')
+
+    if (fs.existsSync(ruta_video)) {
+      var template = 'templates/modal_offline_detalle_video.html';
+      var controller = ModalDetalleVideoOfflineCtrl;
+
+      var modalInstance = $modal.open({
+        templateUrl: template,
+        controller: controller,
+        resolve: {
+          detalle: function() {return recurso;}
+        }
+      });
+    }
+
+    //if (fs.existsSync(ruta_flash)) {
+    //  var gui = require('nw.gui');
+    //  gui.Shell.openExternal(ruta_flash);
+    //  console.log(ruta_flash);
+    //}
+
+    if (fs.existsSync(ruta_html)) {
+      var gui = require('nw.gui');
+      console.log(ruta_html);
+      gui.Shell.openExternal('file://' + ruta_html);
+    }
+
+
+
+
   }
 
   // Cuando termina la descarga actualiza el listado de mis-recursos.
@@ -94,6 +120,15 @@ app.controller('MisRecursosController', function($http, $scope, $timeout, DataBu
     });
 
   });
+
+  $scope.buscar = function() {
+    $scope.filtro = $scope.data.busqueda;
+  };
+
+  $scope.limpiar = function() {
+    $scope.data.busqueda = "";
+    $scope.filtro = "";
+  };
 
   $scope.path_recursos = PerfilFactory.obtener_path_descargas();
 

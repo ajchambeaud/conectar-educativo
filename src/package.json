@@ -1,19 +1,19 @@
 {
   "name": "ConectarEducativo",
   "description": "Conectar Educativo",
-  "version": "0.0.2",
+  "version": "0.4.0",
   "main": "index.html",
   "window": {
     "title": "Conectar Educativo",
-    "toolbar": true,
+    "toolbar": false,
     "frame": true,
     "position": "center",
     "fullscreen": false,
     "resizable": true,
     "width": 850,
-    "height": 550,
+    "height": 500,
     "min_width": 810,
-    "min_height": 550
+    "min_height": 500
   },
   "node-remote": "<local>"
 }

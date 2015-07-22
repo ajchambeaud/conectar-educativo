@@ -1,0 +1,11 @@
+{
+  "recursos": [
+    {
+      "entity": "video",
+      "id": 1234,
+      "titulo": "Un titulo",
+      "descripcion": "Una descripcion",
+      "url": "http://www.goggle.com"
+    }
+  ]
+}

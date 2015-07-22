@@ -1,13 +1,16 @@
 <div class="modal-header">
-  <button class="close float-right" ng-click="ok()">x</button>
+  <button class="close float-right" ng-click="ok()"><i class='glyphicon glyphicon-remove'></i></button>
   <h4 class="modal-title">{{data.detalle.result.titulo}}</h4>
 </div>
 
 <div class="modal-body">
   <p>{{data.detalle.result.descripcion | striptags}}</p>
-  <iframe ng-src="{{data.detalle.result.visualizacion_educar | trustUrl}}" width="100%" height="500"></iframe>
+
+  <conectar-navegador></conectar-navegador>
+  <iframe id='iframe' nwfaketop ng-src="{{data.detalle.result.visualizacion_educar | trustUrl}}" width="100%" height="500"></iframe>
 </div>
 
 <div class="modal-footer">
-  <button class="btn btn-primary" ng-click="ok()">OK</button>
+  <boton-externo url='data.detalle.result.visualizacion_educar'></boton-externo>
+  <button class="btn btn-primary" ng-click="ok()">Cerrar</button>
 </div>

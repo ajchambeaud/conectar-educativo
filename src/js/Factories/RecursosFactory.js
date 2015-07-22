@@ -3,7 +3,23 @@ var nedb = require('nedb');
 var path = require('path');
 var fs = require('fs');
 
-var homedir = (process.platform === 'win32') ? process.env.HOMEPATH : process.env.HOME;
+if (process.platform === 'win32') {
+    if (fs.existsSync("F:\\conectar-educativo")) {
+        var homedir = "F:\\conectar-educativo";
+    }
+    else {
+        var homedir = process.USERPROFILE;
+    }
+}
+else {
+    if (fs.existsSync("/media/DATOS/conectar-educativo")) {
+        var homedir = "/media/DATOS/conectar-educativo";
+    }
+    else {
+        var homedir = process.env.HOME;
+    }
+}
+
 var dir_path = path.join(homedir, ".conectar-educativo");
 var databaseUrl = path.join(dir_path, "recursos.db");
 
@@ -24,12 +40,16 @@ app.factory("RecursosFactory", function(PerfilFactory) {
   }
 
   obj.listar_recursos = function(callback, error_callback) {
+    console.log("Comenzando a buscar recursos.");
 
     obj.db.find({}, function(err, result) {
-      if (err)
+      if (err) {
         error_callback(err);
-      else
+      } else {
         callback(result);
+      }
+
+      console.log("Terminando la búsqueda");
     });
 
   }

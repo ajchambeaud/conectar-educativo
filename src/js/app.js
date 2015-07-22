@@ -10,7 +10,7 @@ function procesar_tecla(e, id_boton_buscar) {
 
 window.mostrar_herramientas_de_desarrollo = function() {
     gui.Window.get().showDevTools();
-}
+};
 
 
 var gui = require('nw.gui');

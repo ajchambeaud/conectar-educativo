@@ -9,20 +9,24 @@ tecnologías: node-webkit, nedb, express, rest y angular.js
 ![](preview/app.png)
 
 ```
-  git clone https://github.com/ajchambeaud/conectar-educativo
   cd conectar-educativo
   npm install
-  cd ..
 ```
 
 También es importante tener instalado el comando `ffmpegthumbnailer`, y
-`node-webkit`
+`node-webkit` (nwjs)
 
 <a href="https://github.com/rogerwang/node-webkit#downloads" target="_blank">Descarga</a> el binario de node-webkit para tu plataforma y usalo para ejecutar la aplicación.
 
 ```
-  nw conectar-educativo
+  nw src
 ```
+
+## Tecnologías utilizadas
+
+* nodewebkit
+* angularjs
+* nedb
 
 # Mas información
 

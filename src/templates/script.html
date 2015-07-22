@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12">
+
+    <h1>Script</h1>
+
+    <p>Desde esta sección se pueden ejecutar tareas de administración
+      y automatización fácilmente.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <form role="form" class="preferencias">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Descarga masiva</label>
+        <input ng-model='data.recursos' type="text" class="form-control" id="exampleInputEmail1" placeholder="IDs de recursos separados por espacios o comas">
+      </div>
+    </div>
+  </div>
+
+  <div class='row'>
+        <div class="col-xs-12">
+
+
+    <button ng-click='iniciarDescarga()' ng-disabled='data.recursos.length == 0' class="btn btn-primary btn-preferencias">Iniciar Descarga</button>
+  </div>
+  </form>
+
+</div>

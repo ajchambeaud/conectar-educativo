@@ -15,6 +15,33 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, D
   $scope.data.result = false;
   $scope.data.mostrar =  'todos';
 
+
+  $scope.$watch('data.juegos', function() {
+    $scope.data.cantidad_juegos = $scope.data.juegos.length;
+  });
+
+  $scope.$watch('data.videos', function() {
+    $scope.data.cantidad_videos = $scope.data.videos.length;
+  });
+
+  $scope.$watch('data.ebooks', function() {
+    $scope.data.cantidad_ebooks = $scope.data.ebooks.length;
+  });
+
+  $scope.$watch('data.secuencias', function() {
+    $scope.data.cantidad_secuencias = $scope.data.secuencias.length;
+  });
+
+  $scope.$watch('data.infografias', function() {
+    $scope.data.cantidad_infografias = $scope.data.infografias.length;
+  });
+
+
+
+
+
+
+
   function alertar_error(data) {
     console.log("BUSQUEDA CONTROLLER -> ERROR");
     console.log(data);
@@ -46,6 +73,15 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, D
 
     ApiFactory.buscar($scope.data.query, success, alertar_error);
   }
+
+  $scope.no_ingreso_busqueda = function() {
+    if ($scope.data.query.texto === undefined) {
+      return true;
+    }
+
+    return (! /\w+/.test($scope.data.query.texto));
+  };
+
 
   $scope.busquedaPagingFunction = function(){
     if($scope.data.recursos.length > 0){
@@ -112,32 +148,35 @@ app.controller('BuscarController', function($scope, $modal, $http, ApiFactory, D
 
 
   $scope.abrir_recurso = function(recurso) {
-    console.log({id: recurso.id});
 
     function success(data) {
       var template = "";
 
-      switch (recurso.entity) {
-        case "juego":
-            template = 'templates/modal_detalle_juego.html';
-            break;
-        case "video":
-            template = 'templates/modal_detalle_video.html';
-            break;
-        case "ebook":
-            data.corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
-            data.mozillaPdfjsUrl = "http://mozilla.github.io/pdf.js/web/viewer.html?file=";
-            data.result.url = encodeURIComponent(data.result.url);
-            template = 'templates/modal_detalle_ebook.html';
-            break;
-        case "secuencia":
-            template = 'templates/modal_detalle_secuencia.html';
-            break;
-        case "infografia":
-            template = 'templates/modal_detalle_infografia.html';
-            break;
-        default:
-            break;
+      if (data.status.code === 406) {
+        template = 'templates/modal_no_disponible.html';
+      } else {
+        switch (recurso.entity) {
+          case "juego":
+              template = 'templates/modal_detalle_juego.html';
+              break;
+          case "video":
+              template = 'templates/modal_detalle_video.html';
+              break;
+          case "ebook":
+              data.corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
+              data.mozillaPdfjsUrl = "http://mozilla.github.io/pdf.js/web/viewer.html?file=";
+              data.result.url = encodeURIComponent(data.result.url);
+              template = 'templates/modal_detalle_ebook.html';
+              break;
+          case "secuencia":
+              template = 'templates/modal_detalle_secuencia.html';
+              break;
+          case "infografia":
+              template = 'templates/modal_detalle_infografia.html';
+              break;
+          default:
+              break;
+        }
       }
 
       var modalInstance = $modal.open({
