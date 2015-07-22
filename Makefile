@@ -1,4 +1,4 @@
-VERSION="0.3.4"
+VERSION="0.3.5"
 
 N=[0m
 V=[01;32m
@@ -29,7 +29,7 @@ distwin:
 	rm -r -f distwin
 	sh extras/distwin.sh
 	makensis distwin/instalador.nsi
-	mv distwin/conectar-educativo_0.3.4.exe dist/
+	mv distwin/conectar-educativo_0.3.5.exe dist/
 	@echo "Build completo: el archivo se encuentra en dist"
 #	open dist
 
