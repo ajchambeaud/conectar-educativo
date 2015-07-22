@@ -40,12 +40,16 @@ app.factory("RecursosFactory", function(PerfilFactory) {
   }
 
   obj.listar_recursos = function(callback, error_callback) {
+    console.log("Comenzando a buscar recursos.");
 
     obj.db.find({}, function(err, result) {
-      if (err)
+      if (err) {
         error_callback(err);
-      else
+      } else {
         callback(result);
+      }
+
+      console.log("Terminando la búsqueda");
     });
 
   }
