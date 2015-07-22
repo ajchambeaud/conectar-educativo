@@ -226,3 +226,4 @@ tipo_rec_educativo:
     sys.stdout.write('\n')
 
     migrar_contenidos(args.origen, args.destino, tipo)
+    os.system('mv data_video.json scripts/data.json')
