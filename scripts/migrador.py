@@ -149,7 +149,7 @@ def migrar_contenidos(origen, destino, tipo_funcional):
                     )
                 except:
                     print('  --> ', os.path.join(origen, data['archivo']))
-                    raise
+                    #raise
 
             # Copiar miniatura
             try:
@@ -173,7 +173,7 @@ if __name__ == '__main__':
     parser.add_argument("origen",
                         help='Carpeta con contenidos de MiEscritorio.',
                         nargs='?',
-                        default='/home/alumno/MiEscritorio/repositorio/')
+                        default='/media/alumno/DATOS/contenido/MiEscritorio/repositorio/')
 
     parser.add_argument("destino",
                         help='Carpeta para contenidos de Conectar Educativo.',
@@ -197,7 +197,7 @@ if __name__ == '__main__':
         raise os.error('La carpeta origen "%s" no existe!' % args.origen)
 
     if not os.path.isdir(args.destino):
-        raise os.error('La carpeta destino "%s" no existe!' % args.destino)
+        os.makedirs(args.destino)
 
     """
 tipo_funcional:
