@@ -9,7 +9,6 @@ tecnologías: node-webkit, nedb, express, rest y angular.js
 ![](preview/app.png)
 
 ```
-  git clone https://github.com/ajchambeaud/conectar-educativo
   cd conectar-educativo
   npm install
   cd ..
