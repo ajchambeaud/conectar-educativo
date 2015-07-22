@@ -42,7 +42,7 @@ run_tests:
 	./node_modules/karma/bin/karma start
 
 version:
-	@bumpversion --current-version ${VERSION} patch extras/instalador.nsi src/package.json Makefile src/templates/modal_about.html --list
+	@bumpversion --current-version ${VERSION} minor extras/instalador.nsi src/package.json Makefile src/templates/modal_about.html --list
 	@echo "Ahora es recomendable escribir el comando que genera los tags y sube todo a github:"
 	@echo ""
 	@echo "make ver_sync"
